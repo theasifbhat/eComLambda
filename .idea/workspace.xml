@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/LandingPage/LandingPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/LandingPage/LandingPageTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +97,7 @@
       <updated>1689846117719</updated>
       <workItem from="1689846119052" duration="8931000" />
       <workItem from="1690194956527" duration="3272000" />
-      <workItem from="1690198239867" duration="2951000" />
+      <workItem from="1690198239867" duration="3305000" />
     </task>
     <servers />
   </component>
