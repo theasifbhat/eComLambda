@@ -9,4 +9,10 @@ public class LandingPageTests extends BaseTest {
     public void testSearchFunctionality(){
     landingPage.searchProductWithName("iPhone");
     }
+
+
+    @Test
+    public void testSuggestedItemsWhenSearching(){
+        landingPage.getSearchSuggestionWithName("mac");
+    }
 }

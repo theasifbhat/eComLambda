@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePage{
 
@@ -24,8 +25,12 @@ public class BasePage{
      webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
  }
 
-    public void waitTillElementVisibleUsingWebElement(WebElement element){
+    public void waitTillElementIsVisibleUsingWebElement(WebElement element){
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitTillElementsAreVisibleUsingWebElement(List<WebElement> element){
+        webDriverWait.until(ExpectedConditions.visibilityOfAllElements(element));
     }
 
     public void waitTillElementIsPresent(By locator){

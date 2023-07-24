@@ -1,10 +1,15 @@
 package pageObjects.LandingPage;
 
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
+
+import java.util.List;
 
 public class LandingPage extends BasePage {
 
@@ -21,6 +26,10 @@ public class LandingPage extends BasePage {
     @FindBy(xpath = "//div[@class='search-wrapper']//button[@class='type-text']")
     WebElement submitButton;
 
+    @FindBy(xpath = "//div[@class='dropdown']//h4[@class='title']")
+    List<WebElement> searchResults;
+
+
 
 
     public void goToLandingPage() {
@@ -32,5 +41,19 @@ public class LandingPage extends BasePage {
         searchBar.sendKeys(text);
         submitButton.click();
     }
+
+    public void getSearchSuggestionWithName(String text){
+        searchBar.clear();
+        searchBar.sendKeys(text);
+        waitTillElementsAreVisibleUsingWebElement(searchResults);
+        searchResults.forEach(item->{
+
+        if (!item.getText().toLowerCase().contains(text.toLowerCase())){
+            Assert.fail("Result with mismatching name found.");
+        }
+                }
+        );
+    }
+
 
 }
