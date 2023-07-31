@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/LandingPage/LandingPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/LandingPage/LandingPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="0af398f4-1b73-49d6-a74e-ccfbf8d29cc3" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -174,7 +175,7 @@
       <workItem from="1690798569830" duration="445000" />
       <workItem from="1690799362571" duration="4142000" />
       <workItem from="1690810431738" duration="2435000" />
-      <workItem from="1690825198204" duration="647000" />
+      <workItem from="1690825198204" duration="1212000" />
     </task>
     <servers />
   </component>
