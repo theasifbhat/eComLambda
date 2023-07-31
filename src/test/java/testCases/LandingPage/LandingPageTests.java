@@ -44,7 +44,7 @@ public class LandingPageTests extends BaseTest {
 
     @Test
     public void testSearchFunctionalityWithLogin(){
-        landingPage.login("asif.test@lamdatest.com","12345678");
+        landingPage.login();
         testSearchFunctionality();
     }
 }

@@ -10,9 +10,11 @@ import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 
 public class LandingPage extends BasePage {
 
@@ -94,14 +96,22 @@ public class LandingPage extends BasePage {
         return Objects.equals(noResultText.getText(), "There is no product that matches the search criteria.");
     }
 
-    public void login(String username, String password){
+    public void login(){
         Actions action = new Actions(mDriver);
         action.moveToElement(myAccountNav).build().perform();
         waitTillElementIsVisibleUsingWebElement(loginLink);
         action.click(loginLink).build().perform();
         Login login = new Login(mDriver);
         waitTillElementIsVisibleUsingWebElement(login.usernameField);
-        login.loginWithValidCredentials(username,password);
+        try {
+            Properties properties = new Properties();
+            FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
+            properties.load(fs);
+            login.loginWithValidCredentials(properties.getProperty("username"), properties.getProperty("password"));
+        }catch (Exception ignored){
+            System.out.println("Cannot find username and password from properties file.");
+        }
+
     }
 
 
