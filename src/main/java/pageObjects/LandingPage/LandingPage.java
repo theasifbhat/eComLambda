@@ -3,10 +3,12 @@ package pageObjects.LandingPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
+import pageObjects.Login.Login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,13 @@ public class LandingPage extends BasePage {
 
     @FindBy(xpath = "//div[@id='entry_212469']//p")
     WebElement noResultText;
+
+    @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
+    WebElement myAccountNav;
+
+    @FindBy(xpath = "//a[contains(@href, 'login')]")
+    WebElement loginLink;
+
 
 
     public void goToLandingPage() {
@@ -83,6 +92,16 @@ public class LandingPage extends BasePage {
     public boolean searchProductsWithNonExistingProductName(){   //returns true if label is found else false
         waitTillElementIsVisibleUsingWebElement(searchResultContainer);
         return Objects.equals(noResultText.getText(), "There is no product that matches the search criteria.");
+    }
+
+    public void login(String username, String password){
+        Actions action = new Actions(mDriver);
+        action.moveToElement(myAccountNav).build().perform();
+        waitTillElementIsVisibleUsingWebElement(loginLink);
+        action.click(loginLink).build().perform();
+        Login login = new Login(mDriver);
+        waitTillElementIsVisibleUsingWebElement(login.usernameField);
+        login.loginWithValidCredentials(username,password);
     }
 
 

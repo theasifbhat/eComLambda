@@ -36,13 +36,15 @@ public class LandingPageTests extends BaseTest {
 
     }
 
-
-
-
-
-
     @Test
     public void testSuggestedItemsWhenSearching(){
         landingPage.getSearchSuggestionWithName("mac");
+    }
+
+
+    @Test
+    public void testSearchFunctionalityWithLogin(){
+        landingPage.login("asif.test@lamdatest.com","12345678");
+        testSearchFunctionality();
     }
 }
