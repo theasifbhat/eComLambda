@@ -27,9 +27,25 @@ public class Search extends BasePage {
     WebElement noResultText;
     @FindBy(xpath = "//div[@class='product-thumb']//h4")
     List<WebElement> searchResultItemName;
+    @FindBy(id = "input-search")
+    WebElement searchBox;
+    @FindBy(id = "button-search")
+    WebElement searchButton;
+
+    //setter methods
+
+    public void setSearchBoxText(String text){
+        searchBox.sendKeys(text);
+    }
+
+    public void clickOnSearchButton(){
+        searchButton.click();
+    }
 
 
 
+
+    //complex methods for oprations
     public List<String> getSearchResultNames(){
         waitTillElementIsVisibleUsingWebElement(searchResultContainer);
         List<String> items = new ArrayList<>();

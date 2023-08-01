@@ -37,9 +37,6 @@ public class Landing extends BasePage {
     @FindBy(xpath = "//a[contains(@href, 'login')]")
     WebElement loginLink;
 
-
-
-
     public void searchProductWithName(String text){
         searchBar.clear();
         searchBar.sendKeys(text);
@@ -51,7 +48,6 @@ public class Landing extends BasePage {
     public void clickOnSearchButtonWithoutText(){
         searchBar.clear();
         submitButton.click();
-
     }
 
     public void getSearchSuggestionWithName(String text){

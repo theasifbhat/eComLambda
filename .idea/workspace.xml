@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Landing/LandingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/LandingPage/LandingPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSuites/testNg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/testNg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,42 +59,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml">
-    <configuration name="LandingPageTests.testSearchFunctionalityWithLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.LandingPage" />
-      <option name="MAIN_CLASS_NAME" value="testCases.LandingPage.LandingPageTests" />
-      <option name="METHOD_NAME" value="testSearchFunctionalityWithLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LandingPageTests.testSearchWithEmptyTerm" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.LandingPage" />
-      <option name="MAIN_CLASS_NAME" value="testCases.LandingPage.LandingPageTests" />
-      <option name="METHOD_NAME" value="testSearchWithEmptyTerm" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LandingPageTests.testSearchWithGenericTerm" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -108,6 +70,24 @@
       <option name="PACKAGE_NAME" value="testCases.LandingPage" />
       <option name="MAIN_CLASS_NAME" value="testCases.LandingPage.LandingPageTests" />
       <option name="METHOD_NAME" value="testSearchWithGenericTerm" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests.testSearchFunctionality" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchFunctionality" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -133,6 +113,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchTests.testSearchWithSearchCriteriaField" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchWithSearchCriteriaField" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
@@ -146,10 +144,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
+        <item itemvalue="TestNG.SearchTests.testSearchFunctionality" />
+        <item itemvalue="TestNG.SearchTests.testSearchWithSearchCriteriaField" />
         <item itemvalue="TestNG.SearchTests.testSearchWithEmptyTerm" />
         <item itemvalue="TestNG.LandingPageTests.testSearchWithGenericTerm" />
-        <item itemvalue="TestNG.LandingPageTests.testSearchFunctionalityWithLogin" />
-        <item itemvalue="TestNG.LandingPageTests.testSearchWithEmptyTerm" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +174,7 @@
       <workItem from="1690799362571" duration="4142000" />
       <workItem from="1690810431738" duration="2435000" />
       <workItem from="1690825198204" duration="2764000" />
-      <workItem from="1690886480529" duration="3924000" />
+      <workItem from="1690886480529" duration="6488000" />
     </task>
     <servers />
   </component>

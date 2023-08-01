@@ -12,11 +12,11 @@ public class SearchTests extends BaseTest {
 
     @Test
     public void testSearchFunctionality(){
-        String productName= "iPhone";
+        String productName= "ipho";
         landingPage.searchProductWithName(productName);
         Search search = new Search(mDriver);
         search.getSearchResultNames().forEach(item->{
-           if (!item.contains(productName)){
+           if (!item.toLowerCase().contains(productName)){
                Assert.fail("Search functionality not working properly");
            }
         });
@@ -65,6 +65,22 @@ public class SearchTests extends BaseTest {
         if (items.size()<2){
             Assert.fail("Items with same name found");
         }
+    }
+
+    @Test
+    public void testSearchWithSearchCriteriaField(){
+        String productName="mac";
+        landingPage.clickOnSearchButtonWithoutText();
+        Search search = new Search(mDriver);
+        waitForPageLoaded();
+        search.setSearchBoxText(productName);
+        search.clickOnSearchButton();
+        search.getSearchResultNames().forEach(item->{
+            if (!item.toLowerCase().contains(productName)){
+                Assert.fail("Search functionality in search criteria not working properly");
+            }
+        });
+
     }
 
 

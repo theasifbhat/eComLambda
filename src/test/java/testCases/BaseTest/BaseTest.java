@@ -1,14 +1,20 @@
 package testCases.BaseTest;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.Landing.Landing;
 
 
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {
@@ -56,7 +62,7 @@ public class BaseTest {
         landingPage.goToLandingPage();
     }
 
-   //@AfterMethod
+   @AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {
@@ -69,6 +75,20 @@ public class BaseTest {
             // Log or handle the exception appropriately
             System.out.println("Exception occurred while closing the browser: " + e.getMessage());
         }
-
+    }
+    public void waitForPageLoaded() {
+        ExpectedCondition<Boolean> expectation = new
+                ExpectedCondition<>() {
+                    public Boolean apply(WebDriver driver) {
+                        return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+                    }
+                };
+        try {
+            Thread.sleep(1000);
+            WebDriverWait wait = new WebDriverWait(mDriver, Duration.ofSeconds(30));
+            wait.until(expectation);
+        } catch (Throwable error) {
+            Assert.fail("Timeout waiting for Page Load Request to complete.");
+        }
     }
 }
