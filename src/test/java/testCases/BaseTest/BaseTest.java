@@ -4,16 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pageObjects.LandingPage.LandingPage;
+import pageObjects.Landing.Landing;
+
 
 import java.io.FileInputStream;
 import java.util.Properties;
 
 public class BaseTest {
     public WebDriver mDriver;
-    public LandingPage landingPage;
+    public Landing landingPage;
 
     public WebDriver initialize(){
         WebDriver driver;
@@ -52,11 +52,11 @@ public class BaseTest {
     @BeforeMethod
     public void launchApplication(){
         mDriver= initialize();
-        landingPage = new LandingPage(mDriver);
+        landingPage = new Landing(mDriver);
         landingPage.goToLandingPage();
     }
 
-   @AfterMethod
+   //@AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {

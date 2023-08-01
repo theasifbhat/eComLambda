@@ -1,5 +1,4 @@
-package pageObjects.LandingPage;
-
+package pageObjects.Landing;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,15 +10,13 @@ import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Properties;
 
-public class LandingPage extends BasePage {
-
+public class Landing extends BasePage {
     WebDriver mDriver;
-    public LandingPage(WebDriver mDriver) {
+
+    public Landing(WebDriver mDriver) {
         super(mDriver);
         this.mDriver=mDriver;
         PageFactory.initElements(mDriver,this);
@@ -30,22 +27,10 @@ public class LandingPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='search-wrapper']//button[@class='type-text']")
     WebElement submitButton;
-
     @FindBy(xpath = "//div[@class='dropdown']//h4[@class='title']")
     List<WebElement> searchSuggestionResults;
-
-    @FindBy(css = "div[id='entry_212469']")
-    WebElement searchResultContainer;
-
     @FindBy(xpath = "//div[@class='product-thumb']")
     List<WebElement> searchResults;
-
-    @FindBy(xpath = "//div[@class='product-thumb']//h4")
-    List<WebElement> searchResultItemName;
-
-    @FindBy(xpath = "//div[@id='entry_212469']//p")
-    WebElement noResultText;
-
     @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
     WebElement myAccountNav;
 
@@ -54,21 +39,18 @@ public class LandingPage extends BasePage {
 
 
 
-    public void goToLandingPage() {
-        mDriver.get("https://ecommerce-playground.lambdatest.io/");
-    }
 
     public void searchProductWithName(String text){
         searchBar.clear();
         searchBar.sendKeys(text);
         submitButton.click();
     }
-
-    public boolean searchWithEmptyProductName(){
+    public void goToLandingPage() {
+        mDriver.get("https://ecommerce-playground.lambdatest.io/");
+    }
+    public void clickOnSearchButtonWithoutText(){
         searchBar.clear();
         submitButton.click();
-        waitTillElementIsVisibleUsingWebElement(searchResultContainer);
-        return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=product%2Fsearch&search=");
 
     }
 
@@ -77,25 +59,10 @@ public class LandingPage extends BasePage {
         searchBar.sendKeys(text);
         waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
         searchSuggestionResults.forEach(item->{
-        if (!item.getText().toLowerCase().contains(text.toLowerCase())){
-            Assert.fail("Result with mismatching name found.");
-        }});
+            if (!item.getText().toLowerCase().contains(text.toLowerCase())){
+                Assert.fail("Result with mismatching name found.");
+            }});
     }
-
-    public List<String> getSearchResultNames(){
-        waitTillElementIsVisibleUsingWebElement(searchResultContainer);
-        List<String> items = new ArrayList<>();
-        searchResultItemName.forEach(it->{
-            items.add(it.getText());
-        });
-        return items;
-    }
-
-    public boolean searchProductsWithNonExistingProductName(){   //returns true if label is found else false
-        waitTillElementIsVisibleUsingWebElement(searchResultContainer);
-        return Objects.equals(noResultText.getText(), "There is no product that matches the search criteria.");
-    }
-
     public void login(){
         Actions action = new Actions(mDriver);
         action.moveToElement(myAccountNav).build().perform();
@@ -113,6 +80,5 @@ public class LandingPage extends BasePage {
         }
 
     }
-
 
 }

@@ -1,16 +1,21 @@
-package testCases.LandingPage;
+package testCases.Search;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
 
-public class LandingPageTests extends BaseTest {
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class SearchTests extends BaseTest {
 
     @Test
     public void testSearchFunctionality(){
         String productName= "iPhone";
         landingPage.searchProductWithName(productName);
-        landingPage.getSearchResultNames().forEach(item->{
+        Search search = new Search(mDriver);
+        search.getSearchResultNames().forEach(item->{
            if (!item.contains(productName)){
                Assert.fail("Search functionality not working properly");
            }
@@ -23,15 +28,18 @@ public class LandingPageTests extends BaseTest {
     public void testSearchWithNonExistingProduct(){
         String productName = "fitbit";
         landingPage.searchProductWithName(productName);
-        if(!landingPage.searchProductsWithNonExistingProductName()){
+        Search search = new Search(mDriver);
+        if(!search.searchProductsWithNonExistingProductName()){
             Assert.fail("Product Found with a non existing product name search.");
         }
     }
 
     @Test
     public void testSearchWithEmptyTerm(){
-        if (!landingPage.searchWithEmptyProductName()){
-            Assert.fail("No search occurred");
+        landingPage.clickOnSearchButtonWithoutText();
+        Search search = new Search(mDriver);
+        if (search.getSearchResultNames().isEmpty()){
+            Assert.fail("search without text not working");
         }
 
     }
@@ -47,4 +55,17 @@ public class LandingPageTests extends BaseTest {
         landingPage.login();
         testSearchFunctionality();
     }
+
+    @Test
+    public void testSearchWithGenericTerm(){
+        String productName = "mac";
+        landingPage.searchProductWithName(productName);
+        Search search = new Search(mDriver);
+        Set<String> items = new LinkedHashSet<>(search.getSearchResultNames());
+        if (items.size()<2){
+            Assert.fail("Items with same name found");
+        }
+    }
+
+
 }
