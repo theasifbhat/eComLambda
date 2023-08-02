@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
+import pageObjects.Register.Register;
 
 import java.io.FileInputStream;
 import java.util.List;
@@ -36,6 +37,8 @@ public class Landing extends BasePage {
 
     @FindBy(xpath = "//a[contains(@href, 'login')]")
     WebElement loginLink;
+    @FindBy(xpath = "//a[contains(@href, 'register')]")
+    WebElement registerLink;
 
     public void searchProductWithName(String text){
         searchBar.clear();
@@ -44,6 +47,13 @@ public class Landing extends BasePage {
     }
     public void goToLandingPage() {
         mDriver.get("https://ecommerce-playground.lambdatest.io/");
+    }
+    public Register goToRegisterPage(){
+        Actions actions = new Actions(mDriver);
+        actions.moveToElement(myAccountNav).build().perform();
+        waitTillElementIsVisibleUsingWebElement(registerLink);
+        actions.click(registerLink).build().perform();
+        return new Register(mDriver);
     }
     public void clickOnSearchButtonWithoutText(){
         searchBar.clear();
