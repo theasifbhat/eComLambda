@@ -36,8 +36,6 @@ public class Register extends BasePage {
     @FindBy(id = "input-confirm")
     WebElement inputConfirmPassword;
 
-    @FindBy(id = "input-newsletter-yes")
-    WebElement inputNewsletterYes;
 
     @FindBy(id = "input-newsletter-no")
     WebElement inputNewsletter;
@@ -51,8 +49,38 @@ public class Register extends BasePage {
     @FindBy(css = "div[id='content']>h1")
     WebElement accountRegisterSuccessMessage;
 
+    @FindBy(css = "input[id='input-newsletter-yes']")
+    WebElement inputNewsletterYes;
+    
+    @FindBy(xpath = "//input[@id='input-firstname']/following-sibling::div")
+    WebElement firstNameErrorMessage;
+    
+    @FindBy(xpath = "//input[@id='input-lastname']/following-sibling::div")
+    WebElement lastNameErrorMessage;
+    
+    @FindBy(xpath = "//input[@id='input-email']/following-sibling::div")
+    WebElement emailErrorMessage;
+    
+    @FindBy(xpath = "//input[@id='input-telephone']/following-sibling::div")
+    WebElement telephoneErrorMessage;
+    
+    @FindBy(xpath = "//input[@id='input-password']/following-sibling::div")
+    WebElement passwordErrorMessage;
+    
+    @FindBy(xpath = "//input[@id='input-confirm']/following-sibling::div")
+    WebElement confirmPasswordErrorMessage;
+
+    @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'danger')]")
+    WebElement divWarningYouMustAgree;
+
+
+
     
     
+
+
+
+
 
     public void setFirstNameInputBoxText(String text){
         firstNameInputBox.clear();
@@ -85,11 +113,13 @@ public class Register extends BasePage {
     }
 
     public void setNewsletterYes(){
-        inputNewsletterYes.click();
+        Actions actions = new Actions(mDriver);
+        actions.moveToElement(inputNewsletterYes).click(inputNewsletterYes).build().perform();
     }
 
     public void setNewsletterNo(){
-        inputNewsletter.click();
+        Actions actions = new Actions(mDriver);
+        actions.moveToElement(inputNewsletter).click(inputNewsletter).build().perform();
     }
 
     public void setAgree(){
@@ -111,6 +141,43 @@ public class Register extends BasePage {
         return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=account/success");
     }
 
+    public boolean checkFirstNameErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(firstNameErrorMessage);
+        return firstNameErrorMessage.getText().equals("First Name must be between 1 and 32 characters!");
+    }
+
+    public boolean checkLastNameErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(lastNameErrorMessage);
+        return lastNameErrorMessage.getText().equals("Last Name must be between 1 and 32 characters!");
+    }
+
+    public boolean checkEmailErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(emailErrorMessage);
+        return emailErrorMessage.getText().equals("E-Mail Address does not appear to be valid!");
+    }
+
+    public boolean checkTelephoneErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(telephoneErrorMessage);
+        return telephoneErrorMessage.getText().equals("Telephone must be between 3 and 32 characters!");
+    }
+
+    public boolean checkPasswordErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(passwordErrorMessage);
+        return passwordErrorMessage.getText().equals("Password must be between 4 and 20 characters!");
+    }
+
+    public boolean checkConfirmPasswordDoesNotMatch(){
+        waitTillElementIsVisibleUsingWebElement(confirmPasswordErrorMessage);
+        return confirmPasswordErrorMessage.getText().equals("Password confirmation does not match password!");
+    }
+
+    public boolean checkWarningYouMustAgree(){
+        waitTillElementIsVisibleUsingWebElement(divWarningYouMustAgree);
+        return divWarningYouMustAgree.getText().equals("Warning: You must agree to the Privacy Policy!");
+    }
+
+
+
 
     //complex methods
 
@@ -122,7 +189,16 @@ public class Register extends BasePage {
         setPasswordText("123456");
         setConfirmPasswordText("123456");
         setAgree();
-        clickContinue();
+    }
+
+    public void fillAllFieldsWithNewsLetterSetToNo(){
+        fillMandatoryFields();
+        setNewsletterNo();
+    }
+
+    public void fillAllFieldsWithNewsLetterSetToYes(){
+        fillMandatoryFields();
+        setNewsletterYes();
     }
 
 }
