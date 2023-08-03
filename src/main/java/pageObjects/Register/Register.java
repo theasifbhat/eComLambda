@@ -28,27 +28,29 @@ public class Register extends BasePage {
     WebElement emailInputBox;
 
     @FindBy(id = "input-telephone")
-    public WebElement inputTelephone;
+    WebElement inputTelephone;
     
     @FindBy(id = "input-password")
-    public WebElement inputPassword;
+    WebElement inputPassword;
 
     @FindBy(id = "input-confirm")
-    public WebElement inputConfirmPassword;
+    WebElement inputConfirmPassword;
 
     @FindBy(id = "input-newsletter-yes")
-    public WebElement inputNewsletterYes;
+    WebElement inputNewsletterYes;
 
     @FindBy(id = "input-newsletter-no")
-    public WebElement inputNewsletter;
+    WebElement inputNewsletter;
 
     @FindBy(id = "input-agree")
-    public WebElement inputAgree;
+    WebElement inputAgree;
 
     @FindBy(css = "input.btn.btn-primary")
-    public WebElement inputContinue;
+    WebElement inputContinue;
     
-    
+    @FindBy(css = "div[id='content']>h1")
+    WebElement accountRegisterSuccessMessage;
+
     
     
 
@@ -99,6 +101,15 @@ public class Register extends BasePage {
         inputContinue.click();
     }
 
+
+    public boolean getAccountRegisterSuccessMessage(){
+        waitTillElementIsVisibleUsingWebElement(accountRegisterSuccessMessage);
+        return accountRegisterSuccessMessage.getText().equals("Your Account Has Been Created!");
+    }
+
+    public boolean checkPageUrlAfterSuccessfulRegister(){
+        return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=account/success");
+    }
 
 
     //complex methods

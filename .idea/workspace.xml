@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Register/RegisterTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Signup/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSuites/testNg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/testNg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Register/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Register/RegisterTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +173,8 @@
       <workItem from="1690810431738" duration="2435000" />
       <workItem from="1690825198204" duration="2764000" />
       <workItem from="1690886480529" duration="7473000" />
-      <workItem from="1690996097314" duration="4516000" />
+      <workItem from="1690996097314" duration="4868000" />
+      <workItem from="1691070329529" duration="1450000" />
     </task>
     <servers />
   </component>
