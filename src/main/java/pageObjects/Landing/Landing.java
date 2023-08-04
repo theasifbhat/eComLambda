@@ -55,7 +55,15 @@ public class Landing extends BasePage {
         actions.click(registerLink).build().perform();
         return new Register(mDriver);
     }
-    public void clickOnSearchButtonWithoutText(){
+
+    public Login goToLoginPage(){
+        Actions actions = new Actions(mDriver);
+        actions.moveToElement(myAccountNav).build().perform();
+        waitTillElementIsVisibleUsingWebElement(loginLink);
+        actions.click(loginLink).build().perform();
+        return new Login(mDriver);
+    }
+        public void clickOnSearchButtonWithoutText(){
         searchBar.clear();
         submitButton.click();
     }

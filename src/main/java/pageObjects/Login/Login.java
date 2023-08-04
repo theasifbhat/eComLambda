@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
+import pageObjects.Register.Register;
 
 public class Login extends BasePage {
 
@@ -17,6 +18,10 @@ public class Login extends BasePage {
 
     @FindBy(css = "input[value='Login']")
     WebElement loginButton;
+
+    @FindBy(css ="a[class$='btn-primary']")
+    WebElement continueButton;
+
 
     public Login(WebDriver mDriver) {
         super(mDriver);
@@ -31,6 +36,12 @@ public class Login extends BasePage {
         passwordField.sendKeys(password);
         loginButton.click();
         goToHomepage();
+    }
+
+    public Register clickOnContinueButton(){
+        waitTillElementIsVisibleUsingWebElement(continueButton);
+        continueButton.click();
+        return new Register(mDriver);
     }
 
 

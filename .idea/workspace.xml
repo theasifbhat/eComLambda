@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Register/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Register/RegisterTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +62,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml">
+  <component name="RunManager" selected="TestNG.RegisterTests.testRegisterPageWithDifferentRoute">
     <configuration name="RegisterTests.testErrorMessagesForFields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -69,24 +74,6 @@
       <option name="PACKAGE_NAME" value="testCases.Register" />
       <option name="MAIN_CLASS_NAME" value="testCases.Register.RegisterTests" />
       <option name="METHOD_NAME" value="testErrorMessagesForFields" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTests.testRegisterAccountWithAllFieldsWithNewsletterNo" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Register.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Register" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Register.RegisterTests" />
-      <option name="METHOD_NAME" value="testRegisterAccountWithAllFieldsWithNewsletterNo" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -112,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTests.testRegisterAccountWithMandatoryFields" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterTests.testRegisterPageWithDifferentRoute" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +109,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="testCases.Register" />
       <option name="MAIN_CLASS_NAME" value="testCases.Register.RegisterTests" />
-      <option name="METHOD_NAME" value="testRegisterAccountWithMandatoryFields" />
+      <option name="METHOD_NAME" value="testRegisterPageWithDifferentRoute" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests.testSearchWithSearchCriteriaField" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchWithSearchCriteriaField" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -142,16 +147,16 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RegisterTests.testRegisterPageWithDifferentRoute" />
+        <item itemvalue="TestNG.SearchTests.testSearchWithSearchCriteriaField" />
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
         <item itemvalue="TestNG.RegisterTests.testErrorMessagesForFields" />
         <item itemvalue="TestNG.RegisterTests.testRegisterAccountWithAllFieldsWithNewsletterYes" />
-        <item itemvalue="TestNG.RegisterTests.testRegisterAccountWithAllFieldsWithNewsletterNo" />
-        <item itemvalue="TestNG.RegisterTests.testRegisterAccountWithMandatoryFields" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
-    <option name="lastUrl" value="https://ecommerce-playground.lambdatest.io/index.php?route=account/register" />
+    <option name="lastUrl" value="https://ecommerce-playground.lambdatest.io/index.php?route=account/login" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,7 +180,8 @@
       <workItem from="1690825198204" duration="2764000" />
       <workItem from="1690886480529" duration="7473000" />
       <workItem from="1690996097314" duration="4868000" />
-      <workItem from="1691070329529" duration="5135000" />
+      <workItem from="1691070329529" duration="5608000" />
+      <workItem from="1691140398995" duration="2570000" />
     </task>
     <servers />
   </component>

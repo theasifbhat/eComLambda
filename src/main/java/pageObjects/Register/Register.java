@@ -75,13 +75,6 @@ public class Register extends BasePage {
 
 
 
-    
-    
-
-
-
-
-
     public void setFirstNameInputBoxText(String text){
         firstNameInputBox.clear();
         firstNameInputBox.sendKeys(text);
@@ -139,6 +132,10 @@ public class Register extends BasePage {
 
     public boolean checkPageUrlAfterSuccessfulRegister(){
         return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=account/success");
+    }
+
+    public boolean isCurrentPageRegisterPage(){
+        return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=account/register");
     }
 
     public boolean checkFirstNameErrorMessage(){
