@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
 import utilities.GlobalFunctions;
 
+import java.util.Properties;
+
 public class Register extends BasePage {
 
     WebDriver mDriver;
@@ -71,7 +73,7 @@ public class Register extends BasePage {
     WebElement confirmPasswordErrorMessage;
 
     @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'danger')]")
-    WebElement divWarningYouMustAgree;
+    WebElement topErrorMessage;
 
 
 
@@ -169,8 +171,13 @@ public class Register extends BasePage {
     }
 
     public boolean checkWarningYouMustAgree(){
-        waitTillElementIsVisibleUsingWebElement(divWarningYouMustAgree);
-        return divWarningYouMustAgree.getText().equals("Warning: You must agree to the Privacy Policy!");
+        waitTillElementIsVisibleUsingWebElement(topErrorMessage);
+        return topErrorMessage.getText().equals("Warning: You must agree to the Privacy Policy!");
+    }
+
+    public boolean checkAccountExistWarning(){
+        waitTillElementIsVisibleUsingWebElement(topErrorMessage);
+        return topErrorMessage.getText().equals("Warning: E-Mail Address is already registered!");
     }
 
 
@@ -186,6 +193,18 @@ public class Register extends BasePage {
         setPasswordText("123456");
         setConfirmPasswordText("123456");
         setAgree();
+    }
+
+    public void fillAllFieldsWithIncorrectPassword(){
+        fillMandatoryFields();
+        setPasswordText("12345678");
+        setConfirmPasswordText("12332145");
+
+    }
+
+    public void fillAllFieldsWithExistingEmail(){
+        fillMandatoryFields();
+        setEmailInputBoxText(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"));
     }
 
     public void fillAllFieldsWithNewsLetterSetToNo(){

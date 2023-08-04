@@ -7,8 +7,10 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.Landing.Landing;
+import utilities.GlobalFunctions;
 
 import java.io.FileInputStream;
+import java.util.Objects;
 import java.util.Properties;
 
 public class BaseTest {
@@ -17,16 +19,9 @@ public class BaseTest {
 
     public WebDriver initialize(){
         WebDriver driver;
-        String browserName = "";
-
-        try {
-            Properties properties = new Properties();
-            FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
-            properties.load(fs);
-            browserName = properties.getProperty("browser") != null ? properties.getProperty("browser") : "chrome";
-        }catch (Exception e){
-            System.out.println("Exception in loading values from properties file " +e.getMessage());
-        }
+        String browserName =Objects.equals(GlobalFunctions.getPropertyFromPropertyFileWithKey("browser"), "")
+                ? GlobalFunctions.getPropertyFromPropertyFileWithKey("browser")
+                : "chrome";
 
         switch (browserName) {
             case "firefox" -> {
@@ -56,7 +51,7 @@ public class BaseTest {
         landingPage.goToLandingPage();
     }
 
-   @AfterMethod
+   //@AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {

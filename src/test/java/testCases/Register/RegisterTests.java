@@ -8,12 +8,9 @@ import testCases.BaseTest.BaseTest;
 
 public class RegisterTests extends BaseTest {
 
-
-
     @Test
     public void testRegisterAccountWithMandatoryFields(){
         Register register = landingPage.goToRegisterPage();
-    //    waitForPageLoaded();
         register.fillMandatoryFields();
         register.clickContinue();
         if (!(register.checkPageUrlAfterSuccessfulRegister()&& register.getAccountRegisterSuccessMessage())){
@@ -25,7 +22,6 @@ public class RegisterTests extends BaseTest {
     @Test
     public void testRegisterAccountWithAllFieldsWithNewsletterNo(){
         Register register = landingPage.goToRegisterPage();
-     //   waitForPageLoaded();
         register.fillAllFieldsWithNewsLetterSetToNo();
         register.clickContinue();
         if (!(register.checkPageUrlAfterSuccessfulRegister()&& register.getAccountRegisterSuccessMessage())){
@@ -37,7 +33,6 @@ public class RegisterTests extends BaseTest {
     @Test
     public void testRegisterAccountWithAllFieldsWithNewsletterYes(){
         Register register = landingPage.goToRegisterPage();
-     //   waitForPageLoaded();
         register.fillAllFieldsWithNewsLetterSetToYes();
         register.clickContinue();
         if (!(register.checkPageUrlAfterSuccessfulRegister()&& register.getAccountRegisterSuccessMessage())){
@@ -48,7 +43,6 @@ public class RegisterTests extends BaseTest {
     @Test
     public void testErrorMessagesForFields(){
         Register register = landingPage.goToRegisterPage();
-     //   waitForPageLoaded();
         register.clickContinue();
         if(!(register.checkFirstNameErrorMessage() &&
                 register.checkLastNameErrorMessage() &&
@@ -61,14 +55,33 @@ public class RegisterTests extends BaseTest {
     }
 
 
-    @Test void testRegisterPageWithDifferentRoute(){
+    @Test
+    public void testRegisterPageWithDifferentRoute(){
         Login login = landingPage.goToLoginPage();
         Register register = login.clickOnContinueButton();
         if(!register.isCurrentPageRegisterPage()){
             Assert.fail("Register page is not displayed");
         }
+    }
 
+    @Test
+    public void testRegisterUserWithDifferentPasswords(){
+        Register register = landingPage.goToRegisterPage();
+        register.fillAllFieldsWithIncorrectPassword();
+        register.clickContinue();
+        if (!register.checkConfirmPasswordDoesNotMatch()){
+            Assert.fail("Error message is not displayed when password and confirm password do not match");
+        }
+    }
 
+    @Test
+    public void testRegisterUserWithExistingEmail(){
+        Register register = landingPage.goToRegisterPage();
+        register.fillAllFieldsWithExistingEmail();
+        register.clickContinue();
+        if (!register.checkAccountExistWarning()){
+            Assert.fail("Error message is not displayed when email already exists");
+        }
     }
 
 }
