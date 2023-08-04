@@ -1,15 +1,15 @@
 package pageObjects.BasePage;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import pageObjects.Landing.Landing;
+import pageObjects.Login.Login;
 import utilities.GlobalFunctions;
 
 import java.time.Duration;
@@ -20,8 +20,18 @@ public class BasePage{
  WebDriver mDriver;
  WebDriverWait webDriverWait;
 
+
+ //common webelements
  @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
- WebElement websiteLogo;
+ public WebElement websiteLogo;
+
+ @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
+ public WebElement myAccountNav;
+
+ @FindBy(xpath = "//a[contains(@href, 'login')]")
+ public WebElement loginLink;
+
+
 
 
 
@@ -32,9 +42,11 @@ public class BasePage{
      GlobalFunctions.waitForPageLoad(mDriver);
  }
 
- public void goToHomepage(){
+
+ public Landing goToHomepage(){
      waitTillElementIsVisibleUsingWebElement(websiteLogo);
      mDriver.get("https://ecommerce-playground.lambdatest.io/");
+     return new Landing(mDriver);
  }
 
  public void waitTillElementIsVisible(By locator){
@@ -51,6 +63,16 @@ public class BasePage{
 
     public void waitTillElementIsPresent(By locator){
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public Landing login(){
+        Actions action = new Actions(mDriver);
+        action.moveToElement(myAccountNav).build().perform();
+        waitTillElementIsVisibleUsingWebElement(loginLink);
+        action.click(loginLink).build().perform();
+        Login login = new Login(mDriver);
+        waitTillElementIsVisibleUsingWebElement(login.usernameField);
+        return login.loginWithValidCredentials(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"), GlobalFunctions.getPropertyFromPropertyFileWithKey("password"));
     }
 
 

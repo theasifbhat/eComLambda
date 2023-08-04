@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
+import pageObjects.Landing.Landing;
 import pageObjects.Register.Register;
 
 public class Login extends BasePage {
@@ -29,13 +30,13 @@ public class Login extends BasePage {
         PageFactory.initElements(mDriver,this);
     }
 
-    public void loginWithValidCredentials(String username, String password){
+    public Landing loginWithValidCredentials(String username, String password){
         usernameField.clear();
         usernameField.sendKeys(username);
         passwordField.clear();
         passwordField.sendKeys(password);
         loginButton.click();
-        goToHomepage();
+        return goToHomepage();
     }
 
     public Register clickOnContinueButton(){

@@ -72,7 +72,6 @@ public class SearchTests extends BaseTest {
         String productName="mac";
         landingPage.clickOnSearchButtonWithoutText();
         Search search = new Search(mDriver);
-       // waitForPageLoaded();
         search.setSearchBoxText(productName);
         search.clickOnSearchButton();
         search.getSearchResultNames().forEach(item->{

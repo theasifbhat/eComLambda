@@ -10,9 +10,7 @@ import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
 import pageObjects.Register.Register;
 
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
 
 public class Landing extends BasePage {
     WebDriver mDriver;
@@ -32,11 +30,7 @@ public class Landing extends BasePage {
     List<WebElement> searchSuggestionResults;
     @FindBy(xpath = "//div[@class='product-thumb']")
     List<WebElement> searchResults;
-    @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
-    WebElement myAccountNav;
 
-    @FindBy(xpath = "//a[contains(@href, 'login')]")
-    WebElement loginLink;
     @FindBy(xpath = "//a[contains(@href, 'register')]")
     WebElement registerLink;
 
@@ -76,23 +70,6 @@ public class Landing extends BasePage {
             if (!item.getText().toLowerCase().contains(text.toLowerCase())){
                 Assert.fail("Result with mismatching name found.");
             }});
-    }
-    public void login(){
-        Actions action = new Actions(mDriver);
-        action.moveToElement(myAccountNav).build().perform();
-        waitTillElementIsVisibleUsingWebElement(loginLink);
-        action.click(loginLink).build().perform();
-        Login login = new Login(mDriver);
-        waitTillElementIsVisibleUsingWebElement(login.usernameField);
-        try {
-            Properties properties = new Properties();
-            FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
-            properties.load(fs);
-            login.loginWithValidCredentials(properties.getProperty("username"), properties.getProperty("password"));
-        }catch (Exception ignored){
-            System.out.println("Cannot find username and password from properties file.");
-        }
-
     }
 
 }
