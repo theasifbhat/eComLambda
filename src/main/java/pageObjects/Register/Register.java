@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
 import utilities.GlobalFunctions;
 
-import java.util.Properties;
 
 public class Register extends BasePage {
 
@@ -127,9 +126,10 @@ public class Register extends BasePage {
     }
 
 
-    public boolean getAccountRegisterSuccessMessage(){
+    public String getAccountRegisterSuccessMessage(){
         waitTillElementIsVisibleUsingWebElement(accountRegisterSuccessMessage);
-        return accountRegisterSuccessMessage.getText().equals("Your Account Has Been Created!");
+        return accountRegisterSuccessMessage.getText();
+                //.equals("Your Account Has Been Created!");
     }
 
     public boolean checkPageUrlAfterSuccessfulRegister(){
@@ -140,44 +140,43 @@ public class Register extends BasePage {
         return mDriver.getCurrentUrl().equals("https://ecommerce-playground.lambdatest.io/index.php?route=account/register");
     }
 
-    public boolean checkFirstNameErrorMessage(){
+    public String getFirstNameErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(firstNameErrorMessage);
-        return firstNameErrorMessage.getText().equals("First Name must be between 1 and 32 characters!");
+        return firstNameErrorMessage.getText();
+                //.equals("First Name must be between 1 and 32 characters!");
     }
 
-    public boolean checkLastNameErrorMessage(){
+    public String getLastNameErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(lastNameErrorMessage);
-        return lastNameErrorMessage.getText().equals("Last Name must be between 1 and 32 characters!");
+        return lastNameErrorMessage.getText();
+                //.equals("Last Name must be between 1 and 32 characters!");
     }
 
-    public boolean checkEmailErrorMessage(){
+    public String getEmailErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(emailErrorMessage);
-        return emailErrorMessage.getText().equals("E-Mail Address does not appear to be valid!");
+        return emailErrorMessage.getText();
+                //.equals("E-Mail Address does not appear to be valid!");
     }
 
-    public boolean checkTelephoneErrorMessage(){
-        waitTillElementIsVisibleUsingWebElement(telephoneErrorMessage);
-        return telephoneErrorMessage.getText().equals("Telephone must be between 3 and 32 characters!");
-    }
-
-    public boolean checkPasswordErrorMessage(){
+    public String getPasswordErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(passwordErrorMessage);
-        return passwordErrorMessage.getText().equals("Password must be between 4 and 20 characters!");
+        return passwordErrorMessage.getText();
+        //.equals("Password must be between 4 and 20 characters!");
     }
 
-    public boolean checkConfirmPasswordDoesNotMatch(){
+    public String getConfirmPasswordDoesNotMatchText(){
         waitTillElementIsVisibleUsingWebElement(confirmPasswordErrorMessage);
-        return confirmPasswordErrorMessage.getText().equals("Password confirmation does not match password!");
+        return confirmPasswordErrorMessage.getText();
     }
 
-    public boolean checkWarningYouMustAgree(){
+    public String getTopErrorText(){
         waitTillElementIsVisibleUsingWebElement(topErrorMessage);
-        return topErrorMessage.getText().equals("Warning: You must agree to the Privacy Policy!");
+        return topErrorMessage.getText();
     }
 
-    public boolean checkAccountExistWarning(){
-        waitTillElementIsVisibleUsingWebElement(topErrorMessage);
-        return topErrorMessage.getText().equals("Warning: E-Mail Address is already registered!");
+    public String getTelephoneErrorMessage(){
+        waitTillElementIsVisibleUsingWebElement(telephoneErrorMessage);
+        return telephoneErrorMessage.getText();
     }
 
 
