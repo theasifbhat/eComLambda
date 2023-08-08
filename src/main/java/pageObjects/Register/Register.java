@@ -1,8 +1,10 @@
 package pageObjects.Register;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.KeyInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
@@ -129,7 +131,6 @@ public class Register extends BasePage {
     public String getAccountRegisterSuccessMessage(){
         waitTillElementIsVisibleUsingWebElement(accountRegisterSuccessMessage);
         return accountRegisterSuccessMessage.getText();
-                //.equals("Your Account Has Been Created!");
     }
 
     public boolean checkPageUrlAfterSuccessfulRegister(){
@@ -143,25 +144,21 @@ public class Register extends BasePage {
     public String getFirstNameErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(firstNameErrorMessage);
         return firstNameErrorMessage.getText();
-                //.equals("First Name must be between 1 and 32 characters!");
     }
 
     public String getLastNameErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(lastNameErrorMessage);
         return lastNameErrorMessage.getText();
-                //.equals("Last Name must be between 1 and 32 characters!");
     }
 
     public String getEmailErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(emailErrorMessage);
         return emailErrorMessage.getText();
-                //.equals("E-Mail Address does not appear to be valid!");
     }
 
     public String getPasswordErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(passwordErrorMessage);
         return passwordErrorMessage.getText();
-        //.equals("Password must be between 4 and 20 characters!");
     }
 
     public String getConfirmPasswordDoesNotMatchText(){
@@ -177,6 +174,18 @@ public class Register extends BasePage {
     public String getTelephoneErrorMessage(){
         waitTillElementIsVisibleUsingWebElement(telephoneErrorMessage);
         return telephoneErrorMessage.getText();
+    }
+
+    public String getPlaceHolderOfWebElement(String elementName){
+        return switch (elementName.toLowerCase()) {
+            case "firstname" -> firstNameInputBox.getAttribute("placeholder");
+            case "lastname" -> lastNameInputBox.getAttribute("placeholder");
+            case "email" -> emailInputBox.getAttribute("placeholder");
+            case "telephone" -> inputTelephone.getAttribute("placeholder");
+            case "password" -> inputPassword.getAttribute("placeholder");
+            case "confirm password" -> inputConfirmPassword.getAttribute("placeholder");
+            default -> throw new RuntimeException("Invalid element name");
+        };
     }
 
 
@@ -215,5 +224,7 @@ public class Register extends BasePage {
         fillMandatoryFields();
         setNewsletterYes();
     }
+
+
 
 }

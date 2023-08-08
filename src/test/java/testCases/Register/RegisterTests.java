@@ -1,11 +1,13 @@
 package testCases.Register;
 
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.Login.Login;
 import pageObjects.Register.Register;
 import testCases.BaseTest.BaseTest;
+import utilities.GlobalFunctions;
 
 public class RegisterTests extends BaseTest {
 
@@ -91,6 +93,39 @@ public class RegisterTests extends BaseTest {
         register.setTelephoneInputBoxText("12");
         register.clickContinue();
         Assert.assertEquals(register.getTelephoneErrorMessage(), "Telephone must be between 3 and 32 characters!");
+    }
+
+
+    @Test
+    public void testRegisterUserWithKeyboardKeys(){
+        Register register = landingPage.goToRegisterPage();
+        register.setFirstNameInputBoxText("Asif"
+        +Keys.TAB+"Bhat"
+        +Keys.TAB+" "+ GlobalFunctions.generateRandomEmail()
+                +Keys.TAB+"1234567890"
+                +Keys.TAB+"123456"
+                +Keys.TAB+"123456"
+                +Keys.TAB+Keys.SPACE
+                +Keys.TAB+Keys.SPACE
+                +Keys.ENTER);
+        Assert.assertEquals(register.getAccountRegisterSuccessMessage(), "Your Account Has Been Created!");
+        if (!(register.checkPageUrlAfterSuccessfulRegister())){
+            Assert.fail("Error after registering account");
+        }
+    }
+
+
+    @Test
+    public void testPlaceholderMessage(){
+        Register register = landingPage.goToRegisterPage();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("firstname"), "First Name");
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("lastname"), "Last Name");
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("email"), "E-Mail");
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("telephone"), "Telephone");
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("password"), "Password");
+        softAssert.assertEquals(register.getPlaceHolderOfWebElement("confirm password"), "Password Confirm");
+        softAssert.assertAll();
     }
 
 }
