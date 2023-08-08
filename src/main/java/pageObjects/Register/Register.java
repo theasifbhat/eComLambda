@@ -188,6 +188,9 @@ public class Register extends BasePage {
         };
     }
 
+    public boolean getTOSWebElementValue(){
+        return inputAgree.getAttribute("checked") != null;
+    }
 
 
 

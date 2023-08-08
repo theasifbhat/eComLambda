@@ -83,7 +83,7 @@ public class RegisterTests extends BaseTest {
         Register register = landingPage.goToRegisterPage();
         register.fillAllFieldsWithExistingEmail();
         register.clickContinue();
-        Assert.assertEquals(register.getTopErrorText(),"Error message is not displayed when email already exists");
+        Assert.assertEquals(register.getTopErrorText(),"Warning: E-Mail Address is already registered!");
     }
 
     @Test
@@ -127,5 +127,44 @@ public class RegisterTests extends BaseTest {
         softAssert.assertEquals(register.getPlaceHolderOfWebElement("confirm password"), "Password Confirm");
         softAssert.assertAll();
     }
+
+
+    @Test
+    public void testEnterOnlySpacesInMandatoryFields(){
+        Register register = landingPage.goToRegisterPage();
+        register.setFirstNameInputBoxText("  ");
+        register.setLastNameInputBoxText("  ");
+        register.setEmailInputBoxText("  ");
+        register.setTelephoneInputBoxText("     ");
+        register.setPasswordText("  ");
+        register.setConfirmPasswordText("  ");
+        register.setAgree();
+        register.clickContinue();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(register.getFirstNameErrorMessage(), "First Name must be between 1 and 32 characters!");
+        softAssert.assertEquals(register.getLastNameErrorMessage(), "Last Name must be between 1 and 32 characters!");
+        softAssert.assertEquals(register.getPasswordErrorMessage(), "Password must be between 4 and 20 characters!");
+        softAssert.assertEquals(register.getEmailErrorMessage(), "E-Mail Address does not appear to be valid!");
+        softAssert.assertAll();
+    }
+
+
+    @Test
+    public void testRegisterUserWithPasswordLessThanAllowed(){
+        Register register = landingPage.goToRegisterPage();
+        register.fillMandatoryFields();
+        register.setPasswordText("123");
+        register.setConfirmPasswordText("123");
+        register.clickContinue();
+        Assert.assertEquals(register.getPasswordErrorMessage(), "Password must be between 4 and 20 characters!");
+    }
+
+    @Test
+    public void testTOSIsSetToOffOnPageLoad(){
+        Register register = landingPage.goToRegisterPage();
+        Assert.assertFalse(register.getTOSWebElementValue());
+    }
+
+
 
 }
