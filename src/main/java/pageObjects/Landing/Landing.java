@@ -9,6 +9,7 @@ import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
 import pageObjects.Register.Register;
+import utilities.GlobalFunctions;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class Landing extends BasePage {
         submitButton.click();
     }
     public void goToLandingPage() {
-        mDriver.get("https://ecommerce-playground.lambdatest.io/");
+        mDriver.get(GlobalFunctions.getPropertyFromPropertyFileWithKey("url"));
     }
     public Register goToRegisterPage(){
         Actions actions = new Actions(mDriver);
