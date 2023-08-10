@@ -38,7 +38,7 @@ public class SearchTests extends BaseTest {
     public void testSearchWithEmptyTerm(){
         landingPage.clickOnSearchButtonWithoutText();
         Search search = new Search(mDriver);
-        if (search.getSearchResultNames().isEmpty()){
+        if (!search.getSearchResultNames().isEmpty()){  //rep !
             Assert.fail("search without text not working");
         }
 
@@ -62,6 +62,7 @@ public class SearchTests extends BaseTest {
         landingPage.searchProductWithName(productName);
         Search search = new Search(mDriver);
         Set<String> items = new LinkedHashSet<>(search.getSearchResultNames());
+        System.out.println("size of items "+items.size());
         if (items.size()<2){
             Assert.fail("Items with same name found");
         }
@@ -75,7 +76,7 @@ public class SearchTests extends BaseTest {
         search.setSearchBoxText(productName);
         search.clickOnSearchButton();
         search.getSearchResultNames().forEach(item->{
-            if (!item.toLowerCase().contains(productName)){
+            if (item.toLowerCase().contains(productName)){   // add !
                 Assert.fail("Search functionality in search criteria not working properly");
             }
         });

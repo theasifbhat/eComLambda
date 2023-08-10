@@ -5,8 +5,8 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
     <test name="Regression">
-        <classes >
-            <class name="testCases.Search.SearchTests"/>
+        <classes>
+           <class name="testCases.Search.SearchTests"/>
             <class name="testCases.Landing.LandingTests"/>
             <class name="testCases.Register.RegisterTests"/>
         </classes>
