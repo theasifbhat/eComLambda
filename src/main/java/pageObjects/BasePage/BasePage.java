@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.Landing.Landing;
 import pageObjects.Login.Login;
+import pageObjects.MyAccount.MyAccount;
 import utilities.GlobalFunctions;
 
 import java.time.Duration;
@@ -65,7 +66,7 @@ public class BasePage{
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    public Landing login(){
+    public MyAccount login(){
         Actions action = new Actions(mDriver);
         action.moveToElement(myAccountNav).build().perform();
         waitTillElementIsVisibleUsingWebElement(loginLink);

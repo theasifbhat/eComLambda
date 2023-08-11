@@ -53,6 +53,7 @@ public class SearchTests extends BaseTest {
     @Test
     public void testSearchFunctionalityWithLogin(){
         landingPage.login();
+        landingPage.goToHomepage();
         testSearchFunctionality();
     }
 

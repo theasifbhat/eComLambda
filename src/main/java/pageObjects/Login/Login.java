@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Landing.Landing;
+import pageObjects.MyAccount.MyAccount;
 import pageObjects.Register.Register;
 
 public class Login extends BasePage {
@@ -30,13 +31,13 @@ public class Login extends BasePage {
         PageFactory.initElements(mDriver,this);
     }
 
-    public Landing loginWithValidCredentials(String username, String password){
+    public MyAccount loginWithValidCredentials(String username, String password){
         usernameField.clear();
         usernameField.sendKeys(username);
         passwordField.clear();
         passwordField.sendKeys(password);
         loginButton.click();
-        return goToHomepage();
+        return new MyAccount(mDriver);
     }
 
     public Register clickOnContinueButton(){
