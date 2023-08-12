@@ -1,10 +1,13 @@
 package pageObjects.Login;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
+import pageObjects.ForgotPassword.ForgotPassword;
 import pageObjects.Landing.Landing;
 import pageObjects.MyAccount.MyAccount;
 import pageObjects.Register.Register;
@@ -57,6 +60,11 @@ public class Login extends BasePage {
 
     public String getForgotPasswordLink(){
        return forgotPassword.getAttribute("href");
+    }
+
+    public ForgotPassword clickOnFogotPassword(){
+        forgotPassword.click();
+        return new ForgotPassword(mDriver);
     }
 
     public MyAccount loginWithValidCredentials(String username, String password){

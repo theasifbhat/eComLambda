@@ -29,6 +29,9 @@ public class ForgotPassword extends BasePage {
     private WebElement backButton;
 
 
+    public String getForgotPasswordUrl(){
+        return mDriver.getCurrentUrl();
+    }
     public void sendTextToEmailField(String text){
         emailField.sendKeys(text);
     }

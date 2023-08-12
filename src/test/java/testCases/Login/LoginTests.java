@@ -3,6 +3,7 @@ package testCases.Login;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pageObjects.ForgotPassword.ForgotPassword;
 import pageObjects.Login.Login;
 import pageObjects.MyAccount.MyAccount;
 import testCases.BaseTest.BaseTest;
@@ -53,8 +54,8 @@ public void testLoginWithIncorrectPassword(){
     public void testForgotPasswordLink(){
     Login login = landingPage.goToLoginPage();
     Assert.assertEquals(login.getForgotPasswordLink(),"https://ecommerce-playground.lambdatest.io/index.php?route=account/forgotten");
+    ForgotPassword forgotPassword = login.clickOnFogotPassword();
+    Assert.assertEquals(forgotPassword.getForgotPasswordUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=account/forgotten");
 }
-
-
 
 }
