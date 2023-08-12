@@ -1,5 +1,6 @@
 package testCases.Login;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.Login.Login;
@@ -18,6 +19,40 @@ public void testLoginWithValidCredentials(){
     softAssert.assertEquals(myAccount.getMyOrdersLabelTest(),"My Orders");
     softAssert.assertEquals(myAccount.getMyAffiliateAccountLabelText(),"My Affiliate Account");
     softAssert.assertAll();
+}
+
+@Test
+public void testLoginWithIncorrectPassword(){
+    Login login= landingPage.goToLoginPage();
+    login.loginWithInvalidPassword();
+    Assert.assertEquals("Warning: No match for E-Mail Address and/or Password.",login.getTopErrorMessageText());
+}
+
+@Test
+    public void testLoginWithInvalidUsernameAndValidPassword(){
+    Login login = landingPage.goToLoginPage();
+    login.loginWithIncorrectUsernameAndValidPassword();
+    Assert.assertEquals("Warning: No match for E-Mail Address and/or Password.",login.getTopErrorMessageText());
+}
+
+@Test
+    public void testLoginWithInvalidCredentials(){
+    Login login = landingPage.goToLoginPage();
+    login.loginWithIncorrectUsernameAndPassword();
+    Assert.assertEquals("Warning: No match for E-Mail Address and/or Password.",login.getTopErrorMessageText());
+}
+
+@Test
+    public void testLoginWithEmptyFields(){
+    Login login = landingPage.goToLoginPage();
+    login.clickOnLoginButton();
+    Assert.assertEquals("Warning: No match for E-Mail Address and/or Password.",login.getTopErrorMessageText());
+}
+
+@Test
+    public void testForgotPasswordLink(){
+    Login login = landingPage.goToLoginPage();
+    Assert.assertEquals(login.getForgotPasswordLink(),"https://ecommerce-playground.lambdatest.io/index.php?route=account/forgotten");
 }
 
 

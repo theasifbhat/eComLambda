@@ -8,6 +8,7 @@ import pageObjects.BasePage.BasePage;
 import pageObjects.Landing.Landing;
 import pageObjects.MyAccount.MyAccount;
 import pageObjects.Register.Register;
+import utilities.GlobalFunctions;
 
 public class Login extends BasePage {
 
@@ -16,19 +17,46 @@ public class Login extends BasePage {
     public WebElement usernameField;   // made public to add wait in different pages while logging in
 
     @FindBy(id = "input-password")
-    WebElement passwordField;
+    private WebElement passwordField;
 
     @FindBy(css = "input[value='Login']")
-    WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(css ="a[class$='btn-primary']")
-    WebElement continueButton;
+    private WebElement continueButton;
+
+    @FindBy(css = "div[class='alert alert-danger alert-dismissible']")
+    private WebElement topErrorMessage;
+
+    @FindBy(xpath = "//input[@id='input-password']/following-sibling::a")
+    private WebElement forgotPassword;
 
 
     public Login(WebDriver mDriver) {
         super(mDriver);
         this.mDriver= mDriver;
         PageFactory.initElements(mDriver,this);
+    }
+
+
+    public Register clickOnContinueButton(){
+        waitTillElementIsVisibleUsingWebElement(continueButton);
+        continueButton.click();
+        return new Register(mDriver);
+    }
+
+    public void clickOnLoginButton(){
+        waitTillElementIsVisibleUsingWebElement(loginButton);
+        loginButton.click();
+    }
+
+    public String getTopErrorMessageText(){
+        waitTillElementIsVisibleUsingWebElement(topErrorMessage);
+        return topErrorMessage.getText();
+    }
+
+    public String getForgotPasswordLink(){
+       return forgotPassword.getAttribute("href");
     }
 
     public MyAccount loginWithValidCredentials(String username, String password){
@@ -40,10 +68,24 @@ public class Login extends BasePage {
         return new MyAccount(mDriver);
     }
 
-    public Register clickOnContinueButton(){
-        waitTillElementIsVisibleUsingWebElement(continueButton);
-        continueButton.click();
-        return new Register(mDriver);
+    public void loginWithInvalidPassword(){
+        usernameField.clear();
+        usernameField.sendKeys(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"));
+        passwordField.clear();
+        passwordField.sendKeys("123445");
+        loginButton.click();
+    }
+
+    public void loginWithIncorrectUsernameAndPassword(){
+        usernameField.sendKeys("asif@lamdatest.com");
+        passwordField.sendKeys("12334");
+        loginButton.click();
+    }
+
+    public void loginWithIncorrectUsernameAndValidPassword(){
+        usernameField.sendKeys("asif@lamdatest.com");
+        passwordField.sendKeys(GlobalFunctions.getPropertyFromPropertyFileWithKey("password"));
+        loginButton.click();
     }
 
 
