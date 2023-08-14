@@ -34,6 +34,8 @@ public class Login extends BasePage {
     @FindBy(xpath = "//input[@id='input-password']/following-sibling::a")
     private WebElement forgotPassword;
 
+    @FindBy(xpath = "//menuitem[@label='Paste']")
+    private WebElement pasteOption;
 
     public Login(WebDriver mDriver) {
         super(mDriver);
@@ -94,6 +96,12 @@ public class Login extends BasePage {
         usernameField.sendKeys("asif@lamdatest.com");
         passwordField.sendKeys(GlobalFunctions.getPropertyFromPropertyFileWithKey("password"));
         loginButton.click();
+    }
+
+    public void checkPasteInPasswordFieldIsDisabled(){
+        Actions actions = new Actions(mDriver);
+        actions.contextClick(passwordField).build().perform();
+      // to be completed
     }
 
 

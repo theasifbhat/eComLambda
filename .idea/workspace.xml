@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ForgotPassword/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ForgotPassword/ForgotPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" afterDir="false" />
@@ -58,7 +58,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LoginTests.testLoginWithKeyboard">
+  <component name="RunManager" selected="TestNG.&lt;default&gt;">
     <configuration name="LoginTests.testForgotPasswordLink" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -95,24 +95,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.testLoginWithIncorrectPassword" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Login" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
-      <option name="METHOD_NAME" value="testLoginWithIncorrectPassword" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoginTests.testLoginWithKeyboard" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -131,10 +113,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTests.testPasteOptionsIsDisabled" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Login" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
+      <option name="METHOD_NAME" value="testPasteOptionsIsDisabled" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
@@ -143,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.&lt;default&gt;" />
+        <item itemvalue="TestNG.LoginTests.testPasteOptionsIsDisabled" />
         <item itemvalue="TestNG.LoginTests.testLoginWithKeyboard" />
         <item itemvalue="TestNG.LoginTests.testForgotPasswordLink" />
         <item itemvalue="TestNG.LoginTests.testLoginWithEmptyFields" />
-        <item itemvalue="TestNG.LoginTests.testLoginWithIncorrectPassword" />
-        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -185,11 +185,49 @@
       <workItem from="1691587378561" duration="6538000" />
       <workItem from="1691669094063" duration="7341000" />
       <workItem from="1691768606347" duration="4330000" />
-      <workItem from="1691848943741" duration="6546000" />
+      <workItem from="1691848943741" duration="7628000" />
+      <workItem from="1691860626486" duration="849000" />
+      <workItem from="1692018480864" duration="3313000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a3d14c72-3b03-4b7e-b4b4-b4345c91858e" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="a3d14c72-3b03-4b7e-b4b4-b4345c91858e">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/asifbhat/selenumProjects/eComLambda/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
