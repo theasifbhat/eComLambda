@@ -5,3 +5,6 @@ This is a framework for automation of test cases. The framework will use followi
 4. **Maven** as build management tool.
 5. **Page Object Model** as design pattern. 
 6. **Page Factory** used to implement Page Object Model.
+
+
+<b>Usage</b>:  mvn test -P "profileName" from terminal at pom.xml's location.

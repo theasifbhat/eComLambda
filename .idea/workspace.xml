@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testSuites/priority1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ScreenShotUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ScreenShotUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +177,7 @@
       <workItem from="1691768606347" duration="4330000" />
       <workItem from="1691848943741" duration="7628000" />
       <workItem from="1691860626486" duration="849000" />
-      <workItem from="1692018480864" duration="6563000" />
+      <workItem from="1692018480864" duration="7295000" />
     </task>
     <servers />
   </component>
