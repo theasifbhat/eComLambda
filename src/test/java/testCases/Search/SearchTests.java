@@ -38,7 +38,7 @@ public class SearchTests extends BaseTest {
     public void testSearchWithEmptyTerm(){
         landingPage.clickOnSearchButtonWithoutText();
         Search search = new Search(mDriver);
-        if (!search.getSearchResultNames().isEmpty()){  //rep !
+        if (search.getSearchResultNames().isEmpty()){  //rep !
             Assert.fail("search without text not working");
         }
 
@@ -77,7 +77,7 @@ public class SearchTests extends BaseTest {
         search.setSearchBoxText(productName);
         search.clickOnSearchButton();
         search.getSearchResultNames().forEach(item->{
-            if (item.toLowerCase().contains(productName)){   // add !
+            if (!item.toLowerCase().contains(productName)){   // add !
                 Assert.fail("Search functionality in search criteria not working properly");
             }
         });

@@ -14,11 +14,10 @@ public static void saveScreenshot(WebDriver mDriver,String packageName, String f
     TakesScreenshot takesScreenshot = (TakesScreenshot) mDriver;
     File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
     File destination = new File(System.getProperty("user.dir")+"/"+packageName+"/"+fileName+".png");
-
     try {
         Files.copy(source.toPath(), destination.toPath());
     }catch (Exception e){
-        Assert.fail("failed to copy screenshot");
+        Assert.fail("failed to copy screenshot "+e.getMessage());
     }
 }
 
