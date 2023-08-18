@@ -1,6 +1,5 @@
 package pageObjects.Login;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
 import pageObjects.ForgotPassword.ForgotPassword;
-import pageObjects.Landing.Landing;
 import pageObjects.MyAccount.MyAccount;
 import pageObjects.Register.Register;
 import utilities.GlobalFunctions;
@@ -69,7 +67,7 @@ public class Login extends BasePage {
         return new ForgotPassword(mDriver);
     }
 
-    public MyAccount loginWithValidCredentials(String username, String password){
+    public MyAccount loginWithCredentials(String username, String password){
         usernameField.clear();
         usernameField.sendKeys(username);
         passwordField.clear();
@@ -80,7 +78,7 @@ public class Login extends BasePage {
 
     public void loginWithInvalidPassword(){
         usernameField.clear();
-        usernameField.sendKeys(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"));
+        usernameField.sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
         passwordField.clear();
         passwordField.sendKeys("123445");
         loginButton.click();
@@ -94,7 +92,7 @@ public class Login extends BasePage {
 
     public void loginWithIncorrectUsernameAndValidPassword(){
         usernameField.sendKeys("asif@lamdatest.com");
-        passwordField.sendKeys(GlobalFunctions.getPropertyFromPropertyFileWithKey("password"));
+        passwordField.sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
         loginButton.click();
     }
 

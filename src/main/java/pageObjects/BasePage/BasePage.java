@@ -10,8 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.Landing.Landing;
 import pageObjects.Login.Login;
+import pageObjects.Logout.Logout;
 import pageObjects.MyAccount.MyAccount;
 import utilities.GlobalFunctions;
+import utilities.GlobalFunctions.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -32,6 +34,10 @@ public class BasePage{
  @FindBy(xpath = "//a[contains(@href, 'login')]")
  public WebElement loginLink;
 
+
+// Side bar elements in My Account page
+ @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/logout']")
+ WebElement logoutLink;
 
 
 
@@ -73,7 +79,16 @@ public class BasePage{
         action.click(loginLink).build().perform();
         Login login = new Login(mDriver);
         waitTillElementIsVisibleUsingWebElement(login.usernameField);
-        return login.loginWithValidCredentials(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"), GlobalFunctions.getPropertyFromPropertyFileWithKey("password"));
+        return login.loginWithCredentials(GlobalFunctions.getPropertyFromPropertyFile("username"), GlobalFunctions.getPropertyFromPropertyFile("password"));
+    }
+
+
+    //sidebar events
+
+    public Logout clickOnLogoutLink(){
+        waitTillElementIsVisibleUsingWebElement(logoutLink);
+        logoutLink.click();
+        return new Logout(mDriver);
     }
 
 

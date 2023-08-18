@@ -1,6 +1,5 @@
 package pageObjects.Register;
 
-import com.aventstack.extentreports.ExtentReports;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -214,7 +213,7 @@ public class Register extends BasePage {
 
     public void fillAllFieldsWithExistingEmail(){
         fillMandatoryFields();
-        setEmailInputBoxText(GlobalFunctions.getPropertyFromPropertyFileWithKey("username"));
+        setEmailInputBoxText(GlobalFunctions.getPropertyFromPropertyFile("username"));
     }
 
     public void fillAllFieldsWithNewsLetterSetToNo(){

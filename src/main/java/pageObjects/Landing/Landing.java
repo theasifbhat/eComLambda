@@ -41,7 +41,8 @@ public class Landing extends BasePage {
         submitButton.click();
     }
     public void goToLandingPage() {
-        mDriver.get(GlobalFunctions.getPropertyFromPropertyFileWithKey("url"));
+        mDriver.get("https://"+
+                GlobalFunctions.getPropertyFromPropertyFile("url"));   //hardcoded https because updateproperties messes up with the url
     }
     public Register goToRegisterPage(){
         Actions actions = new Actions(mDriver);

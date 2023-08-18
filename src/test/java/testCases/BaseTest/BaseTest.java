@@ -9,9 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import pageObjects.Landing.Landing;
 import utilities.GlobalFunctions;
 
-import java.io.FileInputStream;
 import java.util.Objects;
-import java.util.Properties;
 
 public class BaseTest {
     public WebDriver mDriver;
@@ -19,8 +17,8 @@ public class BaseTest {
 
     public WebDriver initialize(){
         WebDriver driver;
-        String browserName =Objects.equals(GlobalFunctions.getPropertyFromPropertyFileWithKey("browser"), "")
-                ? GlobalFunctions.getPropertyFromPropertyFileWithKey("browser")
+        String browserName =Objects.equals(GlobalFunctions.getPropertyFromPropertyFile("browser"), "")
+                ? GlobalFunctions.getPropertyFromPropertyFile("browser")
                 : "chrome";
 
         switch (browserName) {
@@ -51,7 +49,7 @@ public class BaseTest {
         landingPage.goToLandingPage();
     }
 
-   @AfterMethod
+  // @AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {

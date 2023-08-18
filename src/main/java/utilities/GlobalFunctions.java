@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -32,7 +33,7 @@ public static void waitForPageLoad(WebDriver mDriver){
         }
     }
 
-public static String getPropertyFromPropertyFileWithKey(String key){
+public static String getPropertyFromPropertyFile(String key){
 
     String value = "";
     try{
@@ -45,6 +46,25 @@ public static String getPropertyFromPropertyFileWithKey(String key){
     }
     return value;
 }
+
+    public static void updatePropertyFromProperty(String key, String value) {
+        Properties properties = new Properties();
+
+        try {
+            FileInputStream inputStream = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
+            properties.load(inputStream);
+            inputStream.close();
+
+            properties.setProperty(key, value);
+
+            FileOutputStream outputStream = new FileOutputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
+            properties.store(outputStream, null);
+            outputStream.close();
+        } catch (Exception exception) {
+            Assert.fail("Exception in updating property file " + exception.getMessage());
+        }
+    }
+
 
 public static String generateRandomString(){
     return ""+System.currentTimeMillis();

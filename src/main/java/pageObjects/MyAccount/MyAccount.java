@@ -26,6 +26,8 @@ public class MyAccount extends BasePage {
 
     @FindBy(css = "a[href='https://ecommerce-playground.lambdatest.io/index.php?route=account/password']")
     WebElement changePasswordOption;
+    @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'alert')]")
+    private WebElement topMessage;
 
     public String getMyAccountLabelText(){
         return myAccountLabel.getText();
@@ -37,6 +39,10 @@ public class MyAccount extends BasePage {
 
     public String getMyAffiliateAccountLabelText(){
         return  myAffiliateAccountLabel.getText();
+    }
+    public String getTopMessage() {
+        waitTillElementIsVisibleUsingWebElement(topMessage);
+        return topMessage.getText();
     }
 
     public ChangePassword clickOnChangePasswordOption(){

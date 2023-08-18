@@ -15,20 +15,20 @@ public class ChangePassword extends BasePage {
         PageFactory.initElements(mDriver,this);
     }
 
-    @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'danger')]")
-    WebElement topMessage;
 
     @FindBy(id = "input-password")
-    WebElement password;
+    private WebElement password;
 
     @FindBy(id = "input-confirm")
-    WebElement confirmPassword;
+    private WebElement confirmPassword;
+
+    @FindBy(css = "input[value='Continue']")
+    private WebElement continueButton;
 
 
-
-    public String getTopMessage() {
-        waitTillElementIsVisibleUsingWebElement(topMessage);
-        return topMessage.getText();
+    public void clickOnContinueButton(){
+        waitTillElementIsVisibleUsingWebElement(continueButton);
+        continueButton.click();
     }
 
     public String sendNewPasswordToFields(){
@@ -39,6 +39,7 @@ public class ChangePassword extends BasePage {
         confirmPassword.sendKeys(newPassword);
         return newPassword;
     }
+
 
 
 }

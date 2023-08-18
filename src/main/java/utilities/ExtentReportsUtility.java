@@ -10,9 +10,9 @@ public static ExtentReports getExtentReportsObject(){
     ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//reports//extentReport.html");
     extentSparkReporter.config().setReportName("Automation Report");
     extentSparkReporter.config().setDocumentTitle("Automation Test Results");
-    extentReports.setSystemInfo("Tester",GlobalFunctions.getPropertyFromPropertyFileWithKey("tester"));
-    extentReports.setSystemInfo("Url",GlobalFunctions.getPropertyFromPropertyFileWithKey("url"));
-    extentReports.setSystemInfo("Browser",GlobalFunctions.getPropertyFromPropertyFileWithKey("browser"));
+    extentReports.setSystemInfo("Tester",GlobalFunctions.getPropertyFromPropertyFile("tester"));
+    extentReports.setSystemInfo("Url",GlobalFunctions.getPropertyFromPropertyFile("url"));
+    extentReports.setSystemInfo("Browser",GlobalFunctions.getPropertyFromPropertyFile("browser"));
     extentReports.setSystemInfo("OS",System.getProperty("os.name"));
     extentReports.setSystemInfo("Java Version",System.getProperty("java.version"));
     extentReports.attachReporter(extentSparkReporter);
