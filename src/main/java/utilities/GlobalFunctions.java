@@ -46,6 +46,8 @@ public static String getPropertyFromPropertyFileWithKey(String key){
     return value;
 }
 
-
+public static String generateRandomString(){
+    return ""+System.currentTimeMillis();
+}
 
 }

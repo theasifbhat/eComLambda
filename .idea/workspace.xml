@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="" />
+    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ChangePassword/ChangePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,6 +180,9 @@
       <workItem from="1691848943741" duration="7628000" />
       <workItem from="1691860626486" duration="849000" />
       <workItem from="1692018480864" duration="7911000" />
+      <workItem from="1692117945465" duration="276000" />
+      <workItem from="1692191207228" duration="9000" />
+      <workItem from="1692364003409" duration="1599000" />
     </task>
     <servers />
   </component>

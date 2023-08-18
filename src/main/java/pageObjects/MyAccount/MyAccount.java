@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
+import pageObjects.ChangePassword.ChangePassword;
 
 public class MyAccount extends BasePage {
     WebDriver mDriver;
@@ -23,6 +24,9 @@ public class MyAccount extends BasePage {
     @FindBy(xpath = "(//h2[contains(@class,'h5')])[3]")
     WebElement myAffiliateAccountLabel;
 
+    @FindBy(css = "a[href='https://ecommerce-playground.lambdatest.io/index.php?route=account/password']")
+    WebElement changePasswordOption;
+
     public String getMyAccountLabelText(){
         return myAccountLabel.getText();
     }
@@ -33,6 +37,11 @@ public class MyAccount extends BasePage {
 
     public String getMyAffiliateAccountLabelText(){
         return  myAffiliateAccountLabel.getText();
+    }
+
+    public ChangePassword clickOnChangePasswordOption(){
+        changePasswordOption.click();
+        return new ChangePassword(mDriver);
     }
 
 
