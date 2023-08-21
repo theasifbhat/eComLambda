@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Logout/Logout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ChangePassword/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ChangePassword/ChangePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Register/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ExtentReportsUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ExtentReportsUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +59,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LoginTests.testLoginAfterChangingPassword">
+  <component name="RunManager" selected="TestNG.LogoutTests.testLogoutFromMyAccount">
     <configuration name="LoginTests.testLoginAfterChangingPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -85,17 +78,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.testPasteOptionsIsDisabled" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LogoutTests.testLogoutFromMyAccount" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Login.*" />
+          <option name="PATTERN" value="testCases.Logout.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Login" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
-      <option name="METHOD_NAME" value="testPasteOptionsIsDisabled" />
+      <option name="PACKAGE_NAME" value="testCases.Logout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
+      <option name="METHOD_NAME" value="testLogoutFromMyAccount" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogoutTests.testLogoutFromMyAccountMenu" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Logout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Logout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
+      <option name="METHOD_NAME" value="testLogoutFromMyAccountMenu" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -131,23 +142,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccount" />
+        <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccountMenu" />
         <item itemvalue="TestNG.LoginTests.testLoginAfterChangingPassword" />
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
         <item itemvalue="TestNG.SearchTests.testSearchWithEmptyTerm" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.LoginTests.testPasteOptionsIsDisabled" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +193,8 @@
       <workItem from="1692018480864" duration="7911000" />
       <workItem from="1692117945465" duration="276000" />
       <workItem from="1692191207228" duration="9000" />
-      <workItem from="1692364003409" duration="7435000" />
+      <workItem from="1692364003409" duration="8248000" />
+      <workItem from="1692611916695" duration="2175000" />
     </task>
     <servers />
   </component>

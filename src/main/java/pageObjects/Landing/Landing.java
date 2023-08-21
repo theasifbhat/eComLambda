@@ -46,7 +46,7 @@ public class Landing extends BasePage {
     }
     public Register goToRegisterPage(){
         Actions actions = new Actions(mDriver);
-        actions.moveToElement(myAccountNav).build().perform();
+        actions.moveToElement(getMyAccountNav()).build().perform();
         waitTillElementIsVisibleUsingWebElement(registerLink);
         actions.click(registerLink).build().perform();
         return new Register(mDriver);
@@ -54,9 +54,9 @@ public class Landing extends BasePage {
 
     public Login goToLoginPage(){
         Actions actions = new Actions(mDriver);
-        actions.moveToElement(myAccountNav).build().perform();
-        waitTillElementIsVisibleUsingWebElement(loginLink);
-        actions.click(loginLink).build().perform();
+        actions.moveToElement(getMyAccountNav()).build().perform();
+        waitTillElementIsVisibleUsingWebElement(getLoginLink());
+        actions.click(getLoginLink()).build().perform();
         return new Login(mDriver);
     }
         public void clickOnSearchButtonWithoutText(){

@@ -1,5 +1,6 @@
 package pageObjects.BasePage;
 
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,53 +27,55 @@ public class BasePage{
 
  //common webelements
  @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
- public WebElement websiteLogo;
+ private WebElement websiteLogo;
 
+ @Getter            //getter
  @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
- public WebElement myAccountNav;
+ private WebElement myAccountNav;
 
+ @Getter            //getter
  @FindBy(xpath = "//a[contains(@href, 'login')]")
- public WebElement loginLink;
+ private WebElement loginLink;
+
+ @Getter
+ @FindBy(css = "a[href='https://ecommerce-playground.lambdatest.io/index.php?route=account/logout']")
+ private WebElement logoutOptionFromMyAccountDropDown;
 
 
 // Side bar elements in My Account page
  @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/logout']")
  WebElement logoutLink;
 
-
-
-
- public BasePage(WebDriver mDriver){
+public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
      webDriverWait = new WebDriverWait(mDriver, Duration.ofSeconds(7));
      PageFactory.initElements(mDriver,this);
      GlobalFunctions.waitForPageLoad(mDriver);
  }
 
-
- public Landing goToHomepage(){
+public Landing goToHomepage(){
      waitTillElementIsVisibleUsingWebElement(websiteLogo);
      mDriver.get("https://ecommerce-playground.lambdatest.io/");
      return new Landing(mDriver);
  }
 
- public void waitTillElementIsVisible(By locator){
+public void waitTillElementIsVisible(By locator){
      webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
  }
 
-    public void waitTillElementIsVisibleUsingWebElement(WebElement element){
+public void waitTillElementIsVisibleUsingWebElement(WebElement element){
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
-    }
+}
 
-    public void waitTillElementsAreVisibleUsingWebElement(List<WebElement> element){
+public void waitTillElementsAreVisibleUsingWebElement(List<WebElement> element){
         webDriverWait.until(ExpectedConditions.visibilityOfAllElements(element));
-    }
+}
 
-    public void waitTillElementIsPresent(By locator){
+public void waitTillElementIsPresent(By locator){
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
+}
 
-    public MyAccount login(){
+public MyAccount login(){
         Actions action = new Actions(mDriver);
         action.moveToElement(myAccountNav).build().perform();
         waitTillElementIsVisibleUsingWebElement(loginLink);
@@ -80,16 +83,25 @@ public class BasePage{
         Login login = new Login(mDriver);
         waitTillElementIsVisibleUsingWebElement(login.usernameField);
         return login.loginWithCredentials(GlobalFunctions.getPropertyFromPropertyFile("username"), GlobalFunctions.getPropertyFromPropertyFile("password"));
-    }
+}
 
 
-    //sidebar events
-
-    public Logout clickOnLogoutLink(){
+//sidebar events
+public Logout clickOnLogoutLink(){
         waitTillElementIsVisibleUsingWebElement(logoutLink);
         logoutLink.click();
         return new Logout(mDriver);
-    }
+}
+
+//topbar events
+
+public Logout clickOnLogoutFromMyAccountDropdown(){
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(getMyAccountNav()).build().perform();
+    waitTillElementIsVisibleUsingWebElement(getLogoutOptionFromMyAccountDropDown());
+    getLogoutOptionFromMyAccountDropDown().click();
+    return new Logout(mDriver);
+}
 
 
 }
