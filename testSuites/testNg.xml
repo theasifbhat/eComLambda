@@ -9,6 +9,8 @@
            <class name="testCases.Search.SearchTests"/>
             <class name="testCases.Landing.LandingTests"/>
             <class name="testCases.Register.RegisterTests"/>
+            <class name="testCases.Login.LoginTests"/>
+            <class name="testCases.Logout.LogoutTests"/>
         </classes>
     </test>
 </suite>
