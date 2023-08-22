@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LogoutTests.testLogoutFromMyAccount">
+  <component name="RunManager" selected="TestNG.LogoutTests.testBackAfterLogout">
     <configuration name="LoginTests.testLoginAfterChangingPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -71,6 +69,42 @@
       <option name="PACKAGE_NAME" value="testCases.Login" />
       <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
       <option name="METHOD_NAME" value="testLoginAfterChangingPassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTests.testLoginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Login" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
+      <option name="METHOD_NAME" value="testLoginWithValidCredentials" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogoutTests.testBackAfterLogout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Logout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Logout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
+      <option name="METHOD_NAME" value="testBackAfterLogout" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -114,41 +148,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTests.testSearchWithEmptyTerm" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Search" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
-      <option name="METHOD_NAME" value="testSearchWithEmptyTerm" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LogoutTests.testBackAfterLogout" />
+        <item itemvalue="TestNG.LoginTests.testLoginWithValidCredentials" />
         <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccount" />
         <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccountMenu" />
         <item itemvalue="TestNG.LoginTests.testLoginAfterChangingPassword" />
-        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
-        <item itemvalue="TestNG.SearchTests.testSearchWithEmptyTerm" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +200,9 @@
       <workItem from="1692117945465" duration="276000" />
       <workItem from="1692191207228" duration="9000" />
       <workItem from="1692364003409" duration="8248000" />
-      <workItem from="1692611916695" duration="2175000" />
+      <workItem from="1692611916695" duration="2924000" />
+      <workItem from="1692618632144" duration="56000" />
+      <workItem from="1692714548567" duration="1732000" />
     </task>
     <servers />
   </component>
@@ -236,5 +244,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java</url>
+          <line>26</line>
+          <properties class="testCases.Logout.LogoutTests" method="testBackAfterLogout">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

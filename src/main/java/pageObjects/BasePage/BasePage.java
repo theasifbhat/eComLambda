@@ -45,6 +45,8 @@ public class BasePage{
 // Side bar elements in My Account page
  @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/logout']")
  WebElement logoutLink;
+ @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/account']")
+ WebElement myAccountLink;
 
 public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
@@ -93,6 +95,11 @@ public Logout clickOnLogoutLink(){
         return new Logout(mDriver);
 }
 
+public MyAccount clickOnMyAccountLink(){
+waitTillElementIsVisibleUsingWebElement(myAccountLink);
+myAccountLink.click();
+return new MyAccount(mDriver);      //will return Login if account if no account
+}
 //topbar events
 
 public Logout clickOnLogoutFromMyAccountDropdown(){
