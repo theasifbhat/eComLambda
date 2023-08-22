@@ -26,6 +26,8 @@ public class BasePage{
 
 
  //common webelements
+
+    //topbar elements
  @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
  private WebElement websiteLogo;
 
@@ -44,9 +46,16 @@ public class BasePage{
 
 // Side bar elements in My Account page
  @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/logout']")
- WebElement logoutLink;
+ private WebElement logoutLink;
+
  @FindBy(xpath = "//aside[@id='column-right']//a[@href='https://ecommerce-playground.lambdatest.io/index.php?route=account/account']")
- WebElement myAccountLink;
+ @Getter
+ private WebElement myAccountLink;
+
+ @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a/following-sibling::ul//span")
+ @Getter
+ private List<WebElement> optionsUnderMyAccount;
+
 
 public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
@@ -109,6 +118,8 @@ public Logout clickOnLogoutFromMyAccountDropdown(){
     getLogoutOptionFromMyAccountDropDown().click();
     return new Logout(mDriver);
 }
+
+
 
 
 }
