@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Logout/LogoutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LogoutTests.testLogoutDropdownNotAvailableWhenUserNotLoggedIn">
+  <component name="RunManager" selected="TestNG.SearchTests.testSearchWithDescription">
     <configuration name="LoginTests.testLoginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -129,17 +131,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogoutTests.testLogoutFromMyAccountMenu" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTests.testSearchWithDescription" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Logout.*" />
+          <option name="PATTERN" value="testCases.Search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Logout" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
-      <option name="METHOD_NAME" value="testLogoutFromMyAccountMenu" />
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchWithDescription" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -149,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SearchTests.testSearchWithDescription" />
         <item itemvalue="TestNG.LogoutTests.testLogoutDropdownNotAvailableWhenUserNotLoggedIn" />
         <item itemvalue="TestNG.LogoutTests.testBackAfterLogout" />
         <item itemvalue="TestNG.LoginTests.testLoginWithValidCredentials" />
         <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccount" />
-        <item itemvalue="TestNG.LogoutTests.testLogoutFromMyAccountMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +203,9 @@
       <workItem from="1692364003409" duration="8248000" />
       <workItem from="1692611916695" duration="2924000" />
       <workItem from="1692618632144" duration="56000" />
-      <workItem from="1692714548567" duration="5120000" />
+      <workItem from="1692714548567" duration="6012000" />
+      <workItem from="1692722421870" duration="74000" />
+      <workItem from="1692801554538" duration="4232000" />
     </task>
     <servers />
   </component>

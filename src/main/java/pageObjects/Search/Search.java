@@ -1,8 +1,10 @@
 package pageObjects.Search;
 
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
@@ -21,16 +23,23 @@ public class Search extends BasePage {
     }
 
     @FindBy(css = "div[id='entry_212469']")
-    WebElement searchResultContainer;
+    private WebElement searchResultContainer;
 
     @FindBy(xpath = "//div[@id='entry_212469']//p")
-    WebElement noResultText;
+    private WebElement noResultText;
     @FindBy(xpath = "//div[@class='product-thumb']//h4")
-    List<WebElement> searchResultItemName;
+    private List<WebElement> searchResultItemName;
     @FindBy(id = "input-search")
-    WebElement searchBox;
+    private WebElement searchBox;
     @FindBy(id = "button-search")
-    WebElement searchButton;
+    private WebElement searchButton;
+
+    @FindBy(id = "description")
+    private WebElement searchInDescriptionCheckcbox;
+
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_212469']//div[@class='product-thumb-top']//a")
+    private List<WebElement> searchResultItems;
 
     //setter methods
 
@@ -40,6 +49,13 @@ public class Search extends BasePage {
 
     public void clickOnSearchButton(){
         searchButton.click();
+    }
+
+    public void setSearchInDescriptionCheckboxToTrue(){
+       if(!searchInDescriptionCheckcbox.isSelected()){
+           Actions actions = new Actions(mDriver);
+           actions.moveToElement(searchInDescriptionCheckcbox).click().build().perform();
+       }
     }
 
 
@@ -53,6 +69,12 @@ public class Search extends BasePage {
             items.add(it.getText());
         });
         return items;
+    }
+
+    public List<WebElement> getSearchResultWebElements(){
+        waitTillElementsAreVisibleUsingWebElement(searchResultItems);
+        return searchResultItems;
+
     }
 
     public boolean searchProductsWithNonExistingProductName(){   //returns true if label is found else false

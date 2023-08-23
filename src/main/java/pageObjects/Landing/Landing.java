@@ -9,6 +9,7 @@ import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
 import pageObjects.Register.Register;
+import pageObjects.Search.Search;
 import utilities.GlobalFunctions;
 
 import java.util.List;
@@ -35,10 +36,18 @@ public class Landing extends BasePage {
     @FindBy(xpath = "//a[contains(@href, 'register')]")
     WebElement registerLink;
 
-    public void searchProductWithName(String text){
+    public Search searchProductWithName(String text){
         searchBar.clear();
         searchBar.sendKeys(text);
         submitButton.click();
+        return new Search(mDriver);
+
+    }
+
+    public Search clickOnSearchButtonWithoutText(){
+        searchBar.clear();
+        submitButton.click();
+        return new Search(mDriver);
     }
     public void goToLandingPage() {
         mDriver.get("https://"+
@@ -59,10 +68,7 @@ public class Landing extends BasePage {
         actions.click(getLoginLink()).build().perform();
         return new Login(mDriver);
     }
-        public void clickOnSearchButtonWithoutText(){
-        searchBar.clear();
-        submitButton.click();
-    }
+
 
     public void getSearchSuggestionWithName(String text){
         searchBar.clear();

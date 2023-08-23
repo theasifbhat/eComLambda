@@ -2,6 +2,7 @@ package testCases.Search;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
 
@@ -13,8 +14,7 @@ public class SearchTests extends BaseTest {
     @Test
     public void testSearchFunctionality(){
         String productName= "ipho";
-        landingPage.searchProductWithName(productName);
-        Search search = new Search(mDriver);
+        Search search =  landingPage.searchProductWithName(productName);
         search.getSearchResultNames().forEach(item->{
            if (!item.toLowerCase().contains(productName)){
                Assert.fail("Search functionality not working properly");
@@ -27,8 +27,7 @@ public class SearchTests extends BaseTest {
     @Test
     public void testSearchWithNonExistingProduct(){
         String productName = "fitbit";
-        landingPage.searchProductWithName(productName);
-        Search search = new Search(mDriver);
+        Search search =landingPage.searchProductWithName(productName);
         if(!search.searchProductsWithNonExistingProductName()){
             Assert.fail("Product Found with a non existing product name search.");
         }
@@ -36,8 +35,7 @@ public class SearchTests extends BaseTest {
 
     @Test
     public void testSearchWithEmptyTerm(){
-        landingPage.clickOnSearchButtonWithoutText();
-        Search search = new Search(mDriver);
+        Search search = landingPage.clickOnSearchButtonWithoutText();
         if (search.getSearchResultNames().isEmpty()){  //rep !
             Assert.fail("search without text not working");
         }
@@ -60,8 +58,7 @@ public class SearchTests extends BaseTest {
     @Test
     public void testSearchWithGenericTerm(){
         String productName = "mac";
-        landingPage.searchProductWithName(productName);
-        Search search = new Search(mDriver);
+        Search search = landingPage.searchProductWithName(productName);
         Set<String> items = new LinkedHashSet<>(search.getSearchResultNames());
         System.out.println("size of items "+items.size());
         if (items.size()<2){
@@ -72,8 +69,7 @@ public class SearchTests extends BaseTest {
     @Test
     public void testSearchWithSearchCriteriaField(){
         String productName="mac";
-        landingPage.clickOnSearchButtonWithoutText();
-        Search search = new Search(mDriver);
+        Search search = landingPage.clickOnSearchButtonWithoutText();
         search.setSearchBoxText(productName);
         search.clickOnSearchButton();
         search.getSearchResultNames().forEach(item->{
@@ -81,7 +77,22 @@ public class SearchTests extends BaseTest {
                 Assert.fail("Search functionality in search criteria not working properly");
             }
         });
+    }
 
+    @Test
+    public void testSearchWithDescription(){
+        String productDesc = "ilife";
+        Search search = landingPage.clickOnSearchButtonWithoutText();
+        search.setSearchInDescriptionCheckboxToTrue();
+        search.setSearchBoxText(productDesc);
+        search.clickOnSearchButton();
+        search.getSearchResultWebElements().forEach(item->{
+            search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultWebElements());
+            item.click();
+            Product product = new Product(mDriver);
+            Assert.assertTrue(product.getProductDescription().getText().toLowerCase().contains(productDesc));
+            mDriver.navigate().back();
+        });
     }
 
 
