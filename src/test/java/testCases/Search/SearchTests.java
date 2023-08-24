@@ -2,6 +2,7 @@ package testCases.Search;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
@@ -93,6 +94,17 @@ public class SearchTests extends BaseTest {
             Assert.assertTrue(product.getProductDescription().getText().toLowerCase().contains(productDesc));
             mDriver.navigate().back();
         });
+    }
+
+    @Test
+    public void testSearchLabelTitleUrl(){
+        String product = "imac";
+        Search search = landingPage.searchProductWithName(product);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(search.getSearchQueryLabel().getText().toLowerCase().contains(product));
+        softAssert.assertEquals(mDriver.getCurrentUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=product%2Fsearch&search="+product);
+        softAssert.assertEquals(mDriver.getTitle().toLowerCase(),"search - imac");
+        softAssert.assertAll();
     }
 
 

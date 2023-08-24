@@ -41,6 +41,10 @@ public class Search extends BasePage {
     @FindBy(xpath = "//div[@id='entry_212469']//div[@class='product-thumb-top']//a")
     private List<WebElement> searchResultItems;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_212456']/h1")
+    private WebElement searchQueryLabel;
+
     //setter methods
 
     public void setSearchBoxText(String text){
