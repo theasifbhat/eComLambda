@@ -15,6 +15,8 @@ public class TestListener implements ITestListener {
 
     ExtentReports extentReports = ExtentReportsUtility.getExtentReportsObject();
     ExtentTest extentTest;
+    ThreadLocal<ExtentTest> threadLocal = new ThreadLocal<ExtentTest>();
+
     @Override
     public void onStart(ITestContext context) {
         System.out.println("Test Suite started!");
@@ -22,6 +24,7 @@ public class TestListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         System.out.println("Test Started!");
         extentTest = extentReports.createTest(result.getName());
+        threadLocal.set(extentTest);
     }
 
     public void onTestSuccess(ITestResult result) {
@@ -30,7 +33,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        extentTest.fail(result.getThrowable());
+        threadLocal.get().fail(result.getThrowable());
         WebDriver driver;
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("mDriver").get(result.getInstance());
@@ -40,7 +43,7 @@ public class TestListener implements ITestListener {
             Assert.fail("error in getting screenshot during failed test case. "+e.getMessage());
         }
 
-        extentTest.addScreenCaptureFromPath(result.getMethod().getMethodName()+".png");
+        threadLocal.get().addScreenCaptureFromPath(result.getMethod().getMethodName()+".png");
         // here we dont need to specify the file path as we have saved the screenshot in the reports folder
         //https://stackoverflow.com/questions/47555567/extentreports-screenshot-not-in-the-report-broken-image
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="parallel_suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="search">
+        <classes>
+            <class name="testCases.Search.SearchTests"/>
+        </classes>
+    </test>
+
+    <test name="landing">
+        <classes>
+            <class name="testCases.Landing.LandingTests"/>
+        </classes>
+    </test>
+
+    <test name="register">
+        <classes>
+            <class name="testCases.Register.RegisterTests"/>
+        </classes>
+    </test>
+
+    <test name="login">
+        <classes>
+            <class name="testCases.Login.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="logout">
+        <classes>
+            <class name="testCases.Logout.LogoutTests"/>
+        </classes>
+    </test>
+
+</suite>

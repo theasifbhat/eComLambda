@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/priority1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/parallel.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,25 +58,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.SearchTests.testSearchLabelTitleUrl">
-    <configuration name="LoginTests.testLoginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Login" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
-      <option name="METHOD_NAME" value="testLoginWithValidCredentials" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml">
     <configuration name="LogoutTests.testBackAfterLogout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -86,24 +70,6 @@
       <option name="PACKAGE_NAME" value="testCases.Logout" />
       <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
       <option name="METHOD_NAME" value="testBackAfterLogout" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LogoutTests.testLogoutDropdownNotAvailableWhenUserNotLoggedIn" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Logout.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Logout" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Logout.LogoutTests" />
-      <option name="METHOD_NAME" value="testLogoutDropdownNotAvailableWhenUserNotLoggedIn" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -147,13 +113,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/parallel.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/parallel.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
+        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/parallel.xml" />
+        <item itemvalue="TestNG.LogoutTests.testBackAfterLogout" />
         <item itemvalue="TestNG.SearchTests.testSearchLabelTitleUrl" />
         <item itemvalue="TestNG.SearchTests.testSearchWithDescription" />
-        <item itemvalue="TestNG.LogoutTests.testLogoutDropdownNotAvailableWhenUserNotLoggedIn" />
-        <item itemvalue="TestNG.LogoutTests.testBackAfterLogout" />
-        <item itemvalue="TestNG.LoginTests.testLoginWithValidCredentials" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +190,8 @@
       <workItem from="1692714548567" duration="6012000" />
       <workItem from="1692722421870" duration="74000" />
       <workItem from="1692801554538" duration="6242000" />
-      <workItem from="1692895725255" duration="682000" />
+      <workItem from="1692895725255" duration="864000" />
+      <workItem from="1693319625067" duration="4059000" />
     </task>
     <servers />
   </component>

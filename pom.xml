@@ -43,7 +43,7 @@
 
     <profiles>
         <profile>
-            <id>regression</id>
+            <id>fullSuiteSerial</id>
             <build>
                 <pluginManagement>
                     <plugins>
@@ -63,7 +63,7 @@
         </profile>
 
         <profile>
-            <id>priority1</id>
+            <id>fullSuiteParallel</id>
             <build>
                 <pluginManagement>
                     <plugins>
@@ -73,7 +73,7 @@
                             <version>3.1.2</version>
                             <configuration>
                                 <suiteXmlFiles>
-                                    <suiteXmlFile>testSuites/priority1.xml</suiteXmlFile>
+                                    <suiteXmlFile>testSuites/parallel.xml</suiteXmlFile>
                                 </suiteXmlFiles>
                             </configuration>
                         </plugin>
