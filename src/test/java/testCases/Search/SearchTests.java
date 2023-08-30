@@ -108,4 +108,25 @@ public class SearchTests extends BaseTest {
     }
 
 
+    @Test
+    public void testListViewIsWorking(){
+        String product = "imac";
+        Search search = landingPage.searchProductWithName(product);
+        search.clickOnListView();
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemsContainers());
+        Assert.assertEquals(search.getSearchItemsContainerClass(),"product-layout product-list col-12");
+    }
+
+    @Test
+    public void testGridViewIsWorking(){
+        String product = "imac";
+        Search search = landingPage.searchProductWithName(product);
+        search.clickOnListView();
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemsContainers());
+        search.clickOnGridView();
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemsContainers());
+        Assert.assertEquals(search.getSearchItemsContainerClass(),"product-layout product-grid no-desc col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6");
+    }
+
+
 }

@@ -45,6 +45,16 @@ public class Search extends BasePage {
     @FindBy(xpath = "//div[@id='entry_212456']/h1")
     private WebElement searchQueryLabel;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_212469']/div/div")
+    private List<WebElement> searchResultItemsContainers;
+
+    @FindBy(id = "list-view")
+    private WebElement listViewButton;
+
+    @FindBy(id = "grid-view")
+    private WebElement gridViewButton;
+
     //setter methods
 
     public void setSearchBoxText(String text){
@@ -53,6 +63,14 @@ public class Search extends BasePage {
 
     public void clickOnSearchButton(){
         searchButton.click();
+    }
+
+    public void clickOnListView(){
+        listViewButton.click();
+    }
+
+    public void clickOnGridView(){
+        gridViewButton.click();
     }
 
     public void setSearchInDescriptionCheckboxToTrue(){
@@ -84,6 +102,10 @@ public class Search extends BasePage {
     public boolean searchProductsWithNonExistingProductName(){   //returns true if label is found else false
         waitTillElementIsVisibleUsingWebElement(searchResultContainer);
         return Objects.equals(noResultText.getText(), "There is no product that matches the search criteria.");
+    }
+
+    public String getSearchItemsContainerClass(){    // all the items have the same class
+        return searchResultItemsContainers.get(0).getAttribute("class");
     }
 
 
