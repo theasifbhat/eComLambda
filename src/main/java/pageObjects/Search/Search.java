@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import pageObjects.BasePage.BasePage;
 
 import java.util.ArrayList;
@@ -55,6 +56,9 @@ public class Search extends BasePage {
     @FindBy(id = "grid-view")
     private WebElement gridViewButton;
 
+    @FindBy(id = "input-sort-212464")
+    private WebElement sortSelect;
+
     //setter methods
 
     public void setSearchBoxText(String text){
@@ -78,6 +82,14 @@ public class Search extends BasePage {
            Actions actions = new Actions(mDriver);
            actions.moveToElement(searchInDescriptionCheckcbox).click().build().perform();
        }
+    }
+
+    public void selectSortFromSortDropdown(int index){
+        // 0 for default, 1 for Best Seller, 2 for Popular, 3 for newest, 4 for Name A-Z, 5 for Z-A, 6 for Price low to high,
+        // 7 for price high to low, 8 for rating highest, 9 for lowest first, 10 for Model a-z, 11 for model z-a
+
+        Select select = new Select(sortSelect);
+        select.selectByIndex(index);
     }
 
 

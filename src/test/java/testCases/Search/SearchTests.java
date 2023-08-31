@@ -7,7 +7,9 @@ import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class SearchTests extends BaseTest {
@@ -126,6 +128,22 @@ public class SearchTests extends BaseTest {
         search.clickOnGridView();
         search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemsContainers());
         Assert.assertEquals(search.getSearchItemsContainerClass(),"product-layout product-grid no-desc col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6");
+    }
+
+    @Test
+    public void testSortByIncreasingName(){
+        Search search = landingPage.searchProductWithName("mac");
+        List<String> beforeSort = new java.util.ArrayList<>(search.getSearchResultNames().stream().map(String::toLowerCase).toList());  // in order to make sort work each item in list<String> needs to be converted to lowercase
+        search.selectSortFromSortDropdown(4);
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItems());
+        List <String> afterSortFromFrontEnd = search.getSearchResultNames().stream().map(String::toLowerCase).toList();
+
+        if (!beforeSort.equals(afterSortFromFrontEnd)){
+            Assert.fail("sort order does not match");
+        }
+
+
+
     }
 
 
