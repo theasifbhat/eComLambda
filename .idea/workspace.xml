@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.SearchTests.testSortByIncreasingName">
+  <component name="RunManager" selected="TestNG.SearchTests.testSortByDecreasingOrder">
     <configuration name="SearchTests.testGridViewIsWorking" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -101,6 +100,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchTests.testSortByDecreasingOrder" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSortByDecreasingOrder" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SearchTests.testSortByIncreasingName" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -119,16 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/parallel.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/parallel.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
@@ -141,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SearchTests.testSortByDecreasingOrder" />
         <item itemvalue="TestNG.SearchTests.testSortByIncreasingName" />
         <item itemvalue="TestNG.SearchTests.testGridViewIsWorking" />
         <item itemvalue="TestNG.SearchTests.testListViewIsWorking" />
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
-        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/parallel.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +205,8 @@
       <workItem from="1692801554538" duration="6242000" />
       <workItem from="1692895725255" duration="864000" />
       <workItem from="1693319625067" duration="5439000" />
-      <workItem from="1693387899088" duration="5972000" />
+      <workItem from="1693387899088" duration="6853000" />
+      <workItem from="1693589269337" duration="834000" />
     </task>
     <servers />
   </component>

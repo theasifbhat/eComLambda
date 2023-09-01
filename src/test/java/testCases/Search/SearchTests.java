@@ -138,12 +138,28 @@ public class SearchTests extends BaseTest {
         search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItems());
         List <String> afterSortFromFrontEnd = search.getSearchResultNames().stream().map(String::toLowerCase).toList();
 
+        Collections.sort(beforeSort);
+
         if (!beforeSort.equals(afterSortFromFrontEnd)){
             Assert.fail("sort order does not match");
         }
 
+    }
 
+    @Test
+    public void testSortByDecreasingOrder(){
+        Search search = landingPage.searchProductWithName("mac");
+        List<String> beforeSort = new java.util.ArrayList<>(search.getSearchResultNames().stream().map(String::toLowerCase).toList());
+        search.selectSortFromSortDropdown(5);
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItems());
+        List <String> afterSortFromFrontEnd = search.getSearchResultNames().stream().map(String::toLowerCase).toList();
 
+        Collections.sort(beforeSort);
+        Collections.reverse(beforeSort);
+
+        if (!beforeSort.equals(afterSortFromFrontEnd)){
+            Assert.fail("sort order does not match");
+        }
     }
 
 
