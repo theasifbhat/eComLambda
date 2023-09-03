@@ -1,16 +1,15 @@
 package testCases.Search;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
+import utilities.GlobalFunctions;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SearchTests extends BaseTest {
 
@@ -161,6 +160,25 @@ public class SearchTests extends BaseTest {
             Assert.fail("sort order does not match");
         }
     }
+
+    @Test
+    public void testSortByIncreasingPrice(){
+        Search search = landingPage.searchProductWithName("mac");
+        List<String> beforeSort = new java.util.ArrayList<>(search.getSearchResultItemPrice().stream().map(WebElement::getText).toList());
+        search.selectSortFromSortDropdown(6);
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemPrice());
+        List<String> afterSortFromFrontEnd = search.getSearchResultItemPrice().stream().map(WebElement::getText).toList();
+
+        List<Float> convertedPriceFromString = GlobalFunctions.convertListOfStringOfPricesToListOfFloat(beforeSort);
+        Collections.sort(convertedPriceFromString);
+
+        List<Float> convertedPriceFromFrontEnd = GlobalFunctions.convertListOfStringOfPricesToListOfFloat(afterSortFromFrontEnd);
+
+        if (!convertedPriceFromFrontEnd.equals(convertedPriceFromString)){
+            Assert.fail("sorting price from increasing order not working");
+        }
+    }
+
 
 
 }

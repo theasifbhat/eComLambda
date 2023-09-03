@@ -30,13 +30,18 @@ public class Search extends BasePage {
     private WebElement noResultText;
     @FindBy(xpath = "//div[@class='product-thumb']//h4")
     private List<WebElement> searchResultItemName;
+
+    @Getter
+    @FindBy(xpath = "//div[@class='product-thumb']//span[@class='price-new']")
+    private List<WebElement> searchResultItemPrice;
+
     @FindBy(id = "input-search")
     private WebElement searchBox;
     @FindBy(id = "button-search")
     private WebElement searchButton;
 
     @FindBy(id = "description")
-    private WebElement searchInDescriptionCheckcbox;
+    private WebElement searchInDescriptionCheckbox;
 
     @Getter
     @FindBy(xpath = "//div[@id='entry_212469']//div[@class='product-thumb-top']//a")
@@ -78,9 +83,9 @@ public class Search extends BasePage {
     }
 
     public void setSearchInDescriptionCheckboxToTrue(){
-       if(!searchInDescriptionCheckcbox.isSelected()){
+       if(!searchInDescriptionCheckbox.isSelected()){
            Actions actions = new Actions(mDriver);
-           actions.moveToElement(searchInDescriptionCheckcbox).click().build().perform();
+           actions.moveToElement(searchInDescriptionCheckbox).click().build().perform();
        }
     }
 

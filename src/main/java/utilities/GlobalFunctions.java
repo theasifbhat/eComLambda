@@ -9,6 +9,8 @@ import org.testng.Assert;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class GlobalFunctions {
@@ -68,6 +70,22 @@ public static String getPropertyFromPropertyFile(String key){
 
 public static String generateRandomString(){
     return ""+System.currentTimeMillis();
+}
+
+public static List<Float> convertListOfStringOfPricesToListOfFloat(List<String> beforeList){
+    List<Float> convertedPriceFromString = new ArrayList<>();
+    for (String price: beforeList){
+
+        price = price.replace("$","");
+
+        if(!price.contains(",")){
+            convertedPriceFromString.add(Float.parseFloat(price));
+        }
+        else{
+            convertedPriceFromString.add(Float.parseFloat(price.replace(",","")));
+        }
+    }
+    return convertedPriceFromString;
 }
 
 }
