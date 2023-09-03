@@ -153,8 +153,7 @@ public class SearchTests extends BaseTest {
         search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItems());
         List <String> afterSortFromFrontEnd = search.getSearchResultNames().stream().map(String::toLowerCase).toList();
 
-        Collections.sort(beforeSort);
-        Collections.reverse(beforeSort);
+        beforeSort.sort(Collections.reverseOrder());
 
         if (!beforeSort.equals(afterSortFromFrontEnd)){
             Assert.fail("sort order does not match");
@@ -176,6 +175,25 @@ public class SearchTests extends BaseTest {
 
         if (!convertedPriceFromFrontEnd.equals(convertedPriceFromString)){
             Assert.fail("sorting price from increasing order not working");
+        }
+    }
+
+
+    @Test
+    public void testSortByDecreasingPrice(){
+        Search search = landingPage.searchProductWithName("mac");
+        List<String> beforeSort = new java.util.ArrayList<>(search.getSearchResultItemPrice().stream().map(WebElement::getText).toList());
+        search.selectSortFromSortDropdown(7);
+        search.waitTillElementsAreVisibleUsingWebElement(search.getSearchResultItemPrice());
+        List<String> afterSortFromFrontEnd = search.getSearchResultItemPrice().stream().map(WebElement::getText).toList();
+
+        List<Float> convertedPriceFromString = GlobalFunctions.convertListOfStringOfPricesToListOfFloat(beforeSort);
+        convertedPriceFromString.sort(Collections.reverseOrder());
+
+        List<Float> convertedPriceFromFrontEnd = GlobalFunctions.convertListOfStringOfPricesToListOfFloat(afterSortFromFrontEnd);
+
+        if (!convertedPriceFromFrontEnd.equals(convertedPriceFromString)){
+            Assert.fail("sorting price from decreasing order not working");
         }
     }
 
