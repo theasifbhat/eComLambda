@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +43,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "selenium.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.SearchTests.testSortByDecreasingPrice">
-    <configuration name="SearchTests.testGridViewIsWorking" type="TestNG" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="TestNG.ProductTests.testMainThumbnailClick">
+    <configuration name="ProductTests.testMainThumbnailClick" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="PATTERN" value="testCases.Product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Search" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
-      <option name="METHOD_NAME" value="testGridViewIsWorking" />
+      <option name="PACKAGE_NAME" value="testCases.Product" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
+      <option name="METHOD_NAME" value="testMainThumbnailClick" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -151,18 +153,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductTests.testMainThumbnailClick" />
         <item itemvalue="TestNG.SearchTests.testSortByDecreasingPrice" />
         <item itemvalue="TestNG.SearchTests.testSortByIncreasingPrice" />
         <item itemvalue="TestNG.SearchTests.testSortByDecreasingOrder" />
         <item itemvalue="TestNG.SearchTests.testSortByIncreasingName" />
-        <item itemvalue="TestNG.SearchTests.testGridViewIsWorking" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="Selenium" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://www.google.com/" />
+    <option name="lastUrl" value="https://ecommerce-playground.lambdatest.io/index.php?route=product/product&amp;product_id=41&amp;search=mac/" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -210,7 +212,8 @@
       <workItem from="1693319625067" duration="5439000" />
       <workItem from="1693387899088" duration="6853000" />
       <workItem from="1693589269337" duration="2163000" />
-      <workItem from="1693751723406" duration="3748000" />
+      <workItem from="1693751723406" duration="3898000" />
+      <workItem from="1693840055424" duration="7659000" />
     </task>
     <servers />
   </component>
