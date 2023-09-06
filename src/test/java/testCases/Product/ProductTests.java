@@ -1,5 +1,7 @@
 package testCases.Product;
 
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
@@ -19,19 +21,17 @@ public void testMainThumbnailClick(){
 
     List<String> src = new ArrayList<>();
 
-    System.out.println("pr"+product.getSmallImages().toString());
-    //need to look into this, not returning anything
-
     product.getSmallImages().forEach(item->{
-        System.out.println("item "+item.getAttribute("href"));
         src.add(item.getAttribute("href"));
     });
 
+    product.clickOnThumbnail();
+    product.waitTillElementIsVisibleUsingWebElement(product.getWrappingElementOfProductSnapshot());
 
-    System.out.println("length "+product.getSmallImages().size());
+    product.getNextImageButton().click();
 
-    for (String items : src){
-        System.out.println("item "+items);
+    for(int i=0; i<src.size(); i++){
+    //
     }
 
     //determine if the webelement is iframe of figure

@@ -33,7 +33,7 @@ public class Product extends BasePage {
     private WebElement mainImage;
 
     @Getter
-    @FindBy(xpath = "//*[@id='swiper-wrapper-bcd97780ea3bdc5d']//a")
+    @FindBy(xpath = "//div[@style='width: 20%']//div[contains(@id,'swiper-wrapper')]//a")
     private List<WebElement> smallImages;
 
     @Getter
@@ -47,6 +47,10 @@ public class Product extends BasePage {
     @Getter
     @FindBy(xpath = "//button[@title='Close (Esc)']/following-sibling::*")
     private WebElement wrappingElementOfProductSnapshot;
+
+    @Getter
+    @FindBy(xpath = "//button[@title='Close (Esc)']/following-sibling::*//img")
+    private WebElement imageInFigure;
 
     public void clickOnAddToCart() {
         addToCartButton.click();
