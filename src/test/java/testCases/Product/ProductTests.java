@@ -1,23 +1,27 @@
 package testCases.Product;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProductTests extends BaseTest {
 
 @Test
-public void testMainThumbnailClick(){
+public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
 
     Search search = landingPage.searchProductWithName("mac");
     search.getSearchResultWebElements().get(0).click();
     Product product = new Product(mDriver);
-
     List<String> src = new ArrayList<>();
 
     product.getSmallImages().forEach(item->{
@@ -38,13 +42,22 @@ public void testMainThumbnailClick(){
         frontEnd.add(product.getImageInFigure().getAttribute("src"));
     }
     }
-
     Assert.assertEquals(frontEnd,src);
-
-
-    //determine if the webelement is iframe of figure
-    //get the src of figure or iframe
-    //compare with the src from list
-
 }
+
+
+    @Test
+    public void testEscIsWorkingOnThumbnailPreview(){
+        Search search = landingPage.searchProductWithName("mac");
+        search.getSearchResultWebElements().get(0).click();
+        Product product = new Product(mDriver);
+        product.clickOnThumbnail();
+        product.waitTillElementIsVisibleUsingWebElement(product.getWrappingElementOfProductSnapshot());
+        new Actions(mDriver).sendKeys(Keys.ESCAPE).build().perform();
+        product.waitTillElementIsInvisible(product.getWrappingElementOfProductSnapshot());
+
+        Assert.assertTrue(product.isElementDisplayed(product.getWrappingElementOfProductSnapshot()));
+}
+
+
 }

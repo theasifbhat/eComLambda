@@ -2,6 +2,7 @@ package pageObjects.BasePage;
 
 import lombok.Getter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -84,6 +85,20 @@ public void waitTillElementsAreVisibleUsingWebElement(List<WebElement> element){
 
 public void waitTillElementIsPresent(By locator){
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
+}
+
+public void waitTillElementIsInvisible(WebElement webElement){
+    webDriverWait.until(ExpectedConditions.invisibilityOfAllElements(webElement));
+}
+
+public boolean isElementDisplayed(WebElement webElement){
+    boolean flag = true;
+    try {
+        webElement.isDisplayed();
+    }catch (NoSuchElementException e){
+        flag = false;
+    }
+    return flag;
 }
 
 public MyAccount login(){
