@@ -1,6 +1,5 @@
 package testCases.Product;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.Product.Product;
@@ -28,17 +27,24 @@ public void testMainThumbnailClick(){
     product.clickOnThumbnail();
     product.waitTillElementIsVisibleUsingWebElement(product.getWrappingElementOfProductSnapshot());
 
-    product.getNextImageButton().click();
+    List<String> frontEnd = new ArrayList<>();
 
     for(int i=0; i<src.size(); i++){
-    //
+        product.getNextImageButton().click();
+    if (product.getWrappingElementOfProductSnapshot().getTagName().equals("iframe")){
+        frontEnd.add(product.getWrappingElementOfProductSnapshot().getAttribute("src"));
     }
+    else{
+        frontEnd.add(product.getImageInFigure().getAttribute("src"));
+    }
+    }
+
+    Assert.assertEquals(frontEnd,src);
+
 
     //determine if the webelement is iframe of figure
     //get the src of figure or iframe
     //compare with the src from list
 
-
 }
-
 }
