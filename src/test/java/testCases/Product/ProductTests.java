@@ -60,4 +60,17 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
 }
 
 
+@Test
+    public void testAvailabilityStatusIsDisplayed(){
+    Search search = landingPage.searchProductWithName("mac");
+    search.getSearchResultWebElements().get(0).click();
+    Product product = new Product(mDriver);
+    if(!(product.getProductStatusText().getText().equalsIgnoreCase("In Stock")
+            || product.getProductStatusText().getText().equalsIgnoreCase("Out of Stock")
+            || product.getProductStatusText().getText().equalsIgnoreCase("Limited Stock"))) {
+        Assert.fail("Availability status not working");
+    }
+}
+
+
 }

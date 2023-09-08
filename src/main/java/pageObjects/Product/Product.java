@@ -52,6 +52,10 @@ public class Product extends BasePage {
     @FindBy(xpath = "//button[@title='Close (Esc)']/following-sibling::*//img")
     private WebElement imageInFigure;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216826']//span[contains(@class,'badge')]")
+    private WebElement productStatusText;
+
     public void clickOnAddToCart() {
         addToCartButton.click();
     }
