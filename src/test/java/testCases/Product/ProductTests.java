@@ -1,17 +1,14 @@
 package testCases.Product;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import testCases.BaseTest.BaseTest;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ProductTests extends BaseTest {
@@ -70,6 +67,15 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
             || product.getProductStatusText().getText().equalsIgnoreCase("Limited Stock"))) {
         Assert.fail("Availability status not working");
     }
+}
+
+@Test
+    public void testDefaultQuantityOfProduct(){
+    Search search = landingPage.searchProductWithName("mac");
+    search.getSearchResultWebElements().get(0).click();
+    Product product = new Product(mDriver);
+    System.out.println("tetss "+product.getPurchasingQuantity().isDisplayed());
+
 }
 
 

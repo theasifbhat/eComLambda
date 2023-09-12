@@ -56,6 +56,18 @@ public class Product extends BasePage {
     @FindBy(xpath = "//div[@id='entry_216826']//span[contains(@class,'badge')]")
     private WebElement productStatusText;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216841']//input[@name='quantity']")
+    private WebElement purchasingQuantity;
+
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216841']//input[@name='quantity']/following-sibling::div/button")
+    private WebElement plusButtonForQuantity;
+
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216841']//input[@name='quantity']/preceding-sibling::div/button")
+    private WebElement minusButtonForQuantity;
+
     public void clickOnAddToCart() {
         addToCartButton.click();
     }

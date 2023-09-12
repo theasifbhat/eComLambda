@@ -60,7 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ProductTests.testAvailabilityStatusIsDisplayed">
+  <component name="RunManager" selected="TestNG.ProductTests.testDefatultQuantityOfProduct">
     <configuration name="ProductTests.testAvailabilityStatusIsDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -115,6 +115,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductTests.testDefatultQuantityOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Product" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
+      <option name="METHOD_NAME" value="testDefatultQuantityOfProduct" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductTests.testEscIsWorkingOnThumbnailPreview" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -133,31 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTests.testMainThumbnailClick" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testMainThumbnailClick" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductTests.testDefatultQuantityOfProduct" />
         <item itemvalue="TestNG.ProductTests.testAvailabilityStatusIsDisplayed" />
         <item itemvalue="TestNG.ProductTests.testEscIsWorkingOnThumbnailPreview" />
         <item itemvalue="TestNG.ProductTests.testClickingOnNextButtonWhenThumbnailIsPreviewed" />
         <item itemvalue="TestNG.ProductTests.testClickingOnNextAndPreviousButtonWhenThumbnailIsPreviewed" />
-        <item itemvalue="TestNG.ProductTests.testMainThumbnailClick" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +215,8 @@
       <workItem from="1693751723406" duration="3898000" />
       <workItem from="1693840055424" duration="7777000" />
       <workItem from="1693997831978" duration="6972000" />
-      <workItem from="1694190767860" duration="1410000" />
+      <workItem from="1694190767860" duration="1543000" />
+      <workItem from="1694525426211" duration="2438000" />
     </task>
     <servers />
   </component>
