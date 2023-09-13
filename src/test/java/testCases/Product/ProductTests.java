@@ -77,5 +77,23 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
     Assert.assertEquals(product.getCurrentQuantity(), "1");
 }
 
+@Test
+    public void testDefaultQuantityAsTwo(){
+    Product product = landingPage.clickOnFirstSuggestionWithText("Apple Cinema 30");
+
+    if (product.isElementDisplayed(product.getMinimumQuantityDiv())){
+        Assert.assertEquals(product.getCurrentQuantity(),"2");
+        product.getMinusButtonForQuantity().click();
+        Assert.assertEquals(product.getCurrentQuantity(),"2");
+    }
+
+    else {
+        Assert.fail("the entered product in this test case does not have 2 as minimum quantity");
+    }
+
+
+
+}
+
 
 }

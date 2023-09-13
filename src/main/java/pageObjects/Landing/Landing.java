@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.BasePage.BasePage;
 import pageObjects.Login.Login;
+import pageObjects.Product.Product;
 import pageObjects.Register.Register;
 import pageObjects.Search.Search;
 import utilities.GlobalFunctions;
@@ -78,6 +79,13 @@ public class Landing extends BasePage {
             if (!item.getText().toLowerCase().contains(text.toLowerCase())){
                 Assert.fail("Result with mismatching name found.");
             }});
+    }
+    public Product clickOnFirstSuggestionWithText(String text){
+        searchBar.clear();
+        searchBar.sendKeys(text);
+        waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
+        searchSuggestionResults.get(0).click();
+        return new Product(mDriver);
     }
 
 }

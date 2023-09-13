@@ -69,6 +69,10 @@ public class Product extends BasePage {
     @FindBy(xpath = "//div[@id='entry_216841']//input[@name='quantity']/preceding-sibling::div/button")
     private WebElement minusButtonForQuantity;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216852']/div")
+    private WebElement minimumQuantityDiv;
+
     public void clickOnAddToCart() {
         addToCartButton.click();
     }
