@@ -74,8 +74,7 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
     Search search = landingPage.searchProductWithName("mac");
     search.getSearchResultWebElements().get(0).click();
     Product product = new Product(mDriver);
-    System.out.println("tetss "+product.getPurchasingQuantity().isDisplayed());
-
+    Assert.assertEquals(product.getCurrentQuantity(), "1");
 }
 
 

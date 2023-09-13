@@ -7,7 +7,6 @@
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ProductTests.testDefatultQuantityOfProduct">
+  <component name="RunManager" selected="TestNG.ProductTests.testDefaultQuantityOfProduct">
     <configuration name="ProductTests.testAvailabilityStatusIsDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -72,24 +71,6 @@
       <option name="PACKAGE_NAME" value="testCases.Product" />
       <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
       <option name="METHOD_NAME" value="testAvailabilityStatusIsDisplayed" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductTests.testClickingOnNextAndPreviousButtonWhenThumbnailIsPreviewed" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testClickingOnNextAndPreviousButtonWhenThumbnailIsPreviewed" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -133,6 +114,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductTests.testDefaultQuantityOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Product" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
+      <option name="METHOD_NAME" value="testDefaultQuantityOfProduct" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductTests.testEscIsWorkingOnThumbnailPreview" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -153,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductTests.testDefaultQuantityOfProduct" />
         <item itemvalue="TestNG.ProductTests.testDefatultQuantityOfProduct" />
         <item itemvalue="TestNG.ProductTests.testAvailabilityStatusIsDisplayed" />
         <item itemvalue="TestNG.ProductTests.testEscIsWorkingOnThumbnailPreview" />
         <item itemvalue="TestNG.ProductTests.testClickingOnNextButtonWhenThumbnailIsPreviewed" />
-        <item itemvalue="TestNG.ProductTests.testClickingOnNextAndPreviousButtonWhenThumbnailIsPreviewed" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +215,9 @@
       <workItem from="1693840055424" duration="7777000" />
       <workItem from="1693997831978" duration="6972000" />
       <workItem from="1694190767860" duration="1543000" />
-      <workItem from="1694525426211" duration="2438000" />
+      <workItem from="1694525426211" duration="3113000" />
+      <workItem from="1694595700125" duration="49000" />
+      <workItem from="1694601497516" duration="1016000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 package pageObjects.Product;
 
 import lombok.Getter;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -74,6 +75,11 @@ public class Product extends BasePage {
 
     public void clickOnThumbnail(){
         mainImage.click();
+    }
+
+    public String getCurrentQuantity(){String locator = "//div[@id='entry_216841']//input[@name='quantity']";
+        JavascriptExecutor js = (JavascriptExecutor) mDriver;
+        return (String) js.executeScript(" return arguments[0].value;",purchasingQuantity);
     }
 
 
