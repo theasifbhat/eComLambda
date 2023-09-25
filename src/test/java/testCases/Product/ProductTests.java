@@ -90,10 +90,18 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
     else {
         Assert.fail("the entered product in this test case does not have 2 as minimum quantity");
     }
-
-
-
 }
+
+    @Test
+    public void testAddToCartProduct(){
+        Search search = landingPage.searchProductWithName("mac");
+        search.getSearchResultWebElements().get(0).click();
+        Product product = new Product(mDriver);
+        product.getAddToCartButton().click();
+        product.waitTillElementIsVisibleUsingWebElement(product.getSuccessMessage());
+        String filteredString = product.getSuccessMessage().getText().replaceAll("[\\t\\n\\r]+"," ");
+        Assert.assertEquals(filteredString,"Success: You have added iMac to your shopping cart !");
+    }
 
 
 }
