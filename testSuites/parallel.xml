@@ -36,4 +36,16 @@
         </classes>
     </test>
 
+    <test name="product">
+        <classes>
+            <class name="testCases.Product.ProductTests"/>
+        </classes>
+    </test>
+
+    <test name="wishlist">
+        <classes>
+            <class name="testCases.Wishlist.WishlistTests"/>
+        </classes>
+    </test>
+
 </suite>

@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Wishlist/Wishlist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/parallel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/parallel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/testNg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/testNg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.WishlistTests.checkAddToCartFromWishlist">
+  <component name="RunManager" selected="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml">
     <configuration name="ProductTests.testAddToCartProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -78,24 +75,6 @@
       <option name="PACKAGE_NAME" value="testCases.Product" />
       <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
       <option name="METHOD_NAME" value="testAddToCartProduct" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductTests.testDefatultQuantityOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testDefatultQuantityOfProduct" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -121,17 +100,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTests.testDefaultQuantityOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTests.testSearchFunctionality" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
+          <option name="PATTERN" value="testCases.Search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testDefaultQuantityOfProduct" />
+      <option name="PACKAGE_NAME" value="testCases.Search" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
+      <option name="METHOD_NAME" value="testSearchFunctionality" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -157,13 +136,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="/Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/testNg.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
+        <item itemvalue="TestNG.SearchTests.testSearchFunctionality" />
         <item itemvalue="TestNG.WishlistTests.checkAddToCartFromWishlist" />
         <item itemvalue="TestNG.ProductTests.testAddToCartProduct" />
         <item itemvalue="TestNG.ProductTests.testDefaultQuantityAsTwo" />
-        <item itemvalue="TestNG.ProductTests.testDefaultQuantityOfProduct" />
-        <item itemvalue="TestNG.ProductTests.testDefatultQuantityOfProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +218,7 @@
       <workItem from="1694684694961" duration="685000" />
       <workItem from="1695636322977" duration="38000" />
       <workItem from="1695636731968" duration="3587000" />
-      <workItem from="1695703847439" duration="15934000" />
+      <workItem from="1695703847439" duration="18965000" />
     </task>
     <servers />
   </component>

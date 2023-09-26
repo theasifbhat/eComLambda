@@ -11,6 +11,8 @@
             <class name="testCases.Register.RegisterTests"/>
             <class name="testCases.Login.LoginTests"/>
             <class name="testCases.Logout.LogoutTests"/>
+            <class name="testCases.Wishlist.WishlistTests"/>
+            <class name="testCases.Product.ProductTests"/>
         </classes>
     </test>
 </suite>

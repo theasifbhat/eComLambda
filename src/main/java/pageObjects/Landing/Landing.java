@@ -24,32 +24,13 @@ public class Landing extends BasePage {
         PageFactory.initElements(mDriver,this);
     }
 
-    @FindBy(xpath = "(//div[@id='search']//input[@name='search'])[1]")
-    WebElement searchBar;
-
-    @FindBy(xpath = "//div[@class='search-wrapper']//button[@class='type-text']")
-    WebElement submitButton;
-    @FindBy(xpath = "//div[@class='dropdown']//h4[@class='title']")
-    List<WebElement> searchSuggestionResults;
     @FindBy(xpath = "//div[@class='product-thumb']")
     List<WebElement> searchResults;
 
     @FindBy(xpath = "//a[contains(@href, 'register')]")
     WebElement registerLink;
 
-    public Search searchProductWithName(String text){
-        searchBar.clear();
-        searchBar.sendKeys(text);
-        submitButton.click();
-        return new Search(mDriver);
 
-    }
-
-    public Search clickOnSearchButtonWithoutText(){
-        searchBar.clear();
-        submitButton.click();
-        return new Search(mDriver);
-    }
     public void goToLandingPage() {
         mDriver.get("https://"+
                 GlobalFunctions.getPropertyFromPropertyFile("url"));   //hardcoded https because updateproperties messes up with the url
@@ -71,21 +52,6 @@ public class Landing extends BasePage {
     }
 
 
-    public void getSearchSuggestionWithName(String text){
-        searchBar.clear();
-        searchBar.sendKeys(text);
-        waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
-        searchSuggestionResults.forEach(item->{
-            if (!item.getText().toLowerCase().contains(text.toLowerCase())){
-                Assert.fail("Result with mismatching name found.");
-            }});
-    }
-    public Product clickOnFirstSuggestionWithText(String text){
-        searchBar.clear();
-        searchBar.sendKeys(text);
-        waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
-        searchSuggestionResults.get(0).click();
-        return new Product(mDriver);
-    }
+
 
 }

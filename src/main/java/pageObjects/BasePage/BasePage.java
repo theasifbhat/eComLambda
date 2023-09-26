@@ -10,10 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import pageObjects.Landing.Landing;
 import pageObjects.Login.Login;
 import pageObjects.Logout.Logout;
 import pageObjects.MyAccount.MyAccount;
+import pageObjects.Product.Product;
+import pageObjects.Search.Search;
 import pageObjects.Wishlist.Wishlist;
 import utilities.GlobalFunctions;
 
@@ -31,6 +34,18 @@ public class BasePage{
 //topbar elements
 @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
 private WebElement websiteLogo;
+
+@Getter
+@FindBy(xpath = "(//div[@id='search']//input[@name='search'])[1]")
+WebElement searchBar;
+
+@Getter
+@FindBy(xpath = "//div[@class='search-wrapper']//button[@class='type-text']")
+WebElement submitButton;
+
+@Getter
+@FindBy(xpath = "//div[@class='dropdown']//h4[@class='title']")
+List<WebElement> searchSuggestionResults;
 
 
 @FindBy(css = "div[id='entry_217824']> a")
@@ -163,6 +178,38 @@ public Logout clickOnLogoutFromMyAccountDropdown(){
 //    actions.moveToElement(topBarWishlistIcon).click().build().perform();
         topBarWishlistIcon.click();
     return new Wishlist(mDriver);
+    }
+
+    public Search searchProductWithName(String text){
+        searchBar.clear();
+        searchBar.sendKeys(text);
+        submitButton.click();
+        return new Search(mDriver);
+
+    }
+
+    public Search clickOnSearchButtonWithoutText(){
+        searchBar.clear();
+        submitButton.click();
+        return new Search(mDriver);
+    }
+
+    public void getSearchSuggestionWithName(String text){
+        searchBar.clear();
+        searchBar.sendKeys(text);
+        waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
+        searchSuggestionResults.forEach(item->{
+            if (!item.getText().toLowerCase().contains(text.toLowerCase())){
+                Assert.fail("Result with mismatching name found.");
+            }});
+    }
+
+    public Product clickOnFirstSuggestionWithText(String text){
+        searchBar.clear();
+        searchBar.sendKeys(text);
+        waitTillElementsAreVisibleUsingWebElement(searchSuggestionResults);
+        searchSuggestionResults.get(0).click();
+        return new Product(mDriver);
     }
 
 
