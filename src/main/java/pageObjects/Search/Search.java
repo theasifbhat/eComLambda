@@ -2,6 +2,7 @@ package pageObjects.Search;
 
 
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,6 +65,15 @@ public class Search extends BasePage {
     @FindBy(id = "input-sort-212464")
     private WebElement sortSelect;
 
+
+
+    //locators for actions on result items
+
+    By addToCartAction = By.xpath("parent::div/following-sibling::div/button[@title='Add to Cart']");
+    By addToWishlistAction = By.xpath("parent::div/following-sibling::div/button[@title='Add to Wish List']");
+
+
+
     //setter methods
 
     public void setSearchBoxText(String text){
@@ -125,6 +135,18 @@ public class Search extends BasePage {
         return searchResultItemsContainers.get(0).getAttribute("class");
     }
 
+
+    //getting actions on search item results (like addToCart,addToWishlist )
+
+
+    //takes the argument of a search result from search page
+    public WebElement getAddToCartActionButton(WebElement searchResultItem){
+        return searchResultItem.findElement(addToCartAction);
+    }
+
+    public WebElement getAddToWishlistActionButton(WebElement searchResultItem){
+        return searchResultItem.findElement(addToWishlistAction);
+    }
 
 
 }

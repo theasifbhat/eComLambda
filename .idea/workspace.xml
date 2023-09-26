@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Wishlist/Wishlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/MyAccount/MyAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Login/LoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +38,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -56,11 +62,11 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;selenium.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ProductTests.testAddToCartProduct">
+  <component name="RunManager" selected="TestNG.WishlistTests.checkAddToCartFromWishlist">
     <configuration name="ProductTests.testAddToCartProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -72,24 +78,6 @@
       <option name="PACKAGE_NAME" value="testCases.Product" />
       <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
       <option name="METHOD_NAME" value="testAddToCartProduct" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductTests.testAvailabilityStatusIsDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testAvailabilityStatusIsDisplayed" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -151,13 +139,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WishlistTests.checkAddToCartFromWishlist" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Wishlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Wishlist" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Wishlist.WishlistTests" />
+      <option name="METHOD_NAME" value="checkAddToCartFromWishlist" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.WishlistTests.checkAddToCartFromWishlist" />
         <item itemvalue="TestNG.ProductTests.testAddToCartProduct" />
         <item itemvalue="TestNG.ProductTests.testDefaultQuantityAsTwo" />
         <item itemvalue="TestNG.ProductTests.testDefaultQuantityOfProduct" />
         <item itemvalue="TestNG.ProductTests.testDefatultQuantityOfProduct" />
-        <item itemvalue="TestNG.ProductTests.testAvailabilityStatusIsDisplayed" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +228,8 @@
       <workItem from="1694681984191" duration="511000" />
       <workItem from="1694684694961" duration="685000" />
       <workItem from="1695636322977" duration="38000" />
-      <workItem from="1695636731968" duration="2200000" />
+      <workItem from="1695636731968" duration="3587000" />
+      <workItem from="1695703847439" duration="15934000" />
     </task>
     <servers />
   </component>

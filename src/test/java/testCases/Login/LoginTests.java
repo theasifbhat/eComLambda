@@ -68,7 +68,7 @@ public void testLoginWithIncorrectPassword(){
     changePassword.clickOnContinueButton();
     account = new MyAccount(mDriver);
 
-    if (!account.getTopMessage().equals("Success: Your password has been successfully updated.")){
+    if (!account.getTopbarMessage().equals("Success: Your password has been successfully updated.")){
         Assert.fail("Failed to update password");
     }
     else {

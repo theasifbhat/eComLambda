@@ -2,10 +2,12 @@ package pageObjects.MyAccount;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
 import pageObjects.ChangePassword.ChangePassword;
+import pageObjects.Wishlist.Wishlist;
 
 public class MyAccount extends BasePage {
     WebDriver mDriver;
@@ -26,8 +28,9 @@ public class MyAccount extends BasePage {
 
     @FindBy(css = "a[href='https://ecommerce-playground.lambdatest.io/index.php?route=account/password']")
     WebElement changePasswordOption;
-    @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'alert')]")
-    private WebElement topMessage;
+
+    @FindBy(xpath = "//i[@class='fas fa-heart fa-fw mr-1']/parent::a")
+    private WebElement myWishlist;
 
     public String getMyAccountLabelText(){
         return myAccountLabel.getText();
@@ -40,14 +43,16 @@ public class MyAccount extends BasePage {
     public String getMyAffiliateAccountLabelText(){
         return  myAffiliateAccountLabel.getText();
     }
-    public String getTopMessage() {
-        waitTillElementIsVisibleUsingWebElement(topMessage);
-        return topMessage.getText();
-    }
 
     public ChangePassword clickOnChangePasswordOption(){
         changePasswordOption.click();
         return new ChangePassword(mDriver);
+    }
+
+    public Wishlist clickOnMyWishlist(){
+        new Actions(mDriver).moveToElement(myWishlist).click().build().perform();
+      //  myWishlist.click();
+        return new Wishlist(mDriver);
     }
 
 

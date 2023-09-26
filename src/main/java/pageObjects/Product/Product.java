@@ -73,9 +73,6 @@ public class Product extends BasePage {
     @FindBy(xpath = "//div[@id='entry_216852']/div")
     private WebElement minimumQuantityDiv;
 
-    @Getter
-    @FindBy(xpath = "//div[@class='toast-body']//p")
-    private WebElement successMessage;
     public void clickOnThumbnail(){
         mainImage.click();
     }
@@ -86,7 +83,6 @@ public class Product extends BasePage {
     }
 
 
-
-
-
+    public void clickOnAddToWishlist() {
+    }
 }

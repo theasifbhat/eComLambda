@@ -94,13 +94,12 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
 
     @Test
     public void testAddToCartProduct(){
-        Search search = landingPage.searchProductWithName("mac");
+        Search search = landingPage.searchProductWithName("iMac");
         search.getSearchResultWebElements().get(0).click();
         Product product = new Product(mDriver);
         product.getAddToCartButton().click();
-        product.waitTillElementIsVisibleUsingWebElement(product.getSuccessMessage());
-        String filteredString = product.getSuccessMessage().getText().replaceAll("[\\t\\n\\r]+"," ");
-        Assert.assertEquals(filteredString,"Success: You have added iMac to your shopping cart !");
+        product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
+        Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
     }
 
 

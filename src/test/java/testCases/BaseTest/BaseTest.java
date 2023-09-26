@@ -49,7 +49,8 @@ public class BaseTest {
         landingPage.goToLandingPage();
     }
 
-   @AfterMethod
+
+    //@AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {

@@ -14,8 +14,8 @@ import pageObjects.Landing.Landing;
 import pageObjects.Login.Login;
 import pageObjects.Logout.Logout;
 import pageObjects.MyAccount.MyAccount;
+import pageObjects.Wishlist.Wishlist;
 import utilities.GlobalFunctions;
-import utilities.GlobalFunctions.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -28,15 +28,26 @@ public class BasePage{
 
  //common webelements
 
-    //topbar elements
- @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
- private WebElement websiteLogo;
+//topbar elements
+@FindBy(css = "div[id='entry_217821']> figure[class='figure']")
+private WebElement websiteLogo;
 
- @Getter            //getter
+
+@FindBy(css = "div[id='entry_217824']> a")
+private WebElement topBarWishlistIcon;
+
+@Getter
+@FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'alert')]")
+private WebElement topMessageContainer;
+
+
+ // menu bar
+
+ @Getter
  @FindBy(xpath = "//ul[@class='navbar-nav horizontal']//i/parent::a")
  private WebElement myAccountNav;
 
- @Getter            //getter
+ @Getter
  @FindBy(xpath = "//a[contains(@href, 'login')]")
  private WebElement loginLink;
 
@@ -57,10 +68,17 @@ public class BasePage{
  @Getter
  private List<WebElement> optionsUnderMyAccount;
 
+ //toast
+ @Getter
+ @FindBy(xpath = "//div[@class='toast-body']//p")
+ private WebElement toastMessageContainer;
+
+@FindBy(xpath = "//div[@id='notification-box-top']//button")
+ private WebElement toastCloseButton;
 
 public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
-     webDriverWait = new WebDriverWait(mDriver, Duration.ofSeconds(7));
+     webDriverWait = new WebDriverWait(mDriver, Duration.ofSeconds(13));
      PageFactory.initElements(mDriver,this);
      GlobalFunctions.waitForPageLoad(mDriver);
  }
@@ -124,7 +142,10 @@ waitTillElementIsVisibleUsingWebElement(myAccountLink);
 myAccountLink.click();
 return new MyAccount(mDriver);      //will return Login if account if no account
 }
-//topbar events
+
+
+
+//menubar events
 
 public Logout clickOnLogoutFromMyAccountDropdown(){
     Actions actions = new Actions(mDriver);
@@ -134,6 +155,33 @@ public Logout clickOnLogoutFromMyAccountDropdown(){
     return new Logout(mDriver);
 }
 
+
+//topbar events
+
+    public Wishlist clickOnTopBarWishlistIcon(){
+//    Actions actions = new Actions(mDriver);
+//    actions.moveToElement(topBarWishlistIcon).click().build().perform();
+        topBarWishlistIcon.click();
+    return new Wishlist(mDriver);
+    }
+
+
+//toast messages
+
+ public String getSanitizedToastText(){
+    waitTillElementIsVisibleUsingWebElement(toastMessageContainer);
+    return toastMessageContainer.getText().replaceAll("[\\t\\n\\r]+"," ");
+ }
+
+//topbar messages
+public String getTopbarMessage(){
+    waitTillElementIsVisibleUsingWebElement(topMessageContainer);
+    return toastMessageContainer.getText();
+}
+
+public void closeToastBox(){
+    toastCloseButton.click();
+}
 
 
 
