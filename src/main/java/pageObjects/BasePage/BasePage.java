@@ -223,7 +223,7 @@ public Logout clickOnLogoutFromMyAccountDropdown(){
 //topbar messages
 public String getTopbarMessage(){
     waitTillElementIsVisibleUsingWebElement(topMessageContainer);
-    return toastMessageContainer.getText();
+    return topMessageContainer.getText();
 }
 
 public void closeToastBox(){

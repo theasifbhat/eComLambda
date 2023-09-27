@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GlobalData.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Wishlist/WishlistTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSuites/parallel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/parallel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSuites/testNg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/testNg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,35 +62,34 @@
   }
 }</component>
   <component name="RunManager" selected="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml">
-    <configuration name="ProductTests.testAddToCartProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
+          <option name="PATTERN" value="testCases.Login.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testAddToCartProduct" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PACKAGE_NAME" value="testCases.Login" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTests.testDefaultQuantityAsTwo" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTests.testLoginAfterChangingPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
+          <option name="PATTERN" value="testCases.Login.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testDefaultQuantityAsTwo" />
+      <option name="PACKAGE_NAME" value="testCases.Login" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
+      <option name="METHOD_NAME" value="testLoginAfterChangingPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -149,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
+        <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.LoginTests.testLoginAfterChangingPassword" />
         <item itemvalue="TestNG.SearchTests.testSearchFunctionality" />
         <item itemvalue="TestNG.WishlistTests.checkAddToCartFromWishlist" />
-        <item itemvalue="TestNG.ProductTests.testAddToCartProduct" />
-        <item itemvalue="TestNG.ProductTests.testDefaultQuantityAsTwo" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +215,9 @@
       <workItem from="1694684694961" duration="685000" />
       <workItem from="1695636322977" duration="38000" />
       <workItem from="1695636731968" duration="3587000" />
-      <workItem from="1695703847439" duration="18965000" />
+      <workItem from="1695703847439" duration="19273000" />
+      <workItem from="1695745746346" duration="10000" />
+      <workItem from="1695826207260" duration="1048000" />
     </task>
     <servers />
   </component>
