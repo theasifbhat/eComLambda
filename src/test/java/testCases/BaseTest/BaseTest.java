@@ -50,7 +50,7 @@ public class BaseTest {
     }
 
 
-   @AfterMethod
+   //@AfterMethod
     public void tearDown() {
         try {
             if (mDriver != null) {

@@ -53,7 +53,7 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
         new Actions(mDriver).sendKeys(Keys.ESCAPE).build().perform();
         product.waitTillElementIsInvisible(product.getWrappingElementOfProductSnapshot());
 
-        Assert.assertTrue(product.isElementDisplayed(product.getWrappingElementOfProductSnapshot()));
+        Assert.assertFalse(product.isElementDisplayed(product.getWrappingElementOfProductSnapshot()));
 }
 
 
