@@ -1,6 +1,7 @@
 package testCases.Search;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -22,7 +23,6 @@ public class SearchTests extends BaseTest {
                Assert.fail("Search functionality not working properly");
            }
         });
-
     }
 
 
@@ -41,7 +41,6 @@ public class SearchTests extends BaseTest {
         if (search.getSearchResultNames().isEmpty()){  //rep !
             Assert.fail("search without text not working");
         }
-
     }
 
     @Test
@@ -195,6 +194,17 @@ public class SearchTests extends BaseTest {
         if (!convertedPriceFromFrontEnd.equals(convertedPriceFromString)){
             Assert.fail("sorting price from decreasing order not working");
         }
+    }
+
+    @Test
+    public void testAddToCartFromSearchResults(){
+        Search search = landingPage.searchProductWithName("mac");
+        Actions actions = new Actions(mDriver);
+        WebElement selectedSearchItem = search.getSearchResultWebElements().get(0);
+        actions.moveToElement(selectedSearchItem).build().perform();
+        search.waitTillElementIsVisibleUsingWebElement(search.getAddToWishlistActionButton(selectedSearchItem));
+        search.getAddToCartActionButton(selectedSearchItem).click();
+        Assert.assertEquals(search.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
     }
 
 
