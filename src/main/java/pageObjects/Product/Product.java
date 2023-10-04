@@ -1,6 +1,7 @@
 package pageObjects.Product;
 
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,6 +73,32 @@ public class Product extends BasePage {
     @Getter
     @FindBy(xpath = "//div[@id='entry_216852']/div")
     private WebElement minimumQuantityDiv;
+
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216861']//div[@class='row']/div")
+    private List<WebElement> relatedProducts;
+
+
+    // locators for action bar elements in related product items
+
+    //locators for actions on result items
+
+    By addToCartAction = By.xpath("div//button[@title='Add to Cart']");
+    By addToWishlistAction = By.xpath("div[@class='product-action']/button[@title='Add to Wish List']");
+
+    //takes the argument of a search result from search page
+    public WebElement getAddToCartActionButton(WebElement searchResultItem){
+        waitTillElementIsVisibleUsingWebElement(searchResultItem.findElement(addToCartAction));
+        return searchResultItem.findElement(addToCartAction);
+    }
+
+    public WebElement getAddToWishlistActionButton(WebElement searchResultItem){
+        waitTillElementIsVisibleUsingWebElement(searchResultItem.findElement(addToWishlistAction));
+        return searchResultItem.findElement(addToWishlistAction);
+    }
+
+
+    //main methods
 
     public void clickOnThumbnail(){
         mainImage.click();

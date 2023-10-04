@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Search/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.SearchTests.testAddToCartFromSearchResults">
+  <component name="RunManager" selected="TestNG.ProductTests.testAddToCartFromRelatedProducts">
     <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -77,17 +77,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.testLoginAfterChangingPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductTests.testAddToCartFromRelatedProducts" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Login.*" />
+          <option name="PATTERN" value="testCases.Product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Login" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
-      <option name="METHOD_NAME" value="testLoginAfterChangingPassword" />
+      <option name="PACKAGE_NAME" value="testCases.Product" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
+      <option name="METHOD_NAME" value="testAddToCartFromRelatedProducts" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductTests.testAddToCartFromRelatedProducts" />
         <item itemvalue="TestNG.SearchTests.testAddToCartFromSearchResults" />
         <item itemvalue="TestNG.ProductTests.testEscIsWorkingOnThumbnailPreview" />
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
         <item itemvalue="TestNG.LoginTests" />
-        <item itemvalue="TestNG.LoginTests.testLoginAfterChangingPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +217,7 @@
       <workItem from="1695745746346" duration="10000" />
       <workItem from="1695826207260" duration="2463000" />
       <workItem from="1696328975531" duration="483000" />
-      <workItem from="1696416482835" duration="1528000" />
+      <workItem from="1696416482835" duration="6437000" />
     </task>
     <servers />
   </component>
@@ -271,6 +271,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java</url>
+          <line>107</line>
+          <properties class="testCases.Product.ProductTests" method="testAddToCartFromRelatedProducts">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

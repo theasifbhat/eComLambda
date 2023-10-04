@@ -1,5 +1,6 @@
 package testCases.Product;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -100,6 +101,21 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
         product.getAddToCartButton().click();
         product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
         Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+    }
+
+
+    @Test
+    public void testAddToCartFromRelatedProducts(){
+        Search search = landingPage.searchProductWithName("iMac");
+        search.getSearchResultWebElements().get(0).click();
+        Product product = new Product(mDriver);
+        product.waitTillElementsAreVisibleUsingWebElement(product.getRelatedProducts());
+        Actions actions = new Actions(mDriver);
+        actions.moveToElement(product.getRelatedProducts().get(0)).build().perform();
+        product.getAddToCartActionButton(product.getRelatedProducts().get(0)).click();
+//        product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
+//        Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+
     }
 
 
