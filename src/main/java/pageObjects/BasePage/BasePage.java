@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -122,6 +123,14 @@ public void waitTillElementIsPresent(By locator){
 
 public void waitTillElementIsInvisible(WebElement webElement){
     webDriverWait.until(ExpectedConditions.invisibilityOfAllElements(webElement));
+}
+
+public void waitTillElementIsEnabledUsingWebElement(WebElement webElement){
+    webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+}
+
+public void waitTillElementIsDisabledUsingWebElement(WebElement webElement){
+    webDriverWait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(webElement)));
 }
 
 public boolean isElementDisplayed(WebElement webElement){

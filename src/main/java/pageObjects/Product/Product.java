@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import pageObjects.BasePage.BasePage;
 
 import java.util.List;
@@ -78,6 +79,13 @@ public class Product extends BasePage {
     @FindBy(xpath = "//div[@id='entry_216861']//div[@class='row']/div")
     private List<WebElement> relatedProducts;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_212964']/button")
+    private WebElement addToCartButtonInRelatedPopup;
+
+    @Getter
+    @FindBy(xpath = "//select[@id='input-option231-212958']")
+    private WebElement selectElementInRelatedPopup;
 
     // locators for action bar elements in related product items
 
@@ -104,7 +112,8 @@ public class Product extends BasePage {
         mainImage.click();
     }
 
-    public String getCurrentQuantity(){String locator = "//div[@id='entry_216841']//input[@name='quantity']";
+    public String getCurrentQuantity(){
+        //String locator = "//div[@id='entry_216841']//input[@name='quantity']";
         JavascriptExecutor js = (JavascriptExecutor) mDriver;
         return (String) js.executeScript(" return arguments[0].value;",purchasingQuantity);
     }
@@ -112,4 +121,20 @@ public class Product extends BasePage {
 
     public void clickOnAddToWishlist() {
     }
+
+
+    //methods for popup while adding element to cart in related items
+
+    public void clickOnAddToCartInRelatedItemPopup(){
+        waitTillElementIsVisibleUsingWebElement(addToCartButtonInRelatedPopup);
+        if (selectElementInRelatedPopup.isDisplayed()){
+            Select select = new Select(selectElementInRelatedPopup);
+            select.selectByIndex(1);
+            waitTillElementIsDisabledUsingWebElement(addToCartButtonInRelatedPopup);
+        }
+        waitTillElementIsEnabledUsingWebElement(addToCartButtonInRelatedPopup);
+        addToCartButtonInRelatedPopup.click();
+    }
+
+
 }

@@ -113,8 +113,9 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
         Actions actions = new Actions(mDriver);
         actions.moveToElement(product.getRelatedProducts().get(0)).build().perform();
         product.getAddToCartActionButton(product.getRelatedProducts().get(0)).click();
-//        product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
-//        Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+        product.clickOnAddToCartInRelatedItemPopup();
+        product.waitTillElementIsInvisible(product.getToastMessageContainer());
+        Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added Apple Cinema 30\" to your shopping cart !");
 
     }
 
