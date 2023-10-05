@@ -130,7 +130,6 @@ public class Product extends BasePage {
         if (selectElementInRelatedPopup.isDisplayed()){
             Select select = new Select(selectElementInRelatedPopup);
             select.selectByIndex(1);
-            waitTillElementIsDisabledUsingWebElement(addToCartButtonInRelatedPopup);
         }
         waitTillElementIsEnabledUsingWebElement(addToCartButtonInRelatedPopup);
         addToCartButtonInRelatedPopup.click();
