@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/CompareProducts/CompareProducts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/CompareProducts/CompareProductsTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Search/Search.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,18 +61,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ProductTests.testAddToCartFromRelatedProducts">
-    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CompareProductsTests.testAddToCartFromComparePage">
+    <configuration name="CompareProductsTests.testAddToCartFromComparePage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Login.*" />
+          <option name="PATTERN" value="testCases.CompareProducts.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Login" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Login.LoginTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="testCases.CompareProducts" />
+      <option name="MAIN_CLASS_NAME" value="testCases.CompareProducts.CompareProductsTests" />
+      <option name="METHOD_NAME" value="testAddToCartFromComparePage" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -144,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CompareProductsTests.testAddToCartFromComparePage" />
         <item itemvalue="TestNG.ProductTests.testAddToCartFromRelatedProducts" />
         <item itemvalue="TestNG.SearchTests.testAddToCartFromSearchResults" />
         <item itemvalue="TestNG.ProductTests.testEscIsWorkingOnThumbnailPreview" />
         <item itemvalue="TestNG./Users/asifbhat/selenumProjects/eComLambda/testSuites/testNg.xml" />
-        <item itemvalue="TestNG.LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +221,8 @@
       <workItem from="1695826207260" duration="2463000" />
       <workItem from="1696328975531" duration="483000" />
       <workItem from="1696416482835" duration="6782000" />
-      <workItem from="1696512642717" duration="2862000" />
+      <workItem from="1696512642717" duration="3092000" />
+      <workItem from="1697450895500" duration="4991000" />
     </task>
     <servers />
   </component>
@@ -275,13 +278,13 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/testCases/Product/ProductTests.java</url>
-          <line>107</line>
-          <properties class="testCases.Product.ProductTests" method="testAddToCartFromRelatedProducts">
+          <url>file://$PROJECT_DIR$/src/test/java/testCases/CompareProducts/CompareProductsTests.java</url>
+          <line>15</line>
+          <properties class="testCases.CompareProducts.CompareProductsTests" method="testAddToCartFromComparePage">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

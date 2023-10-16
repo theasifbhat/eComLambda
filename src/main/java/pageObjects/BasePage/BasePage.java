@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import pageObjects.CompareProducts.CompareProducts;
 import pageObjects.Landing.Landing;
 import pageObjects.Login.Login;
 import pageObjects.Logout.Logout;
@@ -22,6 +23,7 @@ import pageObjects.Wishlist.Wishlist;
 import utilities.GlobalFunctions;
 
 import java.time.Duration;
+import java.util.Comparator;
 import java.util.List;
 
 public class BasePage{
@@ -84,6 +86,8 @@ private WebElement topMessageContainer;
  @Getter
  private List<WebElement> optionsUnderMyAccount;
 
+
+
  //toast
  @Getter
  @FindBy(xpath = "//div[@class='toast-body']//p")
@@ -91,6 +95,15 @@ private WebElement topMessageContainer;
 
 @FindBy(xpath = "//div[@id='notification-box-top']//button")
  private WebElement toastCloseButton;
+
+@FindBy(xpath = "//div[@class='toast-body']/a")
+private WebElement toastGoToCompareScreenButton;
+
+
+
+
+
+
 
 public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
@@ -237,6 +250,13 @@ public String getTopbarMessage(){
 
 public void closeToastBox(){
     toastCloseButton.click();
+}
+
+
+public CompareProducts clickOnGoToCompareScreenButtonOnToast(){
+        waitTillElementIsVisibleUsingWebElement(toastGoToCompareScreenButton);
+        toastGoToCompareScreenButton.click();
+        return new CompareProducts(mDriver);
 }
 
 

@@ -72,6 +72,8 @@ public class Search extends BasePage {
     By addToCartAction = By.xpath("parent::div/following-sibling::div/button[@title='Add to Cart']");
     By addToWishlistAction = By.xpath("parent::div/following-sibling::div/button[@title='Add to Wish List']");
 
+    By addToCompareAction =  By.xpath("parent::div/following-sibling::div/button[@title='Compare this Product']");
+
 
 
     //setter methods
@@ -146,6 +148,10 @@ public class Search extends BasePage {
 
     public WebElement getAddToWishlistActionButton(WebElement searchResultItem){
         return searchResultItem.findElement(addToWishlistAction);
+    }
+
+    public WebElement getAddToCompareActionButton(WebElement searchResultItem){
+        return searchResultItem.findElement(addToCompareAction);
     }
 
 
