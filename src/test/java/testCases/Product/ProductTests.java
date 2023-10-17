@@ -5,8 +5,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
+import pageObjects.Wishlist.Wishlist;
 import testCases.BaseTest.BaseTest;
 
 import java.util.ArrayList;
@@ -116,6 +118,27 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
         product.clickOnAddToCartInRelatedItemPopup();
         product.waitTillElementIsInvisible(product.getToastMessageContainer());
         Assert.assertEquals(product.getSanitizedToastText(),"Success: You have added Apple Cinema 30\" to your shopping cart !");
+
+    }
+
+
+    @Test
+    public void testAddToWishlistInProductPage(){
+        landingPage.login();
+        Search search = landingPage.searchProductWithName("iMac");
+        search.getSearchResultWebElements().get(0).click();
+        Product product = new Product(mDriver);
+        product.waitTillElementIsVisibleUsingWebElement(product.getAddToWishlistButton());
+        product.getAddToWishlistButton().click();
+        SoftAssert sf = new SoftAssert();
+        sf.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your wish list !");
+        product.closeToastBox();
+        Wishlist wishlist = product.clickOnTopBarWishlistIcon();
+        wishlist.getWishlistItems().forEach(item->{
+            wishlist.getWishlistItemRemoveButton(item).click();
+        });
+        sf.assertEquals(wishlist.getWishlistItems().size(), 0, "Wishlist Item not deleted");
+        sf.assertAll();
 
     }
 

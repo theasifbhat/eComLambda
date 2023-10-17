@@ -196,8 +196,8 @@ public Logout clickOnLogoutFromMyAccountDropdown(){
 //topbar events
 
     public Wishlist clickOnTopBarWishlistIcon(){
-//    Actions actions = new Actions(mDriver);
-//    actions.moveToElement(topBarWishlistIcon).click().build().perform();
+  //  Actions actions = new Actions(mDriver);
+  //  actions.moveToElement(topBarWishlistIcon).click().build().perform();
         topBarWishlistIcon.click();
     return new Wishlist(mDriver);
     }

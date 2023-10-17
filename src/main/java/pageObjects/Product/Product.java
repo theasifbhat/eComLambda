@@ -87,6 +87,10 @@ public class Product extends BasePage {
     @FindBy(xpath = "//select[@id='input-option231-212958']")
     private WebElement selectElementInRelatedPopup;
 
+    @Getter
+    @FindBy(xpath = "//div[@id='image-gallery-216811']//button[@title='Add to Wish List']")
+    private WebElement addToWishlistButton;
+
     // locators for action bar elements in related product items
 
     //locators for actions on result items
