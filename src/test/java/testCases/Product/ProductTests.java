@@ -143,6 +143,21 @@ public void testClickingOnNextButtonWhenThumbnailIsPreviewed(){
     }
 
 
+    @Test
+    public void testClickingOnShoppingCartAfterAddToCartProduct(){
+        Search search = landingPage.searchProductWithName("iMac");
+        search.getSearchResultWebElements().get(0).click();
+        Product product = new Product(mDriver);
+        product.getAddToCartButton().click();
+        product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
+        SoftAssert sf = new SoftAssert();
+        sf.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+        product.getShoppingCartLinkInToast().click();
+        sf.assertEquals(mDriver.getCurrentUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart");
+        sf.assertAll();
+    }
+
+
 
 
 }

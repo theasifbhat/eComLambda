@@ -19,6 +19,7 @@ import pageObjects.Logout.Logout;
 import pageObjects.MyAccount.MyAccount;
 import pageObjects.Product.Product;
 import pageObjects.Search.Search;
+import pageObjects.ShoppingCart.ShoppingCart;
 import pageObjects.Wishlist.Wishlist;
 import utilities.GlobalFunctions;
 
@@ -99,7 +100,9 @@ private WebElement topMessageContainer;
 @FindBy(xpath = "//div[@class='toast-body']/a")
 private WebElement toastGoToCompareScreenButton;
 
-
+@Getter
+@FindBy(xpath = "(//div[@class='toast-body']//p//a)[2]")
+private WebElement shoppingCartLinkInToast;
 
 
 
@@ -257,6 +260,12 @@ public CompareProducts clickOnGoToCompareScreenButtonOnToast(){
         waitTillElementIsVisibleUsingWebElement(toastGoToCompareScreenButton);
         toastGoToCompareScreenButton.click();
         return new CompareProducts(mDriver);
+}
+
+public ShoppingCart clickOnGoToShoppingCartInToast(){
+    waitTillElementIsVisibleUsingWebElement(shoppingCartLinkInToast);
+    shoppingCartLinkInToast.click();
+    return new ShoppingCart(mDriver);
 }
 
 
