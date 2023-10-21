@@ -1,6 +1,7 @@
 package pageObjects.BasePage;
 
 import lombok.Getter;
+import org.checkerframework.checker.signature.qual.FieldDescriptor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +33,6 @@ public class BasePage{
  WebDriver mDriver;
  WebDriverWait webDriverWait;
 
-
  //common webelements
 
 //topbar elements
@@ -58,6 +58,12 @@ private WebElement topBarWishlistIcon;
 @Getter
 @FindBy(xpath = "//nav[@aria-label='breadcrumb']/following-sibling::div[contains(@class,'alert')]")
 private WebElement topMessageContainer;
+
+@Getter
+@FindBy(xpath = "(//div[@class='cart-icon'])[1]")
+private WebElement myShoppingCartInTopbar;
+
+
 
 
  // menu bar
@@ -106,6 +112,23 @@ private WebElement shoppingCartLinkInToast;
 
 
 
+//shopping cart fragment
+
+@Getter
+@FindBy(id = "cart-total-drawer")
+private WebElement shoppingCartSideFragmentContainer;
+
+@Getter
+@FindBy(xpath = "//div[@id='entry_217850']//a")
+private WebElement editCartButtonInShoppingCartSideFragment;
+
+@Getter
+@FindBy(xpath = "//div[@id='entry_217851']//a")
+private WebElement checkoutButtonInShoppingCartSideFragment;
+
+@Getter
+@FindBy(xpath = "//div[@id='entry_217847']/p")
+private WebElement emptyCartLabelInShoppingCartSideFragment;
 
 
 public BasePage(WebDriver mDriver){
