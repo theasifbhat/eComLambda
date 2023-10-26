@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.Search.Search;
+import pageObjects.ShoppingCart.ShoppingCart;
 import testCases.BaseTest.BaseTest;
 import utilities.GlobalFunctions;
 
@@ -32,6 +33,23 @@ public class ShoppingCartTests extends BaseTest {
     search.getEditCartButtonInShoppingCartSideFragment().click();
     GlobalFunctions.waitForPageLoad(mDriver);
     Assert.assertEquals(mDriver.getCurrentUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart");
+}
+
+
+@Test
+    public void testUpdateShoppingCartQuantity(){
+    Search search = landingPage.searchProductWithName("imac");
+    WebElement item =  search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(item).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(item));
+    search.getAddToCartActionButton(item).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.updateQuantityOfShippingItems(3);
+    Assert.assertEquals(shoppingCart.getTopbarMessage(),"Success: You have modified your shopping cart!\n" +
+            "×");
 }
 
 
