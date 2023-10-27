@@ -22,23 +22,48 @@ public class ShoppingCart extends BasePage {
 
 
     @FindBy(xpath = "//div[@class='table-responsive']/table/tbody/tr")
+    @Getter
     private List<WebElement> shoppingCartItems;
+
+
+
+    //total table
+
+    @FindBy(xpath = "(//div[@class='col-md-4']/table/tbody//tr)[4]//strong")
+    @Getter
+    private WebElement finalTotal;
 
 
     //locators for line items in shopping cart items
 
-    By quantityField = By.xpath("td//input");
-    By updateQuantityButton = By.xpath("td//button[@type='submit']");
+    public By quantityField = By.xpath("td//input");
+    public By updateQuantityButton = By.xpath("td//button[@type='submit']");
+
+    By cartItemPhotoElement = By.xpath("/td[@class='text-center']//a");
+
+    By cartItemName = By.xpath("td[@class='text-left']//a");
+
+    By modelName = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[1]");
+
+    public By cartItemUnitPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[3]");
+
+    By cartItemTotalPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[4]");
 
 
     public void updateQuantityOfShippingItems(int quantity){
         shoppingCartItems.forEach(item->{
-
         item.findElement(quantityField).clear();
         item.findElement(quantityField).sendKeys(""+quantity);
         item.findElement(updateQuantityButton).click();
         GlobalFunctions.waitForPageLoad(mDriver);
         });
+    }
+
+    public void compareQuantityUnitPrice(String quantity, String unitPrice){
+        for (WebElement shoppingCartItem : shoppingCartItems) {
+            shoppingCartItem.findElement(quantityField).getText().equals(quantity);
+            shoppingCartItem.findElement(cartItemUnitPrice).getText().equals(unitPrice);
+        }
     }
 
 

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import pageObjects.Product.Product;
 import pageObjects.Search.Search;
 import pageObjects.ShoppingCart.ShoppingCart;
 import testCases.BaseTest.BaseTest;
@@ -50,6 +52,38 @@ public class ShoppingCartTests extends BaseTest {
     shoppingCart.updateQuantityOfShippingItems(3);
     Assert.assertEquals(shoppingCart.getTopbarMessage(),"Success: You have modified your shopping cart!\n" +
             "×");
+}
+
+
+@Test
+    public void testImageNameModelQuantityUnitPriceTotal(){
+    Search search = landingPage.searchProductWithName("iMac");
+    search.getSearchResultWebElements().get(0).click();
+    Product product = new Product(mDriver);
+    String unitPrice = product.getUnitPrice().getText();
+    String quantity = product.getCurrentQuantity();
+
+//other params
+    product.getAddToCartButton().click();
+    product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
+    SoftAssert sf = new SoftAssert();
+    sf.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+    product.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+
+    shoppingCart.getShoppingCartItems().forEach(item->{
+       // sf.assertEquals(item.findElement(shoppingCart.quantityField).getAttribute("innerHTML"),quantity);
+        System.out.println("quantity from shopping cart:"+item.findElement(shoppingCart.quantityField).getAttribute("innerHTML"));
+        System.out.println("quantity from product page:"+quantity);
+
+        System.out.println("unitprice from shopping cart:"+item.findElement(shoppingCart.cartItemUnitPrice).getText());
+        System.out.println("unitprice from product page:"+unitPrice);
+
+        sf.assertEquals(item.findElement(shoppingCart.cartItemUnitPrice).getText(),unitPrice);
+    });
+
+    sf.assertAll();
+
 }
 
 

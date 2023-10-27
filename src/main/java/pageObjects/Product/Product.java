@@ -91,6 +91,10 @@ public class Product extends BasePage {
     @FindBy(xpath = "//div[@id='image-gallery-216811']//button[@title='Add to Wish List']")
     private WebElement addToWishlistButton;
 
+    @FindBy(xpath = "//h3[@data-update='price']")
+    @Getter
+    private WebElement unitPrice;
+
     // locators for action bar elements in related product items
 
     //locators for actions on result items

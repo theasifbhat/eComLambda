@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/ShoppingCart/ShoppingCartTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/ShoppingCart/ShoppingCartTests.java" afterDir="false" />
     </list>
@@ -59,25 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ShoppingCartTests.testUpdateShoppingCartQuantity">
-    <configuration name="ProductTests.testClickingOnShoppingCartAfterAddToCartProduct" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Product" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Product.ProductTests" />
-      <option name="METHOD_NAME" value="testClickingOnShoppingCartAfterAddToCartProduct" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.ShoppingCartTests.testImageNameModelQuantityUnitPriceTotal">
     <configuration name="SearchTests.testAddToCartFromSearchResults" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -132,6 +115,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShoppingCartTests.testImageNameModelQuantityUnitPriceTotal" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.ShoppingCart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.ShoppingCart" />
+      <option name="MAIN_CLASS_NAME" value="testCases.ShoppingCart.ShoppingCartTests" />
+      <option name="METHOD_NAME" value="testImageNameModelQuantityUnitPriceTotal" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShoppingCartTests.testUpdateShoppingCartQuantity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -152,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ShoppingCartTests.testImageNameModelQuantityUnitPriceTotal" />
         <item itemvalue="TestNG.ShoppingCartTests.testUpdateShoppingCartQuantity" />
         <item itemvalue="TestNG.ShoppingCartTests.testEditCartButtonOnMyShoppingCartFragment" />
         <item itemvalue="TestNG.SearchTests.testAddToCartFromSearchResults" />
         <item itemvalue="TestNG.ShoppingCartTests.testAddToCartWithEmptyItems" />
-        <item itemvalue="TestNG.ProductTests.testClickingOnShoppingCartAfterAddToCartProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +234,8 @@
       <workItem from="1697711212782" duration="2352000" />
       <workItem from="1697893996406" duration="5357000" />
       <workItem from="1698312499165" duration="803000" />
-      <workItem from="1698322625296" duration="1886000" />
+      <workItem from="1698322625296" duration="2443000" />
+      <workItem from="1698400179794" duration="5548000" />
     </task>
     <servers />
   </component>
