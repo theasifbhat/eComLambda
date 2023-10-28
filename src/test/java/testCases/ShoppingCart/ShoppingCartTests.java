@@ -1,5 +1,6 @@
 package testCases.ShoppingCart;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -10,6 +11,8 @@ import pageObjects.Search.Search;
 import pageObjects.ShoppingCart.ShoppingCart;
 import testCases.BaseTest.BaseTest;
 import utilities.GlobalFunctions;
+
+import java.util.Arrays;
 
 public class ShoppingCartTests extends BaseTest {
 
@@ -57,31 +60,39 @@ public class ShoppingCartTests extends BaseTest {
 
 @Test
     public void testImageNameModelQuantityUnitPriceTotal(){
-    Search search = landingPage.searchProductWithName("iMac");
+    String testProductName = "iPhone";
+    Search search = landingPage.searchProductWithName(testProductName);
     search.getSearchResultWebElements().get(0).click();
     Product product = new Product(mDriver);
-    String unitPrice = product.getUnitPrice().getText();
-    String quantity = product.getCurrentQuantity();
 
-//other params
+    String image = product.getMainImage().getAttribute("src");
+    String productName = product.getProductTitle().getText();
+    String productModel = product.getProductModel().getText();
+    String quantity = product.getCurrentQuantity();
+    String unitPrice = product.getUnitPrice().getText();
+
     product.getAddToCartButton().click();
     product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
     SoftAssert sf = new SoftAssert();
-    sf.assertEquals(product.getSanitizedToastText(),"Success: You have added iMac to your shopping cart !");
+    sf.assertEquals(product.getSanitizedToastText(),"Success: You have added "+testProductName+" to your shopping cart !");
     product.getShoppingCartLinkInToast().click();
     ShoppingCart shoppingCart = new ShoppingCart(mDriver);
 
     shoppingCart.getShoppingCartItems().forEach(item->{
-       // sf.assertEquals(item.findElement(shoppingCart.quantityField).getAttribute("innerHTML"),quantity);
-        System.out.println("quantity from shopping cart:"+item.findElement(shoppingCart.quantityField).getAttribute("innerHTML"));
-        System.out.println("quantity from product page:"+quantity);
+    String sanitizedCartImage = GlobalFunctions.sanitizeImageUrl(item.findElement(shoppingCart.getCartItemPhotoElement()).getAttribute("src"));
+    String sanitizedProductImage = GlobalFunctions.sanitizeImageUrl(image);
+    JavascriptExecutor js = (JavascriptExecutor) mDriver;
+    String qua = (String) js.executeScript("return arguments[0].value",item.findElement(shoppingCart.getQuantityField()));
 
-        System.out.println("unitprice from shopping cart:"+item.findElement(shoppingCart.cartItemUnitPrice).getText());
-        System.out.println("unitprice from product page:"+unitPrice);
+    sf.assertEquals(sanitizedProductImage,sanitizedCartImage);
+    sf.assertEquals(item.findElement(shoppingCart.getCartItemName()).getText(),productName);
+    sf.assertEquals(item.findElement(shoppingCart.getModelName()).getText(),productModel);
+    sf.assertEquals(qua,quantity);
+    sf.assertEquals(item.findElement(shoppingCart.getCartItemUnitPrice()).getText(),unitPrice);
+    sf.assertEquals(item.findElement(shoppingCart.getCartItemTotalPrice()).getText(),unitPrice);
 
-        sf.assertEquals(item.findElement(shoppingCart.cartItemUnitPrice).getText(),unitPrice);
     });
-
+    sf.assertEquals(shoppingCart.getFinalTotal().getText(),unitPrice);  //for time being
     sf.assertAll();
 
 }

@@ -88,4 +88,12 @@ public static List<Float> convertListOfStringOfPricesToListOfFloat(List<String> 
     return convertedPriceFromString;
 }
 
+public static String sanitizeImageUrl(String unSanitizedImageUrl){
+    String[] first = unSanitizedImageUrl.split("product/");
+    //0 index contains url till megastore-2/
+    //1 contains filename.webp
+    String secondPart = first[1].split("-")[0];
+    return first[0]+"product/"+secondPart;
+}
+
 }

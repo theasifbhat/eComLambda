@@ -36,6 +36,14 @@ public class Product extends BasePage {
     private WebElement mainImage;
 
     @Getter
+    @FindBy(xpath = "//div[@id='entry_216816']/h1")
+    private WebElement productTitle;
+
+    @Getter
+    @FindBy(xpath = "//div[@id='entry_216820']//span[2]")
+    private WebElement productModel;
+
+    @Getter
     @FindBy(xpath = "//div[@style='width: 20%']//div[contains(@id,'swiper-wrapper')]//a")
     private List<WebElement> smallImages;
 
@@ -121,7 +129,6 @@ public class Product extends BasePage {
     }
 
     public String getCurrentQuantity(){
-        //String locator = "//div[@id='entry_216841']//input[@name='quantity']";
         JavascriptExecutor js = (JavascriptExecutor) mDriver;
         return (String) js.executeScript(" return arguments[0].value;",purchasingQuantity);
     }

@@ -36,18 +36,20 @@ public class ShoppingCart extends BasePage {
 
     //locators for line items in shopping cart items
 
-    public By quantityField = By.xpath("td//input");
-    public By updateQuantityButton = By.xpath("td//button[@type='submit']");
 
-    By cartItemPhotoElement = By.xpath("/td[@class='text-center']//a");
+    @Getter By updateQuantityButton = By.xpath("td//button[@type='submit']");
 
-    By cartItemName = By.xpath("td[@class='text-left']//a");
+    @Getter By quantityField = By.xpath("td//input");
+    @Getter By cartItemPhotoElement = By.xpath("td[@class='text-center']//img");
 
-    By modelName = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[1]");
+    @Getter By cartItemName = By.xpath("td[@class='text-left']//a");
 
-    public By cartItemUnitPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[3]");
+    @Getter By modelName = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[1]");
 
-    By cartItemTotalPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[4]");
+    @Getter By cartItemUnitPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[3]");
+
+    @Getter By cartItemTotalPrice = By.xpath("td[@class='text-left']//a/parent::td/following-sibling::td[4]");
+
 
 
     public void updateQuantityOfShippingItems(int quantity){
