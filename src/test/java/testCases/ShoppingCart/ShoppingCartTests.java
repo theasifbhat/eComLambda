@@ -98,4 +98,27 @@ public class ShoppingCartTests extends BaseTest {
 }
 
 
+@Test
+    public void testRemoveButtonOnShoppingCartItem(){
+    String testProductName = "iPhone";
+    Search search = landingPage.searchProductWithName(testProductName);
+    search.getSearchResultWebElements().get(0).click();
+    Product product = new Product(mDriver);
+
+    product.getAddToCartButton().click();
+    product.waitTillElementIsVisibleUsingWebElement(product.getToastMessageContainer());
+    SoftAssert sf = new SoftAssert();
+    sf.assertEquals(product.getSanitizedToastText(),"Success: You have added "+testProductName+" to your shopping cart !");
+    product.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+
+    shoppingCart.getShoppingCartItems().forEach(item->{
+        item.findElement(shoppingCart.getRemoveItemButton()).click();
+    });
+    GlobalFunctions.waitForPageLoad(mDriver);
+    Assert.assertEquals(shoppingCart.getEmptyShoppingCartLabel().getText(),"Your shopping cart is empty!");
+
+}
+
+
 }

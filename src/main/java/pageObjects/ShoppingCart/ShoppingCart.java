@@ -25,6 +25,10 @@ public class ShoppingCart extends BasePage {
     @Getter
     private List<WebElement> shoppingCartItems;
 
+    @FindBy(xpath = "//div[@id='content']//p")
+    @Getter
+    private WebElement emptyShoppingCartLabel;
+
 
 
     //total table
@@ -34,10 +38,12 @@ public class ShoppingCart extends BasePage {
     private WebElement finalTotal;
 
 
+
     //locators for line items in shopping cart items
 
 
     @Getter By updateQuantityButton = By.xpath("td//button[@type='submit']");
+    @Getter By removeItemButton = By.xpath("td//button[@type='button']");
 
     @Getter By quantityField = By.xpath("td//input");
     @Getter By cartItemPhotoElement = By.xpath("td[@class='text-center']//img");
