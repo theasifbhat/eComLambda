@@ -29,6 +29,12 @@ public class ShoppingCart extends BasePage {
     @Getter
     private WebElement emptyShoppingCartLabel;
 
+    @FindBy(xpath = "//div[@class='buttons d-flex']/a[1]")
+    @Getter private WebElement continueShoppingButton;
+
+    @FindBy(xpath = "/div[@class='buttons d-flex']/a[2]")
+    @Getter private WebElement checkoutButton;
+
 
 
     //total table

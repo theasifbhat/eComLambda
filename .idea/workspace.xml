@@ -59,18 +59,18 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ShoppingCartTests.testRemoveButtonOnShoppingCartItem">
-    <configuration name="SearchTests.testAddToCartFromSearchResults" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ShoppingCartTests.testContinueButton">
+    <configuration name="ShoppingCartTests.testContinueButton" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testCases.Search.*" />
+          <option name="PATTERN" value="testCases.ShoppingCart.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testCases.Search" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Search.SearchTests" />
-      <option name="METHOD_NAME" value="testAddToCartFromSearchResults" />
+      <option name="PACKAGE_NAME" value="testCases.ShoppingCart" />
+      <option name="MAIN_CLASS_NAME" value="testCases.ShoppingCart.ShoppingCartTests" />
+      <option name="METHOD_NAME" value="testContinueButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ShoppingCartTests.testContinueButton" />
         <item itemvalue="TestNG.ShoppingCartTests.testRemoveButtonOnShoppingCartItem" />
         <item itemvalue="TestNG.ShoppingCartTests.testImageNameModelQuantityUnitPriceTotal" />
         <item itemvalue="TestNG.ShoppingCartTests.testUpdateShoppingCartQuantity" />
         <item itemvalue="TestNG.ShoppingCartTests.testEditCartButtonOnMyShoppingCartFragment" />
-        <item itemvalue="TestNG.SearchTests.testAddToCartFromSearchResults" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +235,7 @@
       <workItem from="1698312499165" duration="803000" />
       <workItem from="1698322625296" duration="2443000" />
       <workItem from="1698400179794" duration="14396000" />
-      <workItem from="1698647908752" duration="716000" />
+      <workItem from="1698647908752" duration="1895000" />
     </task>
     <servers />
   </component>
