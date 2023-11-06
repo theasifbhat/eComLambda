@@ -37,7 +37,7 @@ public class BasePage{
 
 //topbar elements
 @FindBy(css = "div[id='entry_217821']> figure[class='figure']")
-private WebElement websiteLogo;
+@Getter private WebElement websiteLogo;
 
 @Getter
 @FindBy(xpath = "(//div[@id='search']//input[@name='search'])[1]")

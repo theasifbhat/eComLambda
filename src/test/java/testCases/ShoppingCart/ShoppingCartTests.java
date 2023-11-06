@@ -141,4 +141,19 @@ public class ShoppingCartTests extends BaseTest {
 }
 
 
+@Test
+    public void testHomepageLogo(){
+    landingPage.getMyShoppingCartInTopbar().click();
+    landingPage.waitTillElementIsVisibleUsingWebElement(landingPage.getEditCartButtonInShoppingCartSideFragment());
+    landingPage.getEditCartButtonInShoppingCartSideFragment().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    SoftAssert sf = new SoftAssert();
+    sf.assertEquals(mDriver.getCurrentUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart");
+    landingPage.getWebsiteLogo().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    sf.assertEquals(mDriver.getCurrentUrl(),"https://ecommerce-playground.lambdatest.io/index.php?route=common/home");
+    sf.assertAll();
+}
+
+
 }

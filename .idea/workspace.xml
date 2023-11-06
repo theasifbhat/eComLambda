@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Landing/Landing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Landing/LandingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Landing/LandingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/ShoppingCart/ShoppingCartTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/ShoppingCart/ShoppingCartTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,24 +46,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.LandingTests.testHeroImages.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.ShoppingCartTests.testContinueButton">
+}]]></component>
+  <component name="RunManager" selected="TestNG.LandingTests.testHeroImages">
+    <configuration name="LandingTests.testHeroImages" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Landing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Landing" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Landing.LandingTests" />
+      <option name="METHOD_NAME" value="testHeroImages" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShoppingCartTests.testContinueButton" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -78,7 +102,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShoppingCartTests.testEditCartButtonOnMyShoppingCartFragment" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ShoppingCartTests.testHomepageLogo" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +112,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="testCases.ShoppingCart" />
       <option name="MAIN_CLASS_NAME" value="testCases.ShoppingCart.ShoppingCartTests" />
-      <option name="METHOD_NAME" value="testEditCartButtonOnMyShoppingCartFragment" />
+      <option name="METHOD_NAME" value="testHomepageLogo" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -132,31 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShoppingCartTests.testUpdateShoppingCartQuantity" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.ShoppingCart.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.ShoppingCart" />
-      <option name="MAIN_CLASS_NAME" value="testCases.ShoppingCart.ShoppingCartTests" />
-      <option name="METHOD_NAME" value="testUpdateShoppingCartQuantity" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LandingTests.testHeroImages" />
+        <item itemvalue="TestNG.ShoppingCartTests.testHomepageLogo" />
         <item itemvalue="TestNG.ShoppingCartTests.testContinueButton" />
         <item itemvalue="TestNG.ShoppingCartTests.testRemoveButtonOnShoppingCartItem" />
         <item itemvalue="TestNG.ShoppingCartTests.testImageNameModelQuantityUnitPriceTotal" />
-        <item itemvalue="TestNG.ShoppingCartTests.testUpdateShoppingCartQuantity" />
-        <item itemvalue="TestNG.ShoppingCartTests.testEditCartButtonOnMyShoppingCartFragment" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +241,14 @@
       <workItem from="1698312499165" duration="803000" />
       <workItem from="1698322625296" duration="2443000" />
       <workItem from="1698400179794" duration="14396000" />
-      <workItem from="1698647908752" duration="1895000" />
+      <workItem from="1698647908752" duration="2530000" />
+      <workItem from="1698844388298" duration="2399000" />
+      <workItem from="1699266298963" duration="7000" />
+      <workItem from="1699266970987" duration="42000" />
+      <workItem from="1699267029533" duration="33000" />
+      <workItem from="1699267094539" duration="11000" />
+      <workItem from="1699267402300" duration="5000" />
+      <workItem from="1699267445015" duration="4168000" />
     </task>
     <servers />
   </component>

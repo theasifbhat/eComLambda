@@ -1,5 +1,7 @@
 package pageObjects.Landing;
 
+import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -25,10 +27,36 @@ public class Landing extends BasePage {
     }
 
     @FindBy(xpath = "//div[@class='product-thumb']")
-    List<WebElement> searchResults;
+    private List<WebElement> searchResults;
 
     @FindBy(xpath = "//a[contains(@href, 'register')]")
-    WebElement registerLink;
+    private WebElement registerLink;
+
+
+    //hero section
+
+    @FindBy(css = ".carousel-inner")
+    @Getter
+    private WebElement heroSectionContainer;
+
+    @FindBy(xpath = "//div[@id='mz-carousel-213240']//div[@class='carousel-inner']/div")
+    @Getter
+    private List<WebElement> heroItems;   // there are 3 items and this can be indexed accordingly
+
+    //hero locators
+
+    By linkOfHeroItem = By.xpath("a[@class='d-block w-100']");
+    By imageSrc = By.xpath("a/img");
+
+    //hero actions
+
+    public WebElement getImageElementFromHeroItem(WebElement heroItem){
+        return heroItem.findElement(imageSrc);
+    }
+
+    public String getOnClickedLinkOfHeroElement(WebElement heroItem){
+        return heroItem.findElement(linkOfHeroItem).getAttribute("href");
+    }
 
 
     public void goToLandingPage() {
