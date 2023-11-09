@@ -15,6 +15,7 @@ import pageObjects.Register.Register;
 import pageObjects.Search.Search;
 import utilities.GlobalFunctions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Landing extends BasePage {
@@ -43,6 +44,14 @@ public class Landing extends BasePage {
     @Getter
     private List<WebElement> heroItems;   // there are 3 items and this can be indexed accordingly
 
+    @FindBy(xpath = "//div[@id='entry_213240']//a[@class='carousel-control-prev']")
+    @Getter
+    private WebElement previousButtonHero;
+
+    @FindBy(xpath = "//div[@id='entry_213240']//a[@class='carousel-control-next']")
+    @Getter
+    private WebElement nextButtonHero;
+
     //hero locators
 
     By linkOfHeroItem = By.xpath("a[@class='d-block w-100']");
@@ -58,6 +67,18 @@ public class Landing extends BasePage {
         return heroItem.findElement(linkOfHeroItem).getAttribute("href");
     }
 
+    public List<String> getHeroImageUrls(){
+        List<String> imageUrls = new ArrayList<>();
+        imageUrls.add("https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner-1600x500.webp");
+        imageUrls.add("https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner2-1600x500.webp");
+        imageUrls.add("https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner3-1600x500.webp");
+        return imageUrls;
+    }
+
+
+
+
+    ///hero ends
 
     public void goToLandingPage() {
         mDriver.get("https://"+
