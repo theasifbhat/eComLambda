@@ -61,6 +61,18 @@ public void testHeroImages(){
 }
 
 
+@Test
+    public void testAutomaticTransitionOnHeroSection() throws InterruptedException{
+
+    for (WebElement item : landingPage.getHeroItems()){
+        if(!item.getAttribute("class").contains("active")){
+            Assert.fail("Automatic transition is not working properly");
+        }
+        Thread.sleep(5800);
+    }
+}
+
+
 
 
 
