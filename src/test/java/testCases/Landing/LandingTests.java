@@ -5,7 +5,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pageObjects.Search.Search;
+import pageObjects.ShoppingCart.ShoppingCart;
 import testCases.BaseTest.BaseTest;
+import utilities.GlobalFunctions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +76,33 @@ public void testHeroImages(){
 }
 
 
+@Test
+    public void testCheckoutWithNoProductInCart(){
+    landingPage.getMyShoppingCartInTopbar().click();
+    landingPage.waitTillElementIsVisibleUsingWebElement(landingPage.getCheckoutButtonInShoppingCartSideFragment());
+    landingPage.getCheckoutButtonInShoppingCartSideFragment().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    Assert.assertEquals(mDriver.getCurrentUrl(), "https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart");
+}
+
+@Test
+    public void testCheckoutWithProductInCart(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem=search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getCheckOutButtonInToast());
+    search.getCheckOutButtonInToast().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    Assert.assertEquals(mDriver.getCurrentUrl(), "https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout");
+
+
+
+
+}
 
 
 

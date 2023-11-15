@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Landing/LandingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Landing/LandingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +47,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
+    "TestNG.LandingTests.testCheckoutWithNoProductInCart.executor": "Run",
+    "TestNG.LandingTests.testCheckoutWithProductInCart.executor": "Run",
     "TestNG.LandingTests.testHeroImages.executor": "Run",
     "TestNG.LandingTests.testNextButton.executor": "Run",
     "TestNG.LandingTests.testPrevButton.executor": "Run",
@@ -58,12 +61,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.LandingTests.testAutomaticTransitionOnHeroSection">
+  <component name="RunManager" selected="TestNG.LandingTests.testCheckoutWithProductInCart">
     <configuration name="LandingTests.testAutomaticTransitionOnHeroSection" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -82,7 +88,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LandingTests.testHeroImages" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LandingTests.testCheckoutWithNoProductInCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
@@ -92,7 +98,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="testCases.Landing" />
       <option name="MAIN_CLASS_NAME" value="testCases.Landing.LandingTests" />
-      <option name="METHOD_NAME" value="testHeroImages" />
+      <option name="METHOD_NAME" value="testCheckoutWithNoProductInCart" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandingTests.testCheckoutWithProductInCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Landing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Landing" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Landing.LandingTests" />
+      <option name="METHOD_NAME" value="testCheckoutWithProductInCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -136,31 +160,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShoppingCartTests.testHomepageLogo" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.ShoppingCart.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.ShoppingCart" />
-      <option name="MAIN_CLASS_NAME" value="testCases.ShoppingCart.ShoppingCartTests" />
-      <option name="METHOD_NAME" value="testHomepageLogo" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LandingTests.testCheckoutWithProductInCart" />
+        <item itemvalue="TestNG.LandingTests.testCheckoutWithNoProductInCart" />
         <item itemvalue="TestNG.LandingTests.testAutomaticTransitionOnHeroSection" />
         <item itemvalue="TestNG.LandingTests.testPrevButton" />
         <item itemvalue="TestNG.LandingTests.testNextButton" />
-        <item itemvalue="TestNG.LandingTests.testHeroImages" />
-        <item itemvalue="TestNG.ShoppingCartTests.testHomepageLogo" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +256,8 @@
       <workItem from="1699531704310" duration="6341000" />
       <workItem from="1699630180926" duration="611000" />
       <workItem from="1699630802745" duration="658000" />
-      <workItem from="1699891465508" duration="460000" />
+      <workItem from="1699891465508" duration="625000" />
+      <workItem from="1700046374037" duration="2605000" />
     </task>
     <servers />
   </component>

@@ -110,6 +110,14 @@ private WebElement toastGoToCompareScreenButton;
 @FindBy(xpath = "(//div[@class='toast-body']//p//a)[2]")
 private WebElement shoppingCartLinkInToast;
 
+@Getter
+@FindBy(xpath="//div[@class='form-row']//a[contains(@class,'primary')]")
+private WebElement viewcartButtonInToast;
+
+@Getter
+@FindBy(xpath="//div[@class='form-row']//a[contains(@class,'secondary')]")
+private WebElement checkOutButtonInToast;
+
 
 
 //shopping cart fragment
