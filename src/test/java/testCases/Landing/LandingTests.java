@@ -98,12 +98,26 @@ public void testHeroImages(){
     search.getCheckOutButtonInToast().click();
     GlobalFunctions.waitForPageLoad(mDriver);
     Assert.assertEquals(mDriver.getCurrentUrl(), "https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout");
-
-
-
-
 }
 
+
+@Test
+    public void testCheckoutWithCartHeaderIcon(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem=search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getToastMessageContainer());
+    search.closeToastBox();
+    landingPage.getMyShoppingCartInTopbar().click();
+    landingPage.waitTillElementIsVisibleUsingWebElement(landingPage.getCheckoutButtonInShoppingCartSideFragment());
+    landingPage.getCheckoutButtonInShoppingCartSideFragment().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    Assert.assertEquals(mDriver.getCurrentUrl(), "https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout");
+}
 
 
 }
