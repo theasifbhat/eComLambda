@@ -32,7 +32,7 @@ public class ShoppingCart extends BasePage {
     @FindBy(xpath = "//div[@class='buttons d-flex']/a[1]")
     @Getter private WebElement continueShoppingButton;
 
-    @FindBy(xpath = "/div[@class='buttons d-flex']/a[2]")
+    @FindBy(xpath = "//div[@class='buttons d-flex']/a[2]")
     @Getter private WebElement checkoutButton;
 
 

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="" />
+    <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ShoppingCart/ShoppingCart.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,34 +43,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LandingTests.testCheckoutWithNoProductInCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LandingTests.testCheckoutWithProductInCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LandingTests.testHeroImages.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LandingTests.testNextButton.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LandingTests.testPrevButton.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor": "Run",
+    "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
+    "TestNG.LandingTests.testCheckoutWithCartHeaderIcon.executor": "Run",
+    "TestNG.LandingTests.testCheckoutWithNoProductInCart.executor": "Run",
+    "TestNG.LandingTests.testCheckoutWithProductInCart.executor": "Run",
+    "TestNG.LandingTests.testHeroImages.executor": "Run",
+    "TestNG.LandingTests.testNextButton.executor": "Run",
+    "TestNG.LandingTests.testPrevButton.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.LandingTests.testCheckoutWithCartHeaderIcon">
+}]]></component>
+  <component name="RunManager" selected="TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage">
+    <configuration name="CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Checkout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Checkout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
+      <option name="METHOD_NAME" value="testCheckoutWithSignedInUserInCheckoutPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LandingTests.testAutomaticTransitionOnHeroSection" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -138,38 +163,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LandingTests.testPrevButton" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Landing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Landing" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Landing.LandingTests" />
-      <option name="METHOD_NAME" value="testPrevButton" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage" />
         <item itemvalue="TestNG.LandingTests.testCheckoutWithCartHeaderIcon" />
         <item itemvalue="TestNG.LandingTests.testCheckoutWithProductInCart" />
         <item itemvalue="TestNG.LandingTests.testCheckoutWithNoProductInCart" />
         <item itemvalue="TestNG.LandingTests.testAutomaticTransitionOnHeroSection" />
-        <item itemvalue="TestNG.LandingTests.testPrevButton" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="Selenium" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://ecommerce-playground.lambdatest.io/index.php?route=common/home" />
+    <option name="lastUrl" value="https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -254,6 +261,10 @@
       <workItem from="1699630802745" duration="658000" />
       <workItem from="1699891465508" duration="625000" />
       <workItem from="1700046374037" duration="2916000" />
+      <workItem from="1700212062294" duration="4087000" />
+      <workItem from="1700726979830" duration="450000" />
+      <workItem from="1700727440273" duration="8000" />
+      <workItem from="1700727843609" duration="4941000" />
     </task>
     <servers />
   </component>

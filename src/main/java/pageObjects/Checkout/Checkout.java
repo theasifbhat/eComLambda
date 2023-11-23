@@ -86,6 +86,15 @@ public class Checkout extends BasePage {
 @FindBy(id = "input-shipping-address-same")
 @Getter private WebElement shippingAddressSameCheckbox;
 
+@FindBy(id = "input-payment-address-existing")
+@Getter private WebElement existingAddressRadio;
+
+@FindBy(id = "address_id")
+@Getter private WebElement existingAddressDropdown;
+
+@FindBy(id="input-payment-address-new")
+@Getter private WebElement newAddressSelect;
+
 //shipping section
 
 @FindBy(id = "input-shipping-firstname")
@@ -115,6 +124,14 @@ public class Checkout extends BasePage {
 @FindBy(id = "input-shipping-zone")
 @Getter private WebElement shippingRegionSelect;
 
+
+//payment section
+
+@FindBy(id = "input-payment-method-cod")
+@Getter private WebElement codRadio;
+
+@FindBy(id = "input-shipping-method-flat.flat")
+@Getter private WebElement shippingMethodRadio;
 
 //coupon section
 
