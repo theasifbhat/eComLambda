@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.BasePage.BasePage;
+import pageObjects.ConfirmOrder.ConfirmOrder;
 
 public class Checkout extends BasePage {
  WebDriver mDriver;
@@ -86,10 +87,10 @@ public class Checkout extends BasePage {
 @FindBy(id = "input-shipping-address-same")
 @Getter private WebElement shippingAddressSameCheckbox;
 
-@FindBy(id = "input-payment-address-existing")
+@FindBy(xpath = "(//input[@name='payment_address'])[1]")
 @Getter private WebElement existingAddressRadio;
 
-@FindBy(id = "address_id")
+@FindBy(css = "select[name='address_id']")
 @Getter private WebElement existingAddressDropdown;
 
 @FindBy(id="input-payment-address-new")
@@ -176,6 +177,9 @@ public class Checkout extends BasePage {
 @FindBy(id = "button-save")
 @Getter private WebElement continueButton;
 
-
+public ConfirmOrder clickContinueButton(){
+    continueButton.click();
+    return new ConfirmOrder(mDriver);
+}
 
 }

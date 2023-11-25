@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.Checkout.Checkout;
+import pageObjects.ConfirmOrder.ConfirmOrder;
+import pageObjects.OrderSuccess.OrderSuccess;
 import pageObjects.Search.Search;
 import pageObjects.ShoppingCart.ShoppingCart;
 import testCases.BaseTest.BaseTest;
@@ -34,10 +36,11 @@ public void testCheckoutWithSignedInUserInCheckoutPage(){
     checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
     checkout.getLoginButton().click();
     GlobalFunctions.waitForPageLoad(mDriver);
+    //checkout.waitTillElementIsVisibleUsingWebElement(checkout.getExistingAddressRadio());
+    //need to check why timeout exception is thrown
     actions.moveToElement(checkout.getExistingAddressRadio()).click().build().perform();
 
     checkout.waitTillElementIsEnabledUsingWebElement(checkout.getExistingAddressDropdown());
-   //causes timeout exception
 
     Select select = new Select(checkout.getExistingAddressDropdown());
 
@@ -48,7 +51,10 @@ public void testCheckoutWithSignedInUserInCheckoutPage(){
     sf.assertTrue(checkout.getShippingMethodRadio().isSelected());
 
     actions.moveToElement(checkout.getTosCheckbox()).click().build().perform();
-    checkout.getContinueButton().click();
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    ConfirmOrder confirmOrder= checkout.clickContinueButton();
+    OrderSuccess os = confirmOrder.clickConfirmOrderButton();
+    sf.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
     sf.assertAll();
 
 
