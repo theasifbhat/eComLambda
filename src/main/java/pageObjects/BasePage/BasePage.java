@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pageObjects.CompareProducts.CompareProducts;
@@ -32,6 +33,7 @@ public class BasePage{
 
  WebDriver mDriver;
  WebDriverWait webDriverWait;
+ FluentWait<WebDriver> fluentWait;
 
  //common webelements
 
@@ -142,6 +144,10 @@ private WebElement emptyCartLabelInShoppingCartSideFragment;
 public BasePage(WebDriver mDriver){
      this.mDriver= mDriver;
      webDriverWait = new WebDriverWait(mDriver, Duration.ofSeconds(13));
+     fluentWait = new FluentWait<>(mDriver)
+             .withTimeout(Duration.ofSeconds(13))
+             .pollingEvery(Duration.ofSeconds(3))
+             .ignoring(NoSuchElementException.class);
      PageFactory.initElements(mDriver,this);
      GlobalFunctions.waitForPageLoad(mDriver);
  }
@@ -179,6 +185,11 @@ public void waitTillElementIsEnabledUsingWebElement(WebElement webElement){
 public void waitTillElementIsDisabledUsingWebElement(WebElement webElement){
     webDriverWait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(webElement)));
 }
+
+public void fluentWaitTill(ExpectedCondition<Boolean> expectedConditions){
+    fluentWait.until(expectedConditions);
+}
+
 
 public boolean isElementDisplayed(WebElement webElement){
     boolean flag = true;

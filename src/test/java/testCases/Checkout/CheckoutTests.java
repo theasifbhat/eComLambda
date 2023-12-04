@@ -1,8 +1,10 @@
 package testCases.Checkout;
 
 import com.beust.ah.A;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -56,7 +58,30 @@ public void testCheckoutWithSignedInUserInCheckoutPage(){
     OrderSuccess os = confirmOrder.clickConfirmOrderButton();
     sf.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
     sf.assertAll();
+}
 
+
+@Test
+    public void checkoutWithNewAddress(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    checkout.fillMandatoryFieldsInBillingSectionWithRandomData();
+    checkout.getContinueButton().click();
 
 }
 
