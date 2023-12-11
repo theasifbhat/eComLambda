@@ -146,7 +146,7 @@ public BasePage(WebDriver mDriver){
      webDriverWait = new WebDriverWait(mDriver, Duration.ofSeconds(13));
      fluentWait = new FluentWait<>(mDriver)
              .withTimeout(Duration.ofSeconds(13))
-             .pollingEvery(Duration.ofSeconds(3))
+             .pollingEvery(Duration.ofSeconds(1))
              .ignoring(NoSuchElementException.class);
      PageFactory.initElements(mDriver,this);
      GlobalFunctions.waitForPageLoad(mDriver);
@@ -174,9 +174,14 @@ public void waitTillElementIsPresent(By locator){
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
 }
 
+public void waitTillElementIsClickable(WebElement webElement){
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+}
+
 public void waitTillElementIsInvisible(WebElement webElement){
     webDriverWait.until(ExpectedConditions.invisibilityOfAllElements(webElement));
 }
+
 
 public void waitTillElementIsEnabledUsingWebElement(WebElement webElement){
     webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
@@ -308,6 +313,10 @@ public ShoppingCart clickOnGoToShoppingCartInToast(){
     waitTillElementIsVisibleUsingWebElement(shoppingCartLinkInToast);
     shoppingCartLinkInToast.click();
     return new ShoppingCart(mDriver);
+}
+
+public void clickUsingActionAPI(WebElement webElement){
+    new Actions(mDriver).moveToElement(webElement).click().build().perform();
 }
 
 

@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ConfirmOrder/ConfirmOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ConfirmOrder/ConfirmOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,36 +44,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TestNG.CheckoutTests.checkoutWithNewAddress.executor": "Run",
-    "TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor": "Run",
-    "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
-    "TestNG.LandingTests.testCheckoutWithCartHeaderIcon.executor": "Run",
-    "TestNG.LandingTests.testCheckoutWithNoProductInCart.executor": "Run",
-    "TestNG.LandingTests.testCheckoutWithProductInCart.executor": "Run",
-    "TestNG.LandingTests.testHeroImages.executor": "Run",
-    "TestNG.LandingTests.testNextButton.executor": "Run",
-    "TestNG.LandingTests.testPrevButton.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.CheckoutTests.checkoutWithNewAddress.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testCheckoutWithCartHeaderIcon.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testCheckoutWithNoProductInCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testCheckoutWithProductInCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testHeroImages.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testNextButton.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LandingTests.testPrevButton.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="TestNG.CheckoutTests.checkoutWithNewAddress">
     <configuration name="CheckoutTests.checkoutWithNewAddress" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
@@ -167,8 +168,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.CheckoutTests.checkoutWithNewAddress" />
-        <item itemvalue="TestNG.LandingTests.testCheckoutWithCartHeaderIcon" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage" />
+        <item itemvalue="TestNG.LandingTests.testCheckoutWithCartHeaderIcon" />
         <item itemvalue="TestNG.LandingTests.testCheckoutWithProductInCart" />
         <item itemvalue="TestNG.LandingTests.testCheckoutWithNoProductInCart" />
       </list>
@@ -267,7 +268,8 @@
       <workItem from="1700727440273" duration="8000" />
       <workItem from="1700727843609" duration="5267000" />
       <workItem from="1700908002617" duration="3198000" />
-      <workItem from="1701688494452" duration="4533000" />
+      <workItem from="1701688494452" duration="14375000" />
+      <workItem from="1702288947895" duration="6991000" />
     </task>
     <servers />
   </component>

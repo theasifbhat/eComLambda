@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.Checkout.Checkout;
@@ -62,7 +63,7 @@ public void testCheckoutWithSignedInUserInCheckoutPage(){
 
 
 @Test
-    public void checkoutWithNewAddress(){
+    public void checkoutWithNewAddress() throws InterruptedException {
     Search search = landingPage.searchProductWithName("iMac");
     WebElement searchItem = search.getSearchResultWebElements().get(0);
     Actions actions = new Actions(mDriver);
@@ -81,7 +82,10 @@ public void testCheckoutWithSignedInUserInCheckoutPage(){
     checkout.getLoginButton().click();
     GlobalFunctions.waitForPageLoad(mDriver);
     checkout.fillMandatoryFieldsInBillingSectionWithRandomData();
-    checkout.getContinueButton().click();
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    ConfirmOrder confirmOrder= checkout.clickContinueButton();
+    OrderSuccess os = confirmOrder.clickConfirmOrderButton();
+    Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
 
 }
 

@@ -1,12 +1,15 @@
 package pageObjects.Checkout;
 
 import lombok.Getter;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import pageObjects.BasePage.BasePage;
 import pageObjects.ConfirmOrder.ConfirmOrder;
@@ -99,6 +102,9 @@ public class Checkout extends BasePage {
 @FindBy(id="input-payment-address-new")
 @Getter private WebElement newAddressSelect;
 
+@FindBy(xpath = "//div[@id='payment-address']//select[@id='input-payment-zone']")
+@Getter private WebElement billingRegionSelect;
+
 //shipping section
 
 @FindBy(id = "input-shipping-firstname")
@@ -177,21 +183,18 @@ public class Checkout extends BasePage {
 
 
 //continue section
-@FindBy(id = "button-save")
+@FindBy(xpath = "//button[@id='button-save']")
 @Getter private WebElement continueButton;
 
 public ConfirmOrder clickContinueButton(){
-    continueButton.click();
+    new Actions(mDriver).moveToElement(continueButton).click().build().perform();
     return new ConfirmOrder(mDriver);
 }
-
-
-public void fillMandatoryFieldsInBillingSectionWithRandomData(){
+public void fillMandatoryFieldsInBillingSectionWithRandomData() throws InterruptedException {
     firstNameInput.sendKeys("asif");
     lastNameInput.sendKeys("bhat");
     address1Input.sendKeys("address1");
     cityInput.sendKeys("city");
-    postcodeInput.sendKeys("190004");
     Select select = new Select(countrySelect);
     if (!countrySelect.isEnabled()){
         fluentWaitTill(new ExpectedCondition<Boolean>() {
@@ -202,21 +205,9 @@ public void fillMandatoryFieldsInBillingSectionWithRandomData(){
         });
     }
     select.selectByIndex(106);
-    fluentWaitTill(new ExpectedCondition<Boolean>() {
-        @Override
-        public Boolean apply(WebDriver input) {
-            return new Select(shippingRegionSelect)
-                    .getOptions()
-                    .stream()
-                    .anyMatch(it-> it.getAttribute("innerHTML").equals("Jammu and Kashmir"));
-        }
-    });
-
-    Select s = new Select(shippingRegionSelect);
-    s.selectByIndex(14);
-    Actions actions = new Actions(mDriver);
-    actions.moveToElement(tosCheckbox).click().build().perform();
-
+    Thread.sleep(1000);
+    new Select(billingRegionSelect).selectByIndex(14);
+    new Actions(mDriver).moveToElement(tosCheckbox).click().build().perform();
 }
 
 
