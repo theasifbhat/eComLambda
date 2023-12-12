@@ -205,9 +205,16 @@ public void fillMandatoryFieldsInBillingSectionWithRandomData() throws Interrupt
         });
     }
     select.selectByIndex(106);
-    Thread.sleep(1000);
+    Thread.sleep(1000); // need to find a better strategy
     new Select(billingRegionSelect).selectByIndex(14);
     new Actions(mDriver).moveToElement(tosCheckbox).click().build().perform();
+}
+
+public void fillNonMandatoryFieldsInBillingSectionWithRandomData(){
+    companyInput.sendKeys("company");
+    postcodeInput.sendKeys("190004");
+    address2Input.sendKeys("address2");
+
 }
 
 

@@ -315,8 +315,8 @@ public ShoppingCart clickOnGoToShoppingCartInToast(){
     return new ShoppingCart(mDriver);
 }
 
-public void clickUsingActionAPI(WebElement webElement){
-    new Actions(mDriver).moveToElement(webElement).click().build().perform();
+public String getAttributrOfWebElement(WebElement webElement, String attribute){
+    return webElement.getAttribute(attribute);
 }
 
 
