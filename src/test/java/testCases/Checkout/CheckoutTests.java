@@ -137,6 +137,10 @@ public void testBillingSectionHasPlaceholder(){
     checkout.getLoginButton().click();
     GlobalFunctions.waitForPageLoad(mDriver);
     SoftAssert softAssert = new SoftAssert();
+    softAssert.assertTrue(checkout.getExistingAddressRadio().isSelected());
+    softAssert.assertTrue(checkout.getCodRadio().isSelected());
+    softAssert.assertTrue(checkout.getShippingAddressSameCheckbox().isSelected());
+    softAssert.assertTrue(checkout.getShippingMethodRadio().isSelected());
     softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getFirstNameInput(), "placeholder"),"First Name");
     softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getLastNameInput(),"placeholder"),"Last Name");
     softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getCompanyInput(),"placeholder"),"Company");

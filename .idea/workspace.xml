@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/BasePage/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.CheckoutTests.checkoutWithNewAddress.executor": "Run",
+    "TestNG.CheckoutTests.testBillingSectionHasPlaceholder.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWihNewAddressWithAllFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor": "Run",
     "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
@@ -269,7 +268,7 @@
       <workItem from="1700727843609" duration="5267000" />
       <workItem from="1700908002617" duration="3198000" />
       <workItem from="1701688494452" duration="14375000" />
-      <workItem from="1702288947895" duration="9265000" />
+      <workItem from="1702288947895" duration="9934000" />
     </task>
     <servers />
   </component>
