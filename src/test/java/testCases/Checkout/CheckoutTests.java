@@ -1,6 +1,7 @@
 package testCases.Checkout;
 
 import com.beust.ah.A;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -149,6 +150,45 @@ public void testBillingSectionHasPlaceholder(){
     softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getCityInput(),"placeholder"),"City");
     softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getPostcodeInput(),"placeholder"),"Post Code");
     softAssert.assertAll();
+}
+
+@Test
+    public void testCheckoutWithEmptyFields(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+
+    // due to some reasons while clicking directly on continue, it gives error. So we first have to wait till the country select is enabled.
+    checkout.fluentWaitTill(new ExpectedCondition<Boolean>() {
+        @Override
+        public Boolean apply(WebDriver input) {
+            return checkout.getCountrySelect().isEnabled();
+        }
+    });
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    SoftAssert sf = new SoftAssert();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getFirstNameError());
+    sf.assertEquals(checkout.getFirstNameError().getText(),"First Name must be between 1 and 32 characters!");
+    sf.assertEquals(checkout.getLastNameError().getText(),"Last Name must be between 1 and 32 characters!");
+    sf.assertEquals(checkout.getAddress1Error().getText(),"Address 1 must be between 3 and 128 characters!");
+    sf.assertEquals(checkout.getCityError().getText(),"City must be between 2 and 128 characters!");
+    sf.assertEquals(checkout.getPostcodeError().getText(),"Postcode must be between 2 and 10 characters!");
+    sf.assertAll();
+
 }
 
 

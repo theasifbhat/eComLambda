@@ -40,8 +40,14 @@ public class Checkout extends BasePage {
 @FindBy(id = "input-payment-firstname")
 @Getter private WebElement firstNameInput;
 
+@FindBy(xpath = "//input[@id='input-payment-firstname']/following-sibling::div")
+@Getter private WebElement firstNameError;
+
 @FindBy(id = "input-payment-lastname")
 @Getter private WebElement lastNameInput;
+
+@FindBy(xpath = "//input[@id='input-payment-lastname']/following-sibling::div")
+@Getter private WebElement lastNameError;
 
 @FindBy(id = "input-payment-email")
 @Getter private WebElement emailInput;
@@ -77,15 +83,23 @@ public class Checkout extends BasePage {
 @FindBy(id = "input-payment-address-1")
 @Getter private WebElement address1Input;
 
+@FindBy(xpath = "//input[@id='input-payment-address-1']/following-sibling::div")
+@Getter private WebElement address1Error;
+
 @FindBy(id = "input-payment-address-2")
 @Getter private WebElement address2Input;
 
 @FindBy(id = "input-payment-city")
 @Getter private WebElement cityInput;
 
+@FindBy(xpath = "//input[@id='input-payment-city']/following-sibling::div")
+@Getter private WebElement cityError;
+
 @FindBy(id = "input-payment-postcode")
 @Getter private WebElement postcodeInput;
 
+@FindBy(xpath = "//input[@id='input-payment-postcode']/following-sibling::div")
+@Getter private WebElement postcodeError;
 
 @FindBy(id = "input-payment-country")
 @Getter private WebElement countrySelect;
@@ -214,7 +228,6 @@ public void fillNonMandatoryFieldsInBillingSectionWithRandomData(){
     companyInput.sendKeys("company");
     postcodeInput.sendKeys("190004");
     address2Input.sendKeys("address2");
-
 }
 
 

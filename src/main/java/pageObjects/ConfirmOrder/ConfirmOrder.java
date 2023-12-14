@@ -24,6 +24,6 @@ private WebElement confirmOrderButton;
 
 public OrderSuccess clickConfirmOrderButton() {
    new Actions(mDriver).moveToElement(confirmOrderButton).click().build().perform();
-    return new OrderSuccess(mDriver);
+   return new OrderSuccess(mDriver);
 }
 }

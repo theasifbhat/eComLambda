@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -95,5 +96,12 @@ public static String sanitizeImageUrl(String unSanitizedImageUrl){
     String secondPart = first[1].split("-")[0];
     return first[0]+"product/"+secondPart;
 }
+
+public static void clickOnWebElementWithJS(WebDriver mDriver, WebElement webElement){
+    JavascriptExecutor executor = (JavascriptExecutor) mDriver;
+    executor.executeScript("arguments[0].scrollIntoView();arguments[0].click();", webElement);
+}
+
+
 
 }
