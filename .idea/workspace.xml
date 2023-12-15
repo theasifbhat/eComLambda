@@ -50,6 +50,7 @@
     "TestNG.CheckoutTests.testBillingSectionHasPlaceholder.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWihNewAddressWithAllFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithEmptyFields.executor": "Run",
+    "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor": "Run",
     "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
@@ -76,25 +77,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields">
-    <configuration name="CheckoutTests.checkoutWithNewAddress" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Checkout.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Checkout" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
-      <option name="METHOD_NAME" value="checkoutWithNewAddress" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields">
     <configuration name="CheckoutTests.testBillingSectionHasPlaceholder" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -149,6 +132,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Checkout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Checkout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
+      <option name="METHOD_NAME" value="testCheckoutWithNewShippingAddressWithAllFields" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
@@ -169,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWithEmptyFields" />
         <item itemvalue="TestNG.CheckoutTests.testBillingSectionHasPlaceholder" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWihNewAddressWithAllFields" />
-        <item itemvalue="TestNG.CheckoutTests.checkoutWithNewAddress" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +274,7 @@
       <workItem from="1701688494452" duration="14375000" />
       <workItem from="1702288947895" duration="10652000" />
       <workItem from="1702461612020" duration="60000" />
-      <workItem from="1702461680724" duration="10464000" />
+      <workItem from="1702461680724" duration="11863000" />
     </task>
     <servers />
   </component>

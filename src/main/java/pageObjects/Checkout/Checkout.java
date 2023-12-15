@@ -252,6 +252,15 @@ public void fillMandatoryFieldsInShippingSectionWithRandomData() throws Interrup
     new Select(shippingRegionSelect).selectByIndex(14);
     new Actions(mDriver).moveToElement(tosCheckbox).click().build().perform();
 }
+
+public void fillNonMandatoryFieldsInShippingSectionWithRandomData(){
+    shippingCompanyInput.sendKeys("company");
+    shippingPostcodeInput.clear();
+    shippingPostcodeInput.sendKeys("190004");
+    shippingAddress2Input.sendKeys("address2");
+}
+
+
 }
 
 

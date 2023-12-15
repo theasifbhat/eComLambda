@@ -219,7 +219,39 @@ public void testBillingSectionHasPlaceholder(){
     ConfirmOrder confirmOrder= checkout.clickContinueButton();
     OrderSuccess os = confirmOrder.clickConfirmOrderButton();
     Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
+}
 
+@Test
+    public void testCheckoutWithNewShippingAddressWithAllFields() throws InterruptedException {
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    actions.moveToElement(checkout.getExistingAddressRadio()).click().build().perform();
+    actions.moveToElement(checkout.getShippingAddressSameCheckbox()).click().build().perform();
+    actions.moveToElement(checkout.getNewShippingAddressRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getShippingFirstNameInput());
+    checkout.fillMandatoryFieldsInShippingSectionWithRandomData();
+    checkout.fillNonMandatoryFieldsInShippingSectionWithRandomData();
+   // actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    ConfirmOrder confirmOrder= checkout.clickContinueButton();
+    OrderSuccess os = confirmOrder.clickConfirmOrderButton();
+
+    //failing due to internal server error
+    Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
 }
 
 
