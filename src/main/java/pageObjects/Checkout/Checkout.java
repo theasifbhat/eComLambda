@@ -77,6 +77,9 @@ public class Checkout extends BasePage {
 
 //billing section
 
+@FindBy(id = "input-shipping-address-new")
+@Getter private WebElement newShippingAddressRadio;
+
 @FindBy(id = "input-payment-company")
 @Getter private WebElement companyInput;
 
@@ -230,8 +233,25 @@ public void fillNonMandatoryFieldsInBillingSectionWithRandomData(){
     address2Input.sendKeys("address2");
 }
 
-
-
+public void fillMandatoryFieldsInShippingSectionWithRandomData() throws InterruptedException{
+    shippingFirstNameInput.sendKeys("asif");
+    shippingLastNameInput.sendKeys("bhat");
+    shippingAddress1Input.sendKeys("address1");
+    shippingCityInput.sendKeys("city");
+    Select select = new Select(shippingCountrySelect);
+    if (!shippingCountrySelect.isEnabled()){
+        fluentWaitTill(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver input) {
+                return shippingCountrySelect.isEnabled();
+            }
+        });
+    }
+    select.selectByIndex(106);
+    Thread.sleep(1000); // need to find a better strategy
+    new Select(shippingRegionSelect).selectByIndex(14);
+    new Actions(mDriver).moveToElement(tosCheckbox).click().build().perform();
+}
 }
 
 
