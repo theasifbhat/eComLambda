@@ -97,9 +97,9 @@ public static String sanitizeImageUrl(String unSanitizedImageUrl){
     return first[0]+"product/"+secondPart;
 }
 
-public static void clickOnWebElementWithJS(WebDriver mDriver, WebElement webElement){
+public static void scrollIntoView(WebDriver mDriver, WebElement webElement){
     JavascriptExecutor executor = (JavascriptExecutor) mDriver;
-    executor.executeScript("arguments[0].scrollIntoView();arguments[0].click();", webElement);
+    executor.executeScript("arguments[0].scrollIntoView();", webElement);
 }
 
 

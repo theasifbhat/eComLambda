@@ -258,6 +258,11 @@ public void fillNonMandatoryFieldsInShippingSectionWithRandomData(){
     shippingPostcodeInput.clear();
     shippingPostcodeInput.sendKeys("190004");
     shippingAddress2Input.sendKeys("address2");
+    commentInput.sendKeys("this is a test message");
+}
+
+public String getErrorMessageForCheckoutFields(WebElement webElement){
+    return webElement.findElement(By.xpath("following-sibling::div")).getText();
 }
 
 

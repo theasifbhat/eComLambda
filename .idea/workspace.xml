@@ -7,6 +7,8 @@
     <list default="true" id="146141ef-2a0f-4844-b479-abe04a9925ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Checkout/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ConfirmOrder/ConfirmOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ConfirmOrder/ConfirmOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/GlobalFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCases/Checkout/CheckoutTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +50,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.CheckoutTests.checkoutWithNewAddress.executor": "Run",
     "TestNG.CheckoutTests.testBillingSectionHasPlaceholder.executor": "Run",
+    "TestNG.CheckoutTests.testCheckoutUserMessage.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWihNewAddressWithAllFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithEmptyFields.executor": "Run",
+    "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressPlaceholders.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields.executor": "Run",
+    "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithEmptyFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields.executor": "Run",
     "TestNG.CheckoutTests.testCheckoutWithSignedInUserInCheckoutPage.executor": "Run",
     "TestNG.LandingTests.testAutomaticTransitionOnHeroSection.executor": "Run",
@@ -77,8 +82,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields">
-    <configuration name="CheckoutTests.testBillingSectionHasPlaceholder" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CheckoutTests.testCheckoutUserMessage">
+    <configuration name="CheckoutTests.testCheckoutUserMessage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +93,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="testCases.Checkout" />
       <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
-      <option name="METHOD_NAME" value="testBillingSectionHasPlaceholder" />
+      <option name="METHOD_NAME" value="testCheckoutUserMessage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -96,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTests.testCheckoutWihNewAddressWithAllFields" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutTests.testCheckoutWithNewShippingAddressPlaceholders" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="eComLambda" />
       <extension name="coverage">
         <pattern>
@@ -106,25 +111,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="testCases.Checkout" />
       <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
-      <option name="METHOD_NAME" value="testCheckoutWihNewAddressWithAllFields" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckoutTests.testCheckoutWithEmptyFields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="eComLambda" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testCases.Checkout.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testCases.Checkout" />
-      <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
-      <option name="METHOD_NAME" value="testCheckoutWithEmptyFields" />
+      <option name="METHOD_NAME" value="testCheckoutWithNewShippingAddressPlaceholders" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,6 +130,24 @@
       <option name="PACKAGE_NAME" value="testCases.Checkout" />
       <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
       <option name="METHOD_NAME" value="testCheckoutWithNewShippingAddressWithAllFields" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckoutTests.testCheckoutWithNewShippingAddressWithEmptyFields" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="eComLambda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testCases.Checkout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testCases.Checkout" />
+      <option name="MAIN_CLASS_NAME" value="testCases.Checkout.CheckoutTests" />
+      <option name="METHOD_NAME" value="testCheckoutWithNewShippingAddressWithEmptyFields" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -170,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckoutTests.testCheckoutUserMessage" />
+        <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressPlaceholders" />
+        <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithEmptyFields" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithAllFields" />
         <item itemvalue="TestNG.CheckoutTests.testCheckoutWithNewShippingAddressWithMandatoryFields" />
-        <item itemvalue="TestNG.CheckoutTests.testCheckoutWithEmptyFields" />
-        <item itemvalue="TestNG.CheckoutTests.testBillingSectionHasPlaceholder" />
-        <item itemvalue="TestNG.CheckoutTests.testCheckoutWihNewAddressWithAllFields" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +279,8 @@
       <workItem from="1701688494452" duration="14375000" />
       <workItem from="1702288947895" duration="10652000" />
       <workItem from="1702461612020" duration="60000" />
-      <workItem from="1702461680724" duration="11863000" />
+      <workItem from="1702461680724" duration="11993000" />
+      <workItem from="1702719070588" duration="3096000" />
     </task>
     <servers />
   </component>

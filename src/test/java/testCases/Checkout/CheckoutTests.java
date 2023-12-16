@@ -1,6 +1,7 @@
 package testCases.Checkout;
 
 import com.beust.ah.A;
+import io.netty.handler.traffic.GlobalTrafficShapingHandler;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -253,6 +254,122 @@ public void testBillingSectionHasPlaceholder(){
     //failing due to internal server error
     Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
 }
+
+@Test
+    public void testCheckoutWithNewShippingAddressWithEmptyFields(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    actions.moveToElement(checkout.getExistingAddressRadio()).click().build().perform();
+    actions.moveToElement(checkout.getShippingAddressSameCheckbox()).click().build().perform();
+    actions.moveToElement(checkout.getNewShippingAddressRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getShippingFirstNameInput());
+
+    checkout.fluentWaitTill(new ExpectedCondition<Boolean>() {
+        @Override
+        public Boolean apply(WebDriver input) {
+            return checkout.getShippingCountrySelect().isEnabled();
+        }
+    });
+
+    GlobalFunctions.scrollIntoView(mDriver,checkout.getContinueButton());
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    SoftAssert sf = new SoftAssert();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getFirstNameError());
+    sf.assertEquals(checkout.getErrorMessageForCheckoutFields(checkout.getShippingFirstNameInput()),"First Name must be between 1 and 32 characters!");
+    sf.assertEquals(checkout.getErrorMessageForCheckoutFields(checkout.getShippingLastNameInput()),"Last Name must be between 1 and 32 characters!");
+    sf.assertEquals(checkout.getErrorMessageForCheckoutFields(checkout.getShippingAddress1Input()),"Address 1 must be between 3 and 128 characters!");
+    sf.assertEquals(checkout.getErrorMessageForCheckoutFields(checkout.getShippingCityInput()),"City must be between 2 and 128 characters!");
+    sf.assertEquals(checkout.getErrorMessageForCheckoutFields(checkout.getShippingPostcodeInput()),"Postcode must be between 2 and 10 characters!");
+    sf.assertAll();
+
+    //failing due to internal server error
+}
+
+@Test
+    public void testCheckoutWithNewShippingAddressPlaceholders(){
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    actions.moveToElement(checkout.getExistingAddressRadio()).click().build().perform();
+    actions.moveToElement(checkout.getShippingAddressSameCheckbox()).click().build().perform();
+    actions.moveToElement(checkout.getNewShippingAddressRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getShippingFirstNameInput());
+    SoftAssert softAssert = new SoftAssert();
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingFirstNameInput(),"placeholder"),"First Name");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingLastNameInput(),"placeholder"),"Last Name");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingCompanyInput(),"placeholder"),"Company");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingAddress1Input(),"placeholder"),"Address 1");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingAddress2Input(),"placeholder"),"Address 2");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingCityInput(),"placeholder"),"City");
+    softAssert.assertEquals(checkout.getAttributrOfWebElement(checkout.getShippingPostcodeInput(),"placeholder"),"Post Code");
+    softAssert.assertAll();
+
+}
+
+@Test
+    public void testCheckoutUserMessage() throws InterruptedException {
+    String userMessage = "This is a test message";
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountLoginRadio()).click().build().perform();
+    checkout.waitTillElementIsVisibleUsingWebElement(checkout.getLoginEmailInput());
+    checkout.getLoginEmailInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("username"));
+    checkout.getLoginPasswordInput().sendKeys(GlobalFunctions.getPropertyFromPropertyFile("password"));
+    checkout.getLoginButton().click();
+    GlobalFunctions.waitForPageLoad(mDriver);
+    actions.moveToElement(checkout.getExistingAddressRadio()).click().build().perform();
+    GlobalFunctions.scrollIntoView(mDriver,checkout.getTosCheckbox());
+    if (!checkout.getTosCheckbox().isSelected()){
+        System.out.println("tos checkbox is not selected");
+        actions.moveToElement(checkout.getTosCheckbox()).click().build().perform();
+    }
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    ConfirmOrder confirmOrder= checkout.clickContinueButton();
+    SoftAssert sf = new SoftAssert();
+    sf.assertEquals(confirmOrder.getUserOrderMessage(),userMessage);
+    OrderSuccess os = confirmOrder.clickConfirmOrderButton();
+    Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
+}
+
+
 
 
 

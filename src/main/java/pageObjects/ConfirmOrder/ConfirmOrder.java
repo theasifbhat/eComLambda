@@ -20,10 +20,20 @@ public class ConfirmOrder extends BasePage {
 @Getter
 private WebElement confirmOrderButton;
 
+@FindBy(xpath = "//div[@id='content']/div[4]/div")
+@Getter
+private WebElement userOrderMessage;
 
 
 public OrderSuccess clickConfirmOrderButton() {
    new Actions(mDriver).moveToElement(confirmOrderButton).click().build().perform();
    return new OrderSuccess(mDriver);
 }
+
+public String getUserOrderMessage() {
+   return userOrderMessage.getText();
+}
+
+
+
 }
