@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import pageObjects.BasePage.BasePage;
 import pageObjects.ConfirmOrder.ConfirmOrder;
+import utilities.GlobalFunctions;
 
 public class Checkout extends BasePage {
  WebDriver mDriver;
@@ -224,6 +225,7 @@ public void fillMandatoryFieldsInBillingSectionWithRandomData() throws Interrupt
     select.selectByIndex(106);
     Thread.sleep(1000); // need to find a better strategy
     new Select(billingRegionSelect).selectByIndex(14);
+    GlobalFunctions.scrollIntoView(mDriver,tosCheckbox);
     new Actions(mDriver).moveToElement(tosCheckbox).click().build().perform();
 }
 

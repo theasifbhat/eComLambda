@@ -98,8 +98,7 @@ public static String sanitizeImageUrl(String unSanitizedImageUrl){
 }
 
 public static void scrollIntoView(WebDriver mDriver, WebElement webElement){
-    JavascriptExecutor executor = (JavascriptExecutor) mDriver;
-    executor.executeScript("arguments[0].scrollIntoView();", webElement);
+    ((JavascriptExecutor)mDriver).executeScript("arguments[0].scrollIntoView();", webElement);
 }
 
 

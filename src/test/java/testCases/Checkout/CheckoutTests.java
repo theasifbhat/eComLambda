@@ -369,6 +369,33 @@ public void testBillingSectionHasPlaceholder(){
     Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
 }
 
+@Test
+    public void checkoutWithGuestUserWithBillingAndShippingAddressSame() throws InterruptedException {
+    String userMessage = "This is a test message";
+    Search search = landingPage.searchProductWithName("iMac");
+    WebElement searchItem = search.getSearchResultWebElements().get(0);
+    Actions actions = new Actions(mDriver);
+    actions.moveToElement(searchItem).build().perform();
+    search.waitTillElementIsVisibleUsingWebElement(search.getAddToCartActionButton(searchItem));
+    search.getAddToCartActionButton(searchItem).click();
+    search.waitTillElementIsVisibleUsingWebElement(search.getShoppingCartLinkInToast());
+    search.getShoppingCartLinkInToast().click();
+    ShoppingCart shoppingCart = new ShoppingCart(mDriver);
+    shoppingCart.getCheckoutButton().click();
+    Checkout checkout = new Checkout(mDriver);
+    actions.moveToElement(checkout.getAccountGuestRadio()).click().build().perform();
+    checkout.getEmailInput().sendKeys(GlobalFunctions.generateRandomEmail());
+    checkout.getTelephoneInput().sendKeys("1234567890");
+    checkout.fillMandatoryFieldsInBillingSectionWithRandomData();
+    actions.moveToElement(checkout.getContinueButton()).click().build().perform();
+    ConfirmOrder confirmOrder= checkout.clickContinueButton();
+    SoftAssert sf = new SoftAssert();
+    sf.assertEquals(confirmOrder.getUserOrderMessage(),userMessage);
+    OrderSuccess os = confirmOrder.clickConfirmOrderButton();
+    Assert.assertEquals(os.getOrderSuccessLabel().getText(),"Your order has been placed!");
+
+
+}
 
 
 
